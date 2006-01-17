@@ -1,0 +1,26 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>preview</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>preview</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>834</width>
+            <height>523</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Podgląd wydruku</string>
+    </property>
+</widget>
+<includes>
+    <include location="local" impldecl="in implementation">preview.ui.h</include>
+</includes>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

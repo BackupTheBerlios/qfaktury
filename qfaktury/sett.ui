@@ -1,0 +1,1518 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Form7</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Form7</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>440</width>
+            <height>455</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Ustawienia</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>layout89</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Minimum</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>38</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>O&amp;K</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+K</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>zastButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Za&amp;stosuj</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+S</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>closeButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Can&amp;cel</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget2</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Ogólne</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QFrame" row="0" column="0">
+                        <property name="name">
+                            <cstring>frame11</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Plain</enum>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout74</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Logo:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>logoEdit</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>addLogoBtn</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>...</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QLayoutWidget" row="1" column="0">
+                                <property name="name">
+                                    <cstring>layout75</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Lista pozycji na fakturze:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QTable">
+                                        <column>
+                                            <property name="text">
+                                                <string>Nazwa pozycji</string>
+                                            </property>
+                                        </column>
+                                        <property name="name">
+                                            <cstring>tablePos</cstring>
+                                        </property>
+                                        <property name="numRows">
+                                            <number>14</number>
+                                        </property>
+                                        <property name="numCols">
+                                            <number>1</number>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Faktury</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QGroupBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>groupBox1</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Numeracja: </string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout39</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Przedrostek:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>prefixEdit</cstring>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QCheckBox" row="3" column="0">
+                                <property name="name">
+                                    <cstring>cbMonth</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Miesiąc</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox" row="2" column="0">
+                                <property name="name">
+                                    <cstring>cbDay</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Dzień</string>
+                                </property>
+                            </widget>
+                            <widget class="QLayoutWidget" row="1" column="0">
+                                <property name="name">
+                                    <cstring>layout40</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel2_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Ilość cyfr przy autonumerowaniu:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox">
+                                        <property name="name">
+                                            <cstring>spbNumb</cstring>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QLayoutWidget" row="4" column="0">
+                                <property name="name">
+                                    <cstring>layout60</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>cbYear</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Rok</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>shortYear</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>rok długi np. 2006</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <spacer row="3" column="0">
+                        <property name="name">
+                            <cstring>spacer7</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>31</width>
+                                <height>90</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QCheckBox" row="1" column="0">
+                        <property name="name">
+                            <cstring>cbEdit</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Włącz możliwość edycji faktur i korekt</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="2" column="0">
+                        <property name="name">
+                            <cstring>cbSmbEdit</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Blokuj zmianę symbolu faktury</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Jedn/Korekty</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QFrame" row="0" column="0">
+                        <property name="name">
+                            <cstring>frame10</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Plain</enum>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout68</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout67</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout66</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel1_3</cstring>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Spis jednostek:</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>AlignTop</set>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QListBox">
+                                                        <property name="name">
+                                                            <cstring>currlBox</cstring>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout65</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel2_4</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Nowa:</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QLineEdit">
+                                                        <property name="name">
+                                                            <cstring>currEdit</cstring>
+                                                        </property>
+                                                        <property name="maxLength">
+                                                            <number>10</number>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout27</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout25</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                </vbox>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer8</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Vertical</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>21</width>
+                                                        <height>51</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout26</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>currDelBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Usuń</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+U</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>currAddBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Dodaj</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+D</string>
+                                                        </property>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <widget class="QFrame" row="1" column="0">
+                        <property name="name">
+                            <cstring>frame18</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Box</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Raised</enum>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout68_3</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout67_2</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout66_2</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel1_3_2</cstring>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>32767</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Przyczyny 
+korekt:</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>AlignTop</set>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QListBox">
+                                                        <property name="name">
+                                                            <cstring>korlBox</cstring>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout65_2</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel2_4_2</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Nowa:</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QLineEdit">
+                                                        <property name="name">
+                                                            <cstring>korEdit</cstring>
+                                                        </property>
+                                                        <property name="maxLength">
+                                                            <number>25</number>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout27_2</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout25_2</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                </vbox>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer8_2</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Vertical</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>21</width>
+                                                        <height>51</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout26_2</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>korDelBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Usuń</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+U</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>korAddBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Dodaj</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+D</string>
+                                                        </property>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Stawki/Waluty</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QFrame" row="1" column="0">
+                        <property name="name">
+                            <cstring>frame6</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Plain</enum>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout68_2_2</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout67_3_3</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout66_3_3</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel1_3_3_3</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Spis walut:</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>AlignTop</set>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QListBox">
+                                                        <property name="name">
+                                                            <cstring>currencylBox</cstring>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout65_3_3</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel2_4_3_3</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Nowa:</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QLineEdit">
+                                                        <property name="name">
+                                                            <cstring>currencyEdit</cstring>
+                                                        </property>
+                                                        <property name="maxLength">
+                                                            <number>3</number>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout27_3_2</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout25_3_2</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                </vbox>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer8_3_3</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Vertical</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>21</width>
+                                                        <height>51</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout26_3_3</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>currencyDelBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Usuń</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+U</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>currencyAddBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Dodaj</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+D</string>
+                                                        </property>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <widget class="QFrame" row="0" column="0">
+                        <property name="name">
+                            <cstring>frame7</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Plain</enum>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout117</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout67_3</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout66_3</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel1_3_3</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Spis stawek:</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>AlignTop</set>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QListBox">
+                                                        <property name="name">
+                                                            <cstring>vatlBox</cstring>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout65_3</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel2_4_3</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Nowa:</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QLineEdit">
+                                                        <property name="name">
+                                                            <cstring>vatEdit</cstring>
+                                                        </property>
+                                                        <property name="maxLength">
+                                                            <number>6</number>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout116</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout26_3_4</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>vatUpBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Góra</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+G</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>vatDownBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Dół</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string></string>
+                                                        </property>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer8_3</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Vertical</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>21</width>
+                                                        <height>20</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout26_3</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>vatDelBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Usuń</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+U</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>vatAddBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Dodaj</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+D</string>
+                                                        </property>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Płatności</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QFrame" row="0" column="0">
+                        <property name="name">
+                            <cstring>frame8</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Plain</enum>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout27</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout67_3_2</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout66_3_2</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>paym</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Forma płatności:</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>WordBreak|AlignTop</set>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QListBox">
+                                                        <property name="name">
+                                                            <cstring>paymlBox</cstring>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout65_3_2</cstring>
+                                                </property>
+                                                <hbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QLabel">
+                                                        <property name="name">
+                                                            <cstring>textLabel2_4_3_2</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Nowa:</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QLineEdit">
+                                                        <property name="name">
+                                                            <cstring>paymEdit</cstring>
+                                                        </property>
+                                                        <property name="maxLength">
+                                                            <number>25</number>
+                                                        </property>
+                                                    </widget>
+                                                </hbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout26</cstring>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout25</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>paymUpBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Gó&amp;ra</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+R</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>paymDownBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Dół</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+D</string>
+                                                        </property>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer8_3_2</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Vertical</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>21</width>
+                                                        <height>20</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                            <widget class="QLayoutWidget">
+                                                <property name="name">
+                                                    <cstring>layout26_3_2</cstring>
+                                                </property>
+                                                <vbox>
+                                                    <property name="name">
+                                                        <cstring>unnamed</cstring>
+                                                    </property>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>paymDelBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>&amp;Usuń</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+U</string>
+                                                        </property>
+                                                    </widget>
+                                                    <widget class="QPushButton">
+                                                        <property name="name">
+                                                            <cstring>paymAddBtn</cstring>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Dod&amp;aj</string>
+                                                        </property>
+                                                        <property name="accel">
+                                                            <string>Alt+A</string>
+                                                        </property>
+                                                    </widget>
+                                                </vbox>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="Line" row="1" column="0">
+                                <property name="name">
+                                    <cstring>line3</cstring>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>HLine</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Sunken</enum>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="2" column="0">
+                                <property name="name">
+                                    <cstring>textLabel5</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&lt;b&gt;Uwaga!!&lt;/b&gt;&lt;br&gt;
+Pozycja, która znajduje się na samym początku tej listy 
+w większości przypadków powinna być gotówką, gdyż 
+jeśli przy wystawianiu faktury wybierzemy pierwszy elemant
+to na fakturze pojawi sie napis: zapłacono.</string>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Wydruki</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <spacer row="1" column="0">
+                        <property name="name">
+                            <cstring>spacer41</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>21</width>
+                                <height>211</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QGroupBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>groupBox3</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Ustawienia przeglądarki: </string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QCheckBox" row="0" column="0">
+                                <property name="name">
+                                    <cstring>cbBrowser</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Domyślna systemowa</string>
+                                </property>
+                                <property name="checked">
+                                    <bool>true</bool>
+                                </property>
+                            </widget>
+                            <widget class="QLayoutWidget" row="1" column="0">
+                                <property name="name">
+                                    <cstring>layout131</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel2_3</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Inna:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>editBrName</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>false</bool>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>zastButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>apply()</slot>
+    </connection>
+    <connection>
+        <sender>closeButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>okButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>okButtonClick()</slot>
+    </connection>
+    <connection>
+        <sender>addLogoBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>addLogoBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>currAddBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>currAddBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>currDelBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>currDelBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>currencyAddBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>currencyAddBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>currencyDelBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>currencyDelBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>paymAddBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>paymAddBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>paymDelBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>paymDelBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>paymDownBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>paymDownBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>paymUpBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>paymUpBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>vatAddBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>vatAddBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>vatDelBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>vatDelBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>korAddBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>korAddBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>korDelBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>korDelBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>vatUpBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>vatUpBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>vatDownBtn</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>vatDownBtnClick()</slot>
+    </connection>
+    <connection>
+        <sender>cbDay</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>cbEdit</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>cbMonth</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>cbYear</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>shortYear</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>prefixEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>cbSmbEdit</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>cbBrowser</sender>
+        <signal>clicked()</signal>
+        <receiver>Form7</receiver>
+        <slot>changeBrowser()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>closeButton</tabstop>
+    <tabstop>zastButton</tabstop>
+    <tabstop>okButton</tabstop>
+    <tabstop>tabWidget2</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">sett.ui.h</include>
+</includes>
+<variables>
+    <variable>QStringList pOdb1; QStringList pOdb2; QStringList pWal; QStringList pNrrach; QStringList pKwota; QStringList pKsw; QStringList pZlec1; QStringList pZlec2; QStringList pTyt1; QStringList pTyt2; QStringList pWx; QStringList pPx; int pages; bool poziom; bool own; QFont font;</variable>
+    <variable>QStringList z_dek; QStringList z_id; QStringList z_konto; QStringList z_ksw; QStringList z_kwota; QStringList z_nazwa1; QStringList z_nazwa2; QStringList z_nip; QStringList z_nrdec; QStringList z_nrdek; QStringList z_typid; QStringList z_typwp; QStringList zWx; QStringList zPx;</variable>
+    <variable>QStringList u_id; QStringList u_idzob; QStringList u_ksw; QStringList u_kwota; QStringList u_nazwa1; QStringList u_nazwa2; QStringList u_nip; QStringList u_nrrach; QStringList u_okres; QStringList u_symbol; QStringList u_zlec1; QStringList u_zlec2; QStringList uWx; QStringList uPx;</variable>
+    <variable access="private">int rozSp;</variable>
+</variables>
+<slots>
+    <slot>apply()</slot>
+    <slot>okButtonClick()</slot>
+    <slot>saveSettings()</slot>
+    <slot>readSettings()</slot>
+    <slot>addLogoBtnClick()</slot>
+    <slot>currAddBtnClick()</slot>
+    <slot>currDelBtnClick()</slot>
+    <slot>korAddBtnClick()</slot>
+    <slot>korDelBtnClick()</slot>
+    <slot>vatAddBtnClick()</slot>
+    <slot>vatDelBtnClick()</slot>
+    <slot>vatUpBtnClick()</slot>
+    <slot>vatDownBtnClick()</slot>
+    <slot>currencyAddBtnClick()</slot>
+    <slot>currencyDelBtnClick()</slot>
+    <slot>paymUpBtnClick()</slot>
+    <slot>paymDownBtnClick()</slot>
+    <slot>paymDelBtnClick()</slot>
+    <slot>zastBtnEnable()</slot>
+    <slot>paymAddBtnClick()</slot>
+    <slot>changeBrowser()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function returnType="QString">getAll( QListBox * lb )</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,20 @@
+QFaktury ChangeLog
+
+0.0.2_pre2
+- dodanie mo¿liwo¶ci zmiany nazwy towaru w trakcie dodawania
+towaru do faktury i korekty
+- usuniêto programowe formatowanie z pola NIP w konrahentach
+- dodano opcjê definiowania domy¶lnej przegl±darki
+- zmieniono sposób instalacji programu: make install, make uninstall (tnx 
+Zwierzak)
+
+0.0.2_pre1
+- dodanie mo¿liwo¶ci definiowania formatu symbolu faktury
+- dodanie mo¿liwo¶ci blokowania edycji faktur
+- dodanie mo¿liwo¶ci blokady zmiany symbolu
+- poprawienie b³êdu z kodowaniem polskich znaków w oknie kontrahentów
+- poprawienia b³êdu z kodowaniem polskich znaków na fakturach
+
+0.0.1b
+- pierwsze wydanie
+

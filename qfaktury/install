@@ -1,0 +1,32 @@
+#!/bin/bash
+
+install -m 755 ./bin/qfaktury /usr/bin
+
+mkdir -p /usr/share/qfaktury
+mkdir -p /usr/share/qfaktury/icons
+install -c -p -m 644 ./share/qfaktury/icons/dane_firmy.png /usr/share/qfaktury/icons/dane_firmy.png
+install -c -p -m 644 ./share/qfaktury/icons/dodaj_kontrahentow.png /usr/share/qfaktury/icons/dodaj_kontrahentow.png
+install -c -p -m 644 ./share/qfaktury/icons/edytuj_kontrahentow.png /usr/share/qfaktury/icons/edytuj_kontrahentow.png
+install -c -p -m 644 ./share/qfaktury/icons/edytuj_przelew.png /usr/share/qfaktury/icons/edytuj_przelew.png
+install -c -p -m 644 ./share/qfaktury/icons/qfaktury_128.png /usr/share/qfaktury/icons/qfaktury_128.png
+install -c -p -m 644 ./share/qfaktury/icons/qfaktury_16.png /usr/share/qfaktury/icons/qfaktury_16.png
+install -c -p -m 644 ./share/qfaktury/icons/qfaktury_32.png /usr/share/qfaktury/icons/qfaktury_32.png
+install -c -p -m 644 ./share/qfaktury/icons/qfaktury_48.png /usr/share/qfaktury/icons/qfaktury_48.png
+install -c -p -m 644 ./share/qfaktury/icons/qfaktury_64.png /usr/share/qfaktury/icons/qfaktury_64.png
+install -c -p -m 644 ./share/qfaktury/icons/k2.png /usr/share/qfaktury/icons/k2.png
+install -c -p -m 644 ./share/qfaktury/icons/koniec.png /usr/share/qfaktury/icons/koniec.png
+install -c -p -m 644 ./share/qfaktury/icons/kreator.png /usr/share/qfaktury/icons/kreator.png
+install -c -p -m 644 ./share/qfaktury/icons/o_programie.png /usr/share/qfaktury/icons/o_programie.png
+install -c -p -m 644 ./share/qfaktury/icons/splash.png /usr/share/qfaktury/icons/splash.png
+install -c -p -m 644 ./share/qfaktury/icons/ustawienia.png /usr/share/qfaktury/icons/ustawienia.png
+install -c -p -m 644 ./share/qfaktury/icons/usun_kontrahentow.png /usr/share/qfaktury/icons/usun_kontrahentow.png
+install -c -p -m 644 ./share/qfaktury/icons/usun_przelew.png /usr/share/qfaktury/icons/usun_przelew.png
+
+mkdir -p /usr/share/qfaktury/templates
+install -c -p -m 644 ./share/qfaktury/templates/style.css /usr/share/qfaktury/templates/style.css
+
+mkdir -p /usr/share/applications
+install -c -p  -m 644 ./share/qfaktury/icons/qfaktury.desktop /usr/share/applications/qfaktury.desktop 
+
+mkdir -p /usr/share/applications/kde
+install -c -p  -m 644 ./share/qfaktury/icons/qfaktury.desktop /usr/share/applications/kde/qfaktury.desktop
