@@ -1,5 +1,18 @@
+23-01-2006
+ - upowaznienie odbiorcy
+ - zapamietywanie tekstu dodatkowego
+
+19-01-2006
+ - formatowanie symbolu faktury
+
+18-01-2006
+ - sprawdzanie czy nip istnieje przy dodawaniu kontrahenta
+
+17-01-2006
+ - automatyczne obliczanie terminy platnosci...
+ - Faktury VAT RR
+
 16-01-2006
- - zmienic funkcje wywolywania drukow (dodac do conf)
 
 12-01-2005
  - zmianic rabaty tak aby mozna bylo przypisac do kazdego towaru

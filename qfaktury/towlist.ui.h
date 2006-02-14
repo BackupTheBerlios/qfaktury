@@ -162,8 +162,10 @@ towList::doAccept ()
 	  ret =
 	    selectedItem + "|" + listaTowary2[id].codeX () + "|" +
 	    listaTowary2[id].pkwiuX () + "|" + countEdit->text () + "|" +
-	    listaTowary2[id].currX () + "|" + cenaEdit->text () + "|" +
-	    nettoLabel->text () + "|" + vat + "|" + bruttoLabel->text ();
+	    listaTowary2[id].currX () + "|" +
+	    QString::number (rabatSpin->value ()) + "|" + cenaEdit->text () +
+	    "|" + nettoLabel->text () + "|" + vat + "|" +
+	    bruttoLabel->text ();
 	}
       if (comboBox1->currentItem () == 1)
 	{
@@ -172,8 +174,10 @@ towList::doAccept ()
 	  ret =
 	    selectedItem + "|" + listaUslugi2[id].codeX () + "|" +
 	    listaUslugi2[id].pkwiuX () + "|" + countEdit->text () + "|" +
-	    listaUslugi2[id].currX () + "|" + cenaEdit->text () + "|" +
-	    nettoLabel->text () + "|" + vat + "|" + bruttoLabel->text ();
+	    listaUslugi2[id].currX () + "|" +
+	    QString::number (rabatSpin->value ()) + "|" + cenaEdit->text () +
+	    "|" + nettoLabel->text () + "|" + vat + "|" +
+	    bruttoLabel->text ();
 
 	}
       accept ();
@@ -196,13 +200,18 @@ towList::comboBox1Changed (int x)
 void
 towList::calcNetto ()
 {
-  QString brutto1 = QString::number (getPrice (countEdit->text (),
-					       cenaEdit->text (), vat));
-  bruttoLabel->setText (fixStr (brutto1));
+  QString rabat1 = QString::number (rabatSpin->value ());
+  if (rabat1.length () == 1)
+    rabat1 = "0.0" + rabat1;
+  else
+    rabat1 = "0." + rabat1;
 
-  QString netto1 = QString::number (getPrice2 (countEdit->text (),
-					       cenaEdit->text ()));
-  nettoLabel->setText (fixStr (netto1));
+  double rabat2 =
+    getPrice2 (countEdit->text (), cenaEdit->text ()) * rabat1.toDouble ();
+  double netto2 = getPrice2 (countEdit->text (), cenaEdit->text ()) - rabat2;
+  double brutto2 = getPriceBrutto (netto2, vat);
+  bruttoLabel->setText (fixStr (QString::number (brutto2)));
+  nettoLabel->setText (fixStr (QString::number (netto2)));
 }
 
 

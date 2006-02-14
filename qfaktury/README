@@ -26,20 +26,8 @@ nale¿y
 	qmake
 4. skompilowaæ program
 	make
-5. zainstalowaæ przy pomocy skryptu install.sh uruchomionego na prawach root'a
-	sudo install.sh
-
-
-UWAGA!!
-===================================================
-Po skompilowaniu program jest gotowy do uruchomienia, jednak nie jest jeszcze gotowy
-do pracy. Aby by³ gotowy do pracy konieczne jest jego skonfigurowanie. Zastosowanie
-takie jest spowodowane tym, i¿ w ró¿nych dytrybucjach stosowane s± rózne czcionki
-o ró¿nych szeroko¶ciach, jak równie¿ inne czynniki powoduj±, ¿e ka¿dy system powinien
-mieæ osobn± konfiguracjê wydruku. 
-
-Konfiguracja jest stosunkowo prosta i polega na podaniu wszystkich wspolrzednych 
-pol, które bêda siê pojawiaæ na wydrukach.
+5. zainstalowaæ:
+	make install
 
 
 KONTAKT

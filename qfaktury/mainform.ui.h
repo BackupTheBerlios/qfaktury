@@ -38,6 +38,7 @@ Form1::init ()
 {
   QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
   QTextCodec::setCodecForLocale (QTextCodec::codecForName ("ISO8859-2"));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName ("ISO8859-2"));
   //  create local user directory for store xml files
   // works only on Linux -> see also licence Qt 3
   QDir tmp;
@@ -58,11 +59,21 @@ Form1::init ()
 
   // first run
   if (firstRun ())
-    saveAllSett ();
+    {
+      saveAllSett ();
+    }
   // first run
 
+  // to rename
+  if (firstRun2 ())
+    {
+      renameAll (progDir);
+    }
+  // to rename
+
+
   readKontr (progDir);
-  readHist (progDir);
+  // readHist (progDir);
   readTw (progDir);
 
   // towary/.uslugi - wymiary
@@ -77,17 +88,57 @@ Form1::init ()
   tableT->setColumnWidth (8, 55);	// netto3
   tableT->setColumnWidth (9, 55);	// netto4
   tableT->setColumnWidth (10, 55);
+
+  tableH->setColumnWidth (0, 0);
+  tableH->setColumnWidth (1, 150);
+  tableH->setColumnWidth (4, 150);
+  tableH->setColumnWidth (5, 150);
+
+
+  createMenuDodatki ();
+
+  QSettings settings;
+  filtrStart->setDate (QDate::currentDate ());
+  filtrEnd->setDate (QDate::currentDate ());
+
+  QString dateTmp =
+    settings.readEntry ("elinux/faktury/filtrStart",
+			QDate::currentDate ().toString (Qt::ISODate));
+  filtrStart->setDate (QDate::fromString (dateTmp, Qt::ISODate));
+  // qDebug( dateTmp );
+  dateTmp =
+    settings.readEntry ("elinux/faktury/filtrEnd",
+			QDate::currentDate ().toString (Qt::ISODate));
+  filtrEnd->setDate (QDate::fromString (dateTmp, Qt::ISODate));
+
+  rereadHist ();
+}
+
+bool
+Form1::firstRun2 ()
+{
+  // qDebug (__FUNCTION__);
+  QSettings settings;
+  bool ok;
+  settings.readEntry ("elinux/faktury/renamed", "", &ok);
+  if (ok == 0)
+    {
+      settings.beginGroup ("elinux/faktury");
+      settings.writeEntry ("renamed", "tak");
+      settings.endGroup ();
+      return true;
+    }
+  else
+    return false;
 }
 
 
-
-bool Form1::firstRun ()
+bool
+Form1::firstRun ()
 {
-  qDebug (__FUNCTION__);
-  QSettings
-    settings;
-  bool
-    ok;
+  // qDebug (__FUNCTION__);
+  QSettings settings;
+  bool ok;
   settings.readEntry ("elinux/faktury/firstrun", "", &ok);
   if (ok == 0)
     {
@@ -100,9 +151,12 @@ bool Form1::firstRun ()
 void
 Form1::tableClear (QTable * tab)
 {
-  int x = tab->numRows ();
-  for (int i = x; i >= 0; --i)
-    tab->removeRow (i);
+  tab->setNumRows (0);
+  /*
+     int x = tab->numRows ();
+     for (int i = x; i >= 0; --i)
+     tab->removeRow (i);
+   */
 }
 
 void
@@ -146,8 +200,85 @@ Form1::tabChanged (QWidget * aaa)
 }
 
 void
+Form1::renameAll (QString progDir)
+{
+  QString tmp, tmp2;
+  QDir allFiles;
+  allFiles.setPath (progDir + "/faktury/");
+  allFiles.setFilter (QDir::Files);
+  allFiles.setNameFilter ("h*.xml");
+  QStringList pliczki = allFiles.entryList ();
+  int i, max = pliczki.count ();
+  for (i = 0; i < max; ++i)
+    {
+      tmp = pliczki[i];
+      tmp = tmp.remove ("h");	// 24-01-2006 ---> 10
+
+      tmp2 =
+	tmp.mid (tmp.find ("_") + 1,
+		 (tmp.length () - (tmp.find ("_") + 1)) - 4);
+
+      tmp = tmp.left (10);
+      tmp = tmp.remove ("-");
+
+      QString day = tmp.left (2);
+      tmp = tmp.remove (0, 2);
+      QString month = tmp.left (2);
+      tmp = tmp.remove (0, 2);
+      QString year = tmp.left (4);
+      tmp = tmp.remove (0, 4);
+
+      // qDebug( progDir + "/faktury/" + pliczki[i]);
+      // qDebug( progDir + "/faktury/h" + year + "-" + month + "-" + day + "_" + tmp2  + ".xml" );
+
+      if (allFiles.rename (progDir + "/faktury/" + pliczki[i],
+			   progDir + "/faktury/h" + year + "-" + month + "-" +
+			   day + "_" + tmp2 + ".xml"))
+	{
+	  // qFatal("rename filed!!");
+	}
+
+    }
+}
+
+
+bool Form1::applyFiltr (QString nameToCheck)
+{
+  QString
+    tmp = nameToCheck;
+  tmp = tmp.remove ("h");	// 24-01-2006 ---> 10
+  tmp = tmp.left (10);
+  tmp = tmp.remove ("-");
+
+  int
+    year = tmp.left (4).toInt ();
+  tmp = tmp.remove (0, 4);
+  int
+    month = tmp.left (2).toInt ();
+  tmp = tmp.remove (0, 2);
+  int
+    day = tmp.toInt ();
+  QDate
+  tmpDate (year, month, day);
+
+  if (tmpDate < filtrStart->date ())
+    {
+      return false;
+    }
+
+  if (tmpDate > filtrEnd->date ())
+    {
+      return false;
+    }
+
+  return true;
+}
+
+void
 Form1::readHist (QString progDir)
 {
+
+
   /*!
    * step one: get list of files from directory
    */
@@ -167,44 +298,49 @@ Form1::readHist (QString progDir)
   for (i = 0; i < max; ++i)
     {
       // qDebug(pliczki[i]);
-      tableH->insertRows (tableH->numRows (), 1);
-      text = pliczki[i];
-      tableH->setText (tableH->numRows () - 1, 0, text);
 
-      QFile file (progDir + "/faktury/" + pliczki[i]);
-
-      if (!file.open (IO_ReadOnly))
+      if (applyFiltr (pliczki[i]))
 	{
-	  qDebug ("file doesn't exists");
-	  return;
-	}
-      else
-	{
-	  QTextStream stream (&file);
 
-	  if (!doc.setContent (stream.read ()))
+	  tableH->insertRows (tableH->numRows (), 1);
+	  text = pliczki[i];
+	  tableH->setText (tableH->numRows () - 1, 0, text);
+
+	  QFile file (progDir + "/faktury/" + pliczki[i]);
+
+	  if (!file.open (IO_ReadOnly))
 	    {
-	      // qDebug ("can not set content ");
-	      // qDebug( file.name() );
-	      file.close ();
-	      // return;
+	      qDebug ("file doesn't exists");
+	      return;
 	    }
-	}
+	  else
+	    {
+	      QTextStream stream (&file);
 
-      root = doc.documentElement ();
-      tableH->setText (tableH->numRows () - 1, 1,
-		       root.attribute ("nr", "NULL"));
-      tableH->setText (tableH->numRows () - 1, 2,
-		       root.attribute ("data.sprzed", "NULL"));
-      tableH->setText (tableH->numRows () - 1, 3,
-		       root.attribute ("type", "NULL"));
-      QDomNode nab;
-      nab = root.firstChild ();
-      nab = nab.toElement ().nextSibling ();
-      tableH->setText (tableH->numRows () - 1, 4,
-		       nab.toElement ().attribute ("nazwa", "NULL"));
-      tableH->setText (tableH->numRows () - 1, 5,
-		       nab.toElement ().attribute ("nip", "NULL"));
+	      if (!doc.setContent (stream.read ()))
+		{
+		  // qDebug ("can not set content ");
+		  // qDebug( file.name() );
+		  file.close ();
+		  // return;
+		}
+	    }
+
+	  root = doc.documentElement ();
+	  tableH->setText (tableH->numRows () - 1, 1,
+			   root.attribute ("nr", "NULL"));
+	  tableH->setText (tableH->numRows () - 1, 2,
+			   root.attribute ("data.sprzed", "NULL"));
+	  tableH->setText (tableH->numRows () - 1, 3,
+			   root.attribute ("type", "NULL"));
+	  QDomNode nab;
+	  nab = root.firstChild ();
+	  nab = nab.toElement ().nextSibling ();
+	  tableH->setText (tableH->numRows () - 1, 4,
+			   nab.toElement ().attribute ("nazwa", "NULL"));
+	  tableH->setText (tableH->numRows () - 1, 5,
+			   nab.toElement ().attribute ("nip", "NULL"));
+	}
     }
 
 }
@@ -220,14 +356,30 @@ Form1::oProg ()
 {
   QString ver = "QFaktury ";
   ver += version;
-  QMessageBox::about (this, ver,
-		      "Program do wystawiania faktur. \n Koordynator projektu: \n\tGrzegorz Rêkawek www.e-linux.pl \n Programista:\n\tTomasz 'moux' Pielech \nGrafika:\n\tDariusz Arciszewski \n\nSupport: info@e-linux.pl");
+  QString msg;
+  msg =
+    "Program do wystawiania faktur. \n Koordynator projektu: \n\tGrzegorz Rêkawek www.e-linux.pl \n";
+  msg +=
+    "Programista:\n\tTomasz 'moux' Pielech \nGrafika:\n\tDariusz Arciszewski \n\n";
+  msg += "Support: info@e-linux.pl\n\n";
+  msg += "UWAGA!!!\n";
+  msg +=
+    "Ten program komputerowy dostarczany jest przez autora w formie \"takiej, jaki jest\"\n";
+  msg +=
+    "Autor nie udziela ¿adnej gwarancji oraz rêkojmi, ¿e program bêdzie dzia³a³\n";
+  msg += "prawid³owo, jest odpowiedniej jako¶ci oraz ¿e spe³ni oczekiwania\n";
+  msg +=
+    "u¿ytkownika. Autor nie odpowiada za jakiekolwiek straty wynik³e z u¿ywania\n";
+  msg +=
+    "programu, w tym utratê spodziewanych korzy¶ci, danych, informacji\n";
+  msg += "gospodarczych lub koszt urz±dzeñ lub programów zastêpczych.";
+  QMessageBox::about (this, ver, msg);
 }
 
 void
 Form1::editFHist ()
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
 
   QSettings settings;
 
@@ -757,6 +909,13 @@ Form1::closeEvent (QCloseEvent * e)
       warning (this, "QFaktury",
 	       "Czy chcesz wyj¶æ z programu?", "Tak", "Nie", 0, 0, 1) == 0)
     {
+      QSettings settings;
+      settings.beginGroup ("elinux/faktury");
+      settings.writeEntry ("filtrStart",
+			   filtrStart->date ().toString (Qt::ISODate));
+      settings.writeEntry ("filtrEnd",
+			   filtrEnd->date ().toString (Qt::ISODate));
+      settings.endGroup ();
       e->accept ();
     }
 }
@@ -964,6 +1123,7 @@ Form1::saveAllSett ()
   settings.writeEntry ("payments", "gotówka|przelew");	// uwaga!! get first
   settings.writeEntry ("paym1", "gotówka");
   settings.writeEntry ("pkorekty", "zmiana ilo¶ci");
+  settings.writeEntry ("addText", tr ("towar odebra³em zgodnie z faktur±"));
   settings.endGroup ();
 
   settings.beginGroup ("elinux/faktury_pozycje");
@@ -1001,4 +1161,88 @@ Form1::prevPage ()
 {
   if (tabWidget2->currentPageIndex () != 0)
     tabWidget2->setCurrentPage (tabWidget2->currentPageIndex () - 1);
+}
+
+
+void
+Form1::rereadHist ()
+{
+  //  qDebug( __FUNCTION__ );
+  QString progDir = QDir::homeDirPath () + "/elinux";
+  tableClear (tableH);
+  readHist (progDir);
+}
+
+
+void
+Form1::createMenuDodatki ()
+{
+  QDir allFiles;
+  int tmp;			// thats freaky
+
+
+  allFiles.setPath (QDir::homeDirPath () + "/elinux/scripts");
+  allFiles.setFilter (QDir::Files);
+  allFiles.setNameFilter ("*.py");
+  QStringList pliczki = allFiles.entryList ();
+  int i, max = pliczki.count ();
+  for (i = 0; i < max; ++i)
+    {
+      QFile skrypt (QDir::homeDirPath () + "/elinux/scripts/" + pliczki[i]);
+      if (!skrypt.open (IO_ReadOnly))
+	{
+	  // return;  
+	}
+      else
+	{
+	  QTextStream t (&skrypt);
+	  t.readLine ();
+	  tmp =
+	    Dodatki->insertItem (t.readLine ().remove ("# "), this,
+				 SLOT (skryptSlot (int)));
+	  scripts[tmp] =
+	    QDir::homeDirPath () + "/elinux/scripts/" + pliczki[i];
+	}
+    }
+
+
+  allFiles.setPath ("/usr/share/qfaktury/scripts");
+  allFiles.setFilter (QDir::Files);
+  allFiles.setNameFilter ("*.py");
+  pliczki = "";			// allFiles.entryList ();
+  max = pliczki.count ();
+  for (i = 0; i < max; ++i)
+    {
+      QFile skrypt ("/usr/share/qfaktury/scripts/" + pliczki[i]);
+      if (!skrypt.open (IO_ReadOnly))
+	{
+	  // return;  
+	}
+      else
+	{
+	  QTextStream t (&skrypt);
+	  t.readLine ();
+	  tmp =
+	    Dodatki->insertItem (t.readLine ().remove ("# "), this,
+				 SLOT (skryptSlot (int)));
+	  scripts[tmp] = "/usr/share/qfaktury/scripts/" + pliczki[i];
+	}
+    }
+
+}
+
+
+void
+Form1::skryptSlot (int id)
+{
+  QStringList args;
+  args += "python";
+  args += scripts[id];
+  QProcess cmd (args);
+  if (!cmd.start ())
+    {
+      QMessageBox::information (this, "QFaktury",
+				"Uruchomienie siê nie powiod³o. Prawdopodobnie skrypt nie dzia³a.",
+				QMessageBox::Ok);
+    }
 }

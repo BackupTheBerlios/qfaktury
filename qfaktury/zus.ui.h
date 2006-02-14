@@ -481,11 +481,10 @@ pZUS::slownie ()
 /*!
   *    Special Method for account display
   !*/
-QString pZUS::rozstrzel (QString in)
+QString
+pZUS::rozstrzel (QString in)
 {
-  QString
-    tmp,
-    out;
+  QString tmp, out;
   switch (rozSp)
     {
     case 0:
@@ -507,8 +506,7 @@ QString pZUS::rozstrzel (QString in)
       tmp = in.replace ("-", "     ");
       break;
     }
-  int
-    x = tmp.length ();
+  int x = tmp.length ();
   for (int i = 0; i < x; ++i)
     out += tmp[i] + " ";
   return out;
@@ -756,29 +754,23 @@ pZUS::saveXML ()
 
 }
 
-QPixmap pZUS::getPrzelew ()
+QPixmap
+pZUS::getPrzelew ()
 {
 
   readSettings ();
-  QPixmap
-    pix;
-  QPrinter
-    printer;
+  QPixmap pix;
+  QPrinter printer;
   printer.setFullPage (TRUE);
   // if (printer.setup(this)) {
 
-  QPainter
-  a (&printer);
+  QPainter a (&printer);
   if (!a.device ())
     return NULL;
-  QPaintDeviceMetrics
-  metrics1 (a.device ());
-  int
-    dpix1 = metrics1.logicalDpiX ();
-  int
-    dpiy1 = metrics1.logicalDpiY ();
-  const int
-    margin1 = 0;		// pt
+  QPaintDeviceMetrics metrics1 (a.device ());
+  int dpix1 = metrics1.logicalDpiX ();
+  int dpiy1 = metrics1.logicalDpiY ();
+  const int margin1 = 0;	// pt
   QRect
     body1 (margin1 * dpix1 / 72, margin1 * dpiy1 / 72,
 	   metrics1.width () - margin1 * dpix1 / 72 * 2,
@@ -787,18 +779,13 @@ QPixmap pZUS::getPrzelew ()
   //    = new QPixmap
 //}
 
-  QPainter
-  p (&pix);
+  QPainter p (&pix);
   if (!p.device ())
     return NULL;
-  QPaintDeviceMetrics
-  metrics (p.device ());
-  int
-    dpix = metrics.logicalDpiX ();
-  int
-    dpiy = metrics.logicalDpiY ();
-  const int
-    margin = 0;			// pt
+  QPaintDeviceMetrics metrics (p.device ());
+  int dpix = metrics.logicalDpiX ();
+  int dpiy = metrics.logicalDpiY ();
+  const int margin = 0;		// pt
   QRect
     body (margin * dpix / 72, margin * dpiy / 72,
 	  metrics.width () - margin * dpix / 72 * 2,
@@ -812,8 +799,7 @@ QPixmap pZUS::getPrzelew ()
      body.height());
      richText.setWidth(&p, body.width());
    */
-  QRect
-  view (body);
+  QRect view (body);
   // int page = 1;
 
 // !!!!!!!!!!!! testing testing testing testing
@@ -824,18 +810,15 @@ QPixmap pZUS::getPrzelew ()
 
   if (!own)
     {
-      QDir
-      abs (qApp->argv ()[0]);
-      QString
-	graphDir;
+      QDir abs (qApp->argv ()[0]);
+      QString graphDir;
       if (QString (qApp->argv ()[0]).left (2) == "./")
 	graphDir = abs.absPath ();
       else
 	graphDir = "/usr/bin/eprzelewy";
 
       graphDir = graphDir.replace ("bin/eprzelewy", "share/eprzelewy");
-      QImage *
-	img = new QImage (graphDir + "/druki/zus.png");
+      QImage *img = new QImage (graphDir + "/druki/zus.png");
       p.drawImage (view, *img);
     }
   else
@@ -847,10 +830,8 @@ QPixmap pZUS::getPrzelew ()
     }
 
 
-  QFont
-  serifFont ("Arial", 12, 75);
-  QFont
-  sansFont ("Helvetica [Cronyx]", 12);
+  QFont serifFont ("Arial", 12, 75);
+  QFont sansFont ("Helvetica [Cronyx]", 12);
   p.setFont (font);
 
   if (comboBox1->currentItem () == 0)
@@ -858,9 +839,7 @@ QPixmap pZUS::getPrzelew ()
       // przelew 1
       if (poziom)
 	p.rotate (-90);
-      int
-	i,
-	j;
+      int i, j;
       for (i = 1; i <= pages; ++i)
 	{
 	  j = i - 1;
@@ -916,9 +895,7 @@ QPixmap pZUS::getPrzelew ()
       // przelew 1
       if (poziom)
 	p.rotate (-90);
-      int
-	i,
-	j;
+      int i, j;
       for (i = 1; i <= pages; ++i)
 	{
 	  j = i - 1;

@@ -1,5 +1,21 @@
 QFaktury ChangeLog
 
+0.0.2 BETA
+- poprawiono obsluge filrow
+- dodano sortowanie faktur wg dat (tnx to TiweK)
+- dodano mozliwosc definiowania rabatow dla poszczegolnych towarow jak i rab. globalnych
+- dodano mozliwosc wykonywania przez program skryptow napisanych w jezyky python
+
+0.0.2_pre4
+- dodano filtry przy wy¶wietlanu faktur
+- dodano mo¿liwo¶æ zdefiniowania suffixu przy symbolu faktury
+- dodano mo¿liwo¶æ zdefiniowania dowolnego tekstu dodatkowego
+- dodano s³owo "NIP" przy kontrahencie na fakturach
+- dodano zabezpieczenie przed dublowaniem firm o takim samym Nipie
+
+0.0.2_pre3
+- poprawiono b³±d przy obliczaniu stawek ogo³em
+
 0.0.2_pre2
 - dodanie mo¿liwo¶ci zmiany nazwy towaru w trakcie dodawania
 towaru do faktury i korekty

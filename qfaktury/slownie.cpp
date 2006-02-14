@@ -5,7 +5,7 @@
 QString
 slownie (QString input, QString waluta)
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
   QString in = input;
 
   QString tmp = in.remove (in.find (","), 3);

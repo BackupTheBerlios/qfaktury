@@ -6,6 +6,7 @@ CONFIG	+= qt warn_on release
 INSTALLS += templates \
 	icons \
 	applications \
+	pixmaps \
 	target
 
 applications.files += ./share/applications/*.desktop
@@ -14,6 +15,8 @@ templates.files += ./share/qfaktury/templates/*.css
 templates.path = /usr/share/qfaktury/templates 
 icons.files += ./share/qfaktury/icons/*
 icons.path = /usr/share/qfaktury/icons
+pixmaps.files = ./share/qfaktury/icons/qfaktury_48.png
+pixmaps.path = /usr/share/pixmaps
 target.path = /usr/bin 
 
 DEFAULTCODEC = ISO8859-2

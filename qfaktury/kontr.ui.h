@@ -101,7 +101,7 @@ Form4::readData (QString name, QString type)
 void
 Form4::getFirmList ()
 {
-  qDebug (__FUNCTION__);
+//  qDebug (__FUNCTION__);
   QString progDir2 = QDir::homeDirPath () + "/elinux";
 
   QDomDocument doc ("kontrahenci");
@@ -139,12 +139,16 @@ Form4::getFirmList ()
 	{
 	  text = n.toElement ().attribute ("name");
 	  allNames << text;
+	  text = n.toElement ().attribute ("nip");
+	  allNames << text;
 	}
 
       for (QDomNode n = urzad.firstChild (); !n.isNull ();
 	   n = n.nextSibling ())
 	{
 	  text = n.toElement ().attribute ("name");
+	  allNames << text;
+	  text = n.toElement ().attribute ("nip");
 	  allNames << text;
 	}
 
@@ -163,9 +167,10 @@ Form4::init ()
 }
 
 
-bool Form4::saveAll ()
+bool
+Form4::saveAll ()
 {
-  qDebug (__FUNCTION__);
+//  qDebug (__FUNCTION__);
 
   getFirmList ();
   QStringList::iterator it = allNames.find (nameEdit->text ());
@@ -176,17 +181,20 @@ bool Form4::saveAll ()
       return false;
     }
 
-  QDomDocument
-  doc ("kontrahenci");
-  QDomElement
-    root;
-  QDomElement
-    urzad;
-  QDomElement
-    firma;
+  it = allNames.find (nipEdit->text ());
+  if ((*it) == nipEdit->text ())
+    {
+      QMessageBox::critical (0, "Faktury",
+			     "Kontrahent nie moze zostaæ dodany poniewa¿ istnieje ju¿ kontrahent o takim NIP'ie.");
+      return false;
+    }
 
-  QFile
-  file (progDir + "/kontrah.xml");
+  QDomDocument doc ("kontrahenci");
+  QDomElement root;
+  QDomElement urzad;
+  QDomElement firma;
+
+  QFile file (progDir + "/kontrah.xml");
   if (!file.open (IO_ReadOnly))
     {
       qDebug ("can not open ");
@@ -199,8 +207,7 @@ bool Form4::saveAll ()
     }
   else
     {
-      QTextStream
-      stream (&file);
+      QTextStream stream (&file);
       if (!doc.setContent (stream.read ()))
 
 	{
@@ -221,8 +228,7 @@ bool Form4::saveAll ()
   // firma = 0; urzad = 1;
   if (typeCombo->currentItem () == 0)
     {
-      QDomElement
-	elem = doc.createElement ("firma");
+      QDomElement elem = doc.createElement ("firma");
       elem.setAttribute ("name", nameEdit->text ());
       elem.setAttribute ("place", placeEdit->text ());
       elem.setAttribute ("code", codeEdit->text ());
@@ -238,8 +244,7 @@ bool Form4::saveAll ()
 
   if (typeCombo->currentItem () == 1)
     {
-      QDomElement
-	elem = doc.createElement ("urzad");
+      QDomElement elem = doc.createElement ("urzad");
       elem.setAttribute ("name", nameEdit->text ());
       elem.setAttribute ("place", placeEdit->text ());
       elem.setAttribute ("code", codeEdit->text ());
@@ -254,13 +259,11 @@ bool Form4::saveAll ()
     }
 
 
-  QString
-    xml = doc.toString ();
+  QString xml = doc.toString ();
 
   file.close ();
   file.open (IO_WriteOnly);
-  QTextStream
-  ts (&file);
+  QTextStream ts (&file);
   ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
   ts << xml;
   file.close ();
@@ -271,7 +274,7 @@ bool Form4::saveAll ()
 void
 Form4::modifyOnly ()
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
 
   /*
      getFirmList ();
@@ -383,10 +386,11 @@ Form4::modifyOnly ()
   ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
   ts << xml;
   file.close ();
-
+  typeCombo->setEnabled(false);
 }
 
-QString Form4::isEmpty (QString in)
+QString
+Form4::isEmpty (QString in)
 {
   if (in == "")
     return "-";

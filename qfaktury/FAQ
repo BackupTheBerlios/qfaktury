@@ -1,5 +1,46 @@
-1. Nie chce umieszczac loga na fakturach. Co mam zrobic?
+1. Znalaz³em b³±d co mam zrobiæ?
 
-Aby logo sie nie pojawialo wystarczy wejsc w ustawienia i
-wykasowac tekst z pola logo.
+    Je¶li znalaz³e¶ b³±d w programie QFaktury lub masz pomys³ na usprawnienie pracy z programem koniecznie daj nam znaæ. Informacje te prze¶lij na adres info (at) e-linux (dot) pl.
 
+
+2. Jak zrobiæ kopie zapasow± historii faktur, towarów oraz kontrahentów?
+
+    Plik z danymi kontrahentów jak i pliki faktur mieszcz± siê w katalogu ~/elinux (gdzie ~ odpowiada za katalog domowy u¿ytkownika, który akurat korzysta z programu). Wystrczy zrobiæ kopiê tego katalogu.
+
+
+3. Nie chcê umieszczac loga na fakturach. Co mam zrobic?
+
+    Je¶li raz doda³e¶ logo w ustawieniach, a teraz chcesz siê go pozbyæ wystarczy, ¿e pole logo w ustawieniach pozostanie puste.
+
+
+4. Jestem grafikiem, programist±, umiem robiæ pakiety dla dystrybucji... chcia³bym pomóc
+
+    Je¶li masz zdolno¶ci graficzne, jestes programist± (C++, Qt, Python) lub umiesz robiæ pakiety dla jakiej¶ dystrybucji Linuksa, daj nam znaæ. Pewnych rzeczy nie jeste¶my w stanie zrobiæ, równie¿ ze wzglêdu na brak czasu. Testerzy, graficy, programi¶ci i osoby potrafi±ce robiæ pakiety s± jak najbardziej mile widziane.
+
+
+5. Czy istnieje wersja QFaktur dla systemu MacOS X?
+
+   Mimo du¿ego zainteresowania ze strony osób u¿ywaj±cych systemu MacOS X, mamy z³± wiadomo¶æ: Nie dysponujemy programem e-przelewy dla tego systemu. Przede wszystkim nie dysponujemy systemem MacOS X, zeby taka wersje przygotowaæ.
+
+
+6. Przy próbie kompilacji otrzymujê komunikat "qmake: command not found".
+
+   Do skompilowania programu niezbêdne jest posiadanie biblioteki Qt, wraz z plikami nag³ówkowymi i programem qmake. W ró¿nych dystrybucjach pliki te mog± siê znajdowaæ w ró¿nych pakietach, zwykle bêda to pakiety qt z "dev" lub "devel" w nazwie.
+
+
+7. Nie podoba mi siê czcionka u¿ywana przy wydrukach co mam zrobic?
+
+   Wydruk jest realizowany przy pomocy HTML'a jednak definicje wszystkich czcionek znajduj± siê w zewnêtrznym pliku style.css, który mo¿na znale¼æ w katalogu ../share/qfaktury/templates. W tym pliku mo¿na zdefiniowaæ/przedefiniowaæ wygl±d wszystkich elementów faktury, analogicznie do stron WWW.
+
+
+8. W jaki sposob odbywa sie wspolpraca miedzy programami QFaktury i e-Przelewy.
+
+   Program QFaktury oraz e-Przelewy korzystaja z wspolnego katalogu tworzonego na koncie urzytkownika w momencie pierwszego urchominia programu ( /elinux ). Struktura katalogu podzielona jest na podkatalogi transakcji QFaktur i e-Przelewy oraz wspolnej informacji o kontahentach (kontrah.xml). Wpis nowego lub modyfikacja juz istniejacego kontrahenta w ktoryms z programow automatycznie jest aktualizowany w bazie kontahentow. 
+
+9. Jak dodaæ zaawansony tekst w polu dodatkowym?
+
+   Wydruk faktur odbywa siê ca³kowicie w oparci o HTML, oznacza to, ¿e przy definiowaniu takich rzeczy jak napis dodatkowy na fakturach mo¿na korzystaæ ze wszytskich tagów HTML. Przyk³adowo przej¶cie do nastêpnej lini bêdzie realizowane za pomoc± tagu: <br>
+
+10. Chcê dodaæ logo. Jak to zrobiæ najlepiej?
+
+   Logiem mo¿e byæ ka¿dy obrazek w formacie JPEG lub PNG o rozmiarach 200x100. Je¶li jako logo zostnie dodany wiêkszy obrazek to zostanie on wyskalowany do tego rozmiaru.

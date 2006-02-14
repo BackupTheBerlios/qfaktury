@@ -243,9 +243,6 @@
                             <property name="name">
                                 <cstring>nipEdit</cstring>
                             </property>
-                            <property name="inputMask">
-                                <string>999-99-999-99; </string>
-                            </property>
                         </widget>
                         <widget class="QLineEdit">
                             <property name="name">

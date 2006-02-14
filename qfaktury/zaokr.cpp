@@ -30,15 +30,10 @@ doRound (QString in)
          if (last > 5)
          iTemp = floor((dOriginal - .005) * 100);
        */
-
       dOriginal = iTemp / 100;
-
-
       // qDebug("!!!" + reszta + " | | " + calk );
       QString out = QString::number (calk.toInt () + dOriginal);
 // in = in.replace(",", ".");
-
-
       return out;
     }
   else
@@ -51,6 +46,7 @@ QString
 addZeros (QString in)
 {
   // ie. 0, then return 0,00
+  // qDebug("? 1 " + in);
   QString sth = in;
   QString reszta = sth.remove (0, sth.find (",") + 1);
   // qDebug( reszta + " " + in );
@@ -63,6 +59,12 @@ addZeros (QString in)
       return in + "0";
     }
   return in;
+}
+
+float
+doRound2 (float a, bool round)
+{
+  return ((float) ((int) (a * 100 + (round ? 0.5 : 0)))) / 100;
 }
 
 /*!
@@ -78,8 +80,7 @@ fixStr (QString in)
     {
       return tmp + ",00";
     }
-  // addZeros(    );
-  return addZeros (doRound (in)).replace (".", ",");
+  return addZeros (doRound (in).replace (".", ","));
 }
 
 
@@ -95,6 +96,19 @@ getPrice (QString count, QString netto, QString vat)
   float vt = (tmpVt / 100) + 1;
   return (nt * vt) * cnt;
 }
+
+/*!
+ This calculate brutto  
+  */
+float
+getPriceBrutto (double netto, QString vat)
+{
+  float nt = netto;		// .replace (",", ".").toFloat ();
+  float tmpVt = vat.toFloat ();
+  float vt = (tmpVt / 100) + 1;
+  return nt * vt;
+}
+
 
 /*!
  This calculate netto

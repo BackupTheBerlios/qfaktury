@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>515</width>
+            <width>503</width>
             <height>494</height>
         </rect>
     </property>
@@ -181,182 +181,6 @@
                     </hbox>
                 </widget>
             </hbox>
-        </widget>
-        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>layout189</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>textLabel1_2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Lista towarów/usług:</string>
-                    </property>
-                </widget>
-                <widget class="QTable">
-                    <column>
-                        <property name="text">
-                            <string>Lp.</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Nazwa</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Kod</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>PKWiU</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Ilość</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Jm.</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Cena jn.</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Netto</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Vat</string>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Brutto</string>
-                        </property>
-                    </column>
-                    <property name="name">
-                        <cstring>tableTow</cstring>
-                    </property>
-                    <property name="numRows">
-                        <number>0</number>
-                    </property>
-                    <property name="numCols">
-                        <number>10</number>
-                    </property>
-                    <property name="sorting">
-                        <bool>true</bool>
-                    </property>
-                    <property name="selectionMode">
-                        <enum>MultiRow</enum>
-                    </property>
-                </widget>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout188</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <spacer>
-                            <property name="name">
-                                <cstring>spacer9</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Horizontal</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>Expanding</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>30</width>
-                                    <height>20</height>
-                                </size>
-                            </property>
-                        </spacer>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>addTw</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Dodaj towar</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>rmTow</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Usuń towar</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>editTw</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Edycja</string>
-                            </property>
-                        </widget>
-                        <spacer>
-                            <property name="name">
-                                <cstring>spacer8</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Horizontal</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>Expanding</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>40</width>
-                                    <height>20</height>
-                                </size>
-                            </property>
-                        </spacer>
-                        <widget class="QLayoutWidget">
-                            <property name="name">
-                                <cstring>layout187</cstring>
-                            </property>
-                            <hbox>
-                                <property name="name">
-                                    <cstring>unnamed</cstring>
-                                </property>
-                                <widget class="QLabel">
-                                    <property name="name">
-                                        <cstring>textLabel4</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Rabat:</string>
-                                    </property>
-                                </widget>
-                                <widget class="QSpinBox">
-                                    <property name="name">
-                                        <cstring>rabatValue</cstring>
-                                    </property>
-                                </widget>
-                            </hbox>
-                        </widget>
-                    </hbox>
-                </widget>
-            </vbox>
         </widget>
         <spacer row="3" column="1">
             <property name="name">
@@ -739,6 +563,227 @@
                 </widget>
             </hbox>
         </widget>
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>layout20</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Lista towarów/usług:</string>
+                    </property>
+                </widget>
+                <widget class="QTable">
+                    <column>
+                        <property name="text">
+                            <string>Lp.</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Nazwa</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Kod</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>PKWiU</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Ilość</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Jm.</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Rabat</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Cena jn.</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Netto</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Vat</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Brutto</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>tableTow</cstring>
+                    </property>
+                    <property name="numRows">
+                        <number>0</number>
+                    </property>
+                    <property name="numCols">
+                        <number>11</number>
+                    </property>
+                    <property name="sorting">
+                        <bool>true</bool>
+                    </property>
+                    <property name="selectionMode">
+                        <enum>MultiRow</enum>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout18</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer8_2</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>41</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>addTw</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Dodaj</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>rmTow</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Usuń</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>editTw</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Edycja</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer8</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>constRab</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>27</height>
+                                </size>
+                            </property>
+                            <property name="text">
+                                <string>Stały</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel4</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Rabat:</string>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox">
+                            <property name="name">
+                                <cstring>rabatValue</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
+        </widget>
     </grid>
 </widget>
 <connections>
@@ -802,6 +847,12 @@
         <receiver>FormFra</receiver>
         <slot>backBtnClick()</slot>
     </connection>
+    <connection>
+        <sender>constRab</sender>
+        <signal>clicked()</signal>
+        <receiver>FormFra</receiver>
+        <slot>constRabClick()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="local" impldecl="in implementation">fraform.ui.h</include>
@@ -833,6 +884,7 @@
     <slot>makeInvoice()</slot>
     <slot>saveInvoice()</slot>
     <slot>backBtnClick()</slot>
+    <slot>constRabClick()</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>

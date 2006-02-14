@@ -55,13 +55,11 @@ Form7::okButtonClick ()
   accept ();
 }
 
-QString Form7::getAll (QListBox * lb)
+QString
+Form7::getAll (QListBox * lb)
 {
-  QString
-    tmp;
-  int
-    selNr,
-    posCount = lb->count ();
+  QString tmp;
+  int selNr, posCount = lb->count ();
   for (selNr = 0; selNr < posCount; ++selNr)
     {
       tmp += lb->text (selNr);
@@ -90,7 +88,11 @@ Form7::saveSettings ()
   settings.writeEntry ("payments", getAll (paymlBox));	// uwaga!! get first
   settings.writeEntry ("paym1", paymlBox->text (0));
 
+  settings.writeEntry ("addText", additText->text ());
+
+
   settings.writeEntry ("prefix", prefixEdit->text ());
+  settings.writeEntry ("sufix", sufixEdit->text ());
   settings.writeEntry ("day", cbDay->isChecked ());
   settings.writeEntry ("month", cbMonth->isChecked ());
   settings.writeEntry ("year", cbYear->isChecked ());
@@ -241,6 +243,10 @@ Form7::readSettings ()
 			readBoolEntry ("elinux/faktury_pozycje/bruttoval"));
 
   prefixEdit->setText (settings.readEntry ("elinux/faktury/prefix"));
+  sufixEdit->setText (settings.readEntry ("elinux/faktury/sufix"));
+
+  // if (settings.readEntry ("elinux/faktury/addText") != "" )
+  additText->setText (settings.readEntry ("elinux/faktury/addText"));
 
   cbDay->setChecked (settings.readBoolEntry ("elinux/faktury/day"));
   cbMonth->setChecked (settings.readBoolEntry ("elinux/faktury/month"));
@@ -271,8 +277,19 @@ Form7::addLogoBtnClick ()
 					      "Wybierz logo",
 					      "Wybierz plik do wstawienia jako logo");
 
+  QFile f (ofn);
+  if (!f.open (IO_ReadOnly))
+    {
+      QMessageBox::information (this, "Uwaga!!",
+				"Nie mo¿na dodaæ pliku. Plik tylko do odczytu.",
+				QMessageBox::Ok);
+      return;
+    }
+
+
   logoEdit->setText (ofn);
   zastButton->setEnabled (true);
+  f.close ();
 }
 
 
@@ -669,4 +686,11 @@ Form7::changeBrowser ()
     editBrName->setEnabled (TRUE);
 
   zastBtnEnable ();
+}
+
+
+void
+Form7::defTextBtn ()
+{
+  additText->setText (tr ("towar odebra³em zgodnie z faktur±"));
 }

@@ -14,7 +14,7 @@ main (int argc, char **argv)
   QLabel splash ("Hello world!", 0, "",
 		 Qt::WStyle_NoBorder | Qt::WStyle_Customize | Qt::
 		 WStyle_StaysOnTop | Qt::WShowModal);
-  splash.resize (400, 300);
+  splash.resize (380, 450);
   QDir abs (a.argv ()[0]);
   QString graphDir;
   if (QString (a.argv ()[0]).left (2) == "./")
@@ -23,7 +23,7 @@ main (int argc, char **argv)
     graphDir = "/usr/bin/qfaktury";
   //absPath();
   graphDir = graphDir.replace ("bin", "share");
-  qDebug (graphDir);
+  // qDebug (graphDir);
 
   splash.setPixmap (QPixmap (graphDir + "/icons/splash.png"));
   QRect screen = QApplication::desktop ()->screenGeometry ();

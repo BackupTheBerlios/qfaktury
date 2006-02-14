@@ -73,7 +73,7 @@ kontList::readKontr (QString progDir)
 	  text = n.toElement ().attribute ("name");
 	  text += ", " + n.toElement ().attribute ("code");
 	  text += " " + n.toElement ().attribute ("place");
-	  text += ", ul. " + n.toElement ().attribute ("address");
+	  text += ", " + n.toElement ().attribute ("address");	// ul. 
 	  text += ", NIP: " + n.toElement ().attribute ("nip");
 	  listaFirmy.append (text);
 	}
@@ -85,7 +85,7 @@ kontList::readKontr (QString progDir)
 	  text = n.toElement ().attribute ("name");
 	  text += ", " + n.toElement ().attribute ("code");
 	  text += " " + n.toElement ().attribute ("place");
-	  text += ", ul. " + n.toElement ().attribute ("address");
+	  text += ",  " + n.toElement ().attribute ("address");	// ul.
 	  text += ", NIP: " + n.toElement ().attribute ("nip");
 	  listaUrzedy.append (text);
 	}
