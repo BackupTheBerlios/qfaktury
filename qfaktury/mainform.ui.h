@@ -900,6 +900,8 @@ Form1::newKor ()
 				"Do faktur Pro Forma nie wystawiamy korekt",
 				QMessageBox::Ok);
     }
+  
+// rereadHist (); // this shouldn't be here
 }
 
 void

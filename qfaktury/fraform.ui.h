@@ -437,11 +437,17 @@ FormFra::editTowar ()
   changeAmount->spinAmount->setValue (tableTow->
 				      text (tableTow->currentRow (),
 					    4).toInt ());
+  changeAmount->spinRabat->setValue (tableTow->
+				      text (tableTow->currentRow (),
+					    6).toInt ());
   if (changeAmount->exec () == QDialog::Accepted)
     {
       // kontrName->setText( klWindow->ret );
       tableTow->setText (tableTow->currentRow (), 4,
 			 QString::number (changeAmount->spinAmount->
+					  value ()));
+      tableTow->setText (tableTow->currentRow (), 6,
+			 QString::number (changeAmount->spinRabat->
 					  value ()));
     }
   countRabat ();

@@ -627,18 +627,22 @@ korForm::editTowar ()
   changeAmount->spinAmount->setValue (tableTow->
 				      text (tableTow->currentRow (),
 					    4).toInt ());
+  changeAmount->spinRabat->setValue (tableTow->
+				      text (tableTow->currentRow (),
+					    6).toInt ());
   if (changeAmount->exec () == QDialog::Accepted)
     {
       // kontrName->setText( klWindow->ret );
       tableTow->setText (tableTow->currentRow (), 4,
 			 QString::number (changeAmount->spinAmount->
 					  value ()));
+      tableTow->setText (tableTow->currentRow (), 6,
+			 QString::number (changeAmount->spinRabat->
+					  value ()));
     }
   countRabat ();
   countSum ();
 }
-
-
 
 
 void
@@ -1359,13 +1363,13 @@ korForm::saveInvoice ()
 	    "h" + fileName + "_" + QString::number (pNumber) + ".xml" + "|";
 	  pNumber += 1;
 	}
-      // qDebug( "2" );
+      qDebug( "2" );
     }
   else
     {
       file.setName (progDir2 + "/faktury/" + fileName);
       ret = fileName + "|";
-      // qDebug( "1" );
+      qDebug( "1" );
     }
 //   qDebug( "dasa" + progDir2 + "/faktury/h" + fileName + "_" + QString::number (pNumber) + ".xml" );
 
