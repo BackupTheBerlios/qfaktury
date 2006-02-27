@@ -980,7 +980,7 @@ void
 Form1::towaryUsun ()
 {
 
-  int row, max = tableK->numRows ();
+  int row, max = tableT->numRows ();
 
   for (row = 0; row < max; ++row)
     {

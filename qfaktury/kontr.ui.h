@@ -96,6 +96,7 @@ Form4::readData (QString name, QString type)
 	}
     }
   setCaption ("Edytuj kontrahenta");
+  typeCombo->setEnabled( FALSE );
 }
 
 void

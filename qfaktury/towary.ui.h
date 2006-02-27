@@ -45,6 +45,7 @@ twAdd::readData (QString idx, QString type)
   else
     {
       setCaption ("Edytuj towar/us³ugê");
+      typeCombo->setEnabled( FALSE );
     }
 
   lastId = 1;

@@ -15,7 +15,7 @@
 16-01-2006
 
 12-01-2005
- - zmianic rabaty tak aby mozna bylo przypisac do kazdego towaru
+/done/ - zmianic rabaty tak aby mozna bylo przypisac do kazdego towaru
  - kopia faktury
 
 
@@ -27,6 +27,6 @@
 - import naszych i EDI
 - raporty python
 - export do KEXI
-- filtry faktur: data, typ
+/done/- filtry faktur: data, typ
 - sprawdzanie czy plik z logiem jest do odczytu
 - kodowanie do ustawien

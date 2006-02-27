@@ -5,6 +5,7 @@ QFaktury ChangeLog
 - dodano sortowanie faktur wg dat (tnx to TiweK)
 - dodano mozliwosc definiowania rabatow dla poszczegolnych towarow jak i rab. globalnych
 - dodano mozliwosc wykonywania przez program skryptow napisanych w jezyky python
+- poprawiono blad przy usuwaniu towarow
 
 0.0.2_pre4
 - dodano filtry przy wy¶wietlanu faktur
