@@ -344,7 +344,7 @@
         <action name="towaryUsunAction"/>
         <action name="towaryEdycjaAction"/>
     </item>
-    <item text="&amp;Dodatki" name="Dodatki">
+    <item text="Dodatk&amp;i" name="Dodatki">
     </item>
     <item text="P&amp;omoc" name="Pomoc">
         <action name="pomocO_programieAction"/>

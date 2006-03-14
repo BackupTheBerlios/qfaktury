@@ -28,6 +28,7 @@
 #include "zaokr.h"
 #include "slownie.h"
 
+#include "config.h"
 
 double priceBRabN, priceBRab;
 
@@ -131,6 +132,11 @@ FormFra::readData (QString fraFile, int co)
     }
   else
     setCaption ("Edytuje Fakturê Pro Forma");
+
+#ifdef QF_noVAT__
+    setCaption ("Edytuje Rachunek");
+#endif
+
 
   // here we would read all data from one xml file to the this window
   QDomDocument doc ("faktury");
@@ -304,7 +310,6 @@ void
 FormFra::countRabat ()
 {
 
-
   //    if ( constRab->isChecked() ) {
   double kwota = 0;
   double cenajdn = 0;
@@ -467,6 +472,7 @@ FormFra::makeInvoiceHeadar ()
   fraStrList += "<meta name=\"creator\" value=\"http://www.e-linux.pl\" />";
   fraStrList += "</head>";
 
+#ifdef QF_base__
   if (caption ().right (3) == "VAT")
     {
       fraStrList += "<title>______Faktura VAT______</title>";
@@ -475,7 +481,11 @@ FormFra::makeInvoiceHeadar ()
     {
       fraStrList += "<title>______Faktura Pro Forma______</title>";
     }
+#endif
 
+#ifdef QF_noVAT__
+      fraStrList += "<title>______Rachunek______</title>";
+#endif
 
 
   fraStrList += "<style type=\"text/css\"><!-- ";
@@ -523,16 +533,24 @@ FormFra::makeInvoiceHeadar ()
   fraStrList += "</td>";
   fraStrList += "<td>";
 
+#ifdef QF_base__
   if (caption ().right (3) == "VAT")
     {
       fraStrList += "<h2>FAKTURA VAT<br>";
+      fraStrList += "NR: " + frNr->text () + "<br></h2>";
     }
   else
     {
       fraStrList += "<h2>FAKTURA Pro Forma<br>";
+      fraStrList += "NR: " + frNr->text () + "<br></h2>";
     }
+#endif
 
-  fraStrList += "NR: " + frNr->text () + "<br></h2>";
+#ifdef QF_noVAT__
+      fraStrList += "<h2>Rachunek<br>";
+      fraStrList += "NR: " + frNr->text () + "<br></h2>";
+#endif
+
   fraStrList +=
     "<h5>Data wystawienia: " + QDate::currentDate ().toString ("yyyy-MM-dd") +
     "<br>";
@@ -560,7 +578,7 @@ FormFra::makeInvoiceBody ()
   fraStrList += "<table width=\"100%\" border=\"0\">";
   fraStrList += "<tr>";
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
-  fraStrList += "<td width=\"48%\"> ";
+  fraStrList += "<td width=\"48%\" valign=\"top\">";
   fraStrList += "<h4>Sprzedawca:</h4>";
   QSettings settings;
   fraStrList += "<h5>" + settings.readEntry ("przelewy/user/nazwa") + "<br>";
@@ -573,10 +591,22 @@ FormFra::makeInvoiceBody ()
     "Nr konta: " + settings.readEntry ("przelewy/user/konto").replace ("-",
 								       " ") +
     "<br>";
+
+ if ( settings.readEntry ("przelewy/user/phone") != "" )
+  fraStrList +=
+    tr("Telefon: ") + settings.readEntry ("przelewy/user/phone") +  "<br>";
+ if ( settings.readEntry ("przelewy/user/email") != "" )
+  fraStrList +=
+    tr("E-mail: ") + settings.readEntry ("przelewy/user/email") +  "<br>";
+ if ( settings.readEntry ("przelewy/user/www") != "" )
+  fraStrList +=
+    tr("WWW: ") + settings.readEntry ("przelewy/user/www") +  "<br>";
+
+
   fraStrList += "</h5>";
   fraStrList += "</td>";
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
-  fraStrList += "<td width=\"48%\">";
+  fraStrList += "<td width=\"48%\" valign=\"top\">";
   fraStrList += "<h4>Nabywca:</h4>";
   fraStrList += "<h5>" + kontrName->text ().replace (",", "<br>") + "<br>";
   fraStrList += "</h5>";
@@ -681,10 +711,8 @@ FormFra::makeInvoiceGoods ()
 void
 FormFra::makeInvoiceSumm ()
 {
-  double vatPrice = sbrutto->text ().replace (",",
-					      ".").toDouble () -
-    snetto->text ().replace (",",
-			     ".").toDouble ();
+  double vatPrice = sbrutto->text ().replace (",", ".").toDouble () -
+    snetto->text ().replace (",", ".").toDouble ();
   fraStrList += "<tr comment=\"razem\" align=\"center\"><td>";
   fraStrList += "<table width=\"100%\" border=\"0\">";
   fraStrList += "<tr class=\"stawki\">";
@@ -720,7 +748,9 @@ FormFra::makeInvoiceSumm ()
 
   fraStrList += "<td width=\"140\">&nbsp;Razem:</td>";
   fraStrList += "<td width=\"60\">&nbsp;" + snetto->text () + "</td>";	// netto
+  if ( settings.readBoolEntry("elinux/faktury_pozycje/vatval")  )
   fraStrList += "<td width=\"60\">&nbsp;</td>";
+  if ( settings.readBoolEntry("elinux/faktury_pozycje/vatprice")  )
   fraStrList += "<td width=\"60\">&nbsp;" + fixStr (QString::number (vatPrice)) + "</td>";	// vat
   fraStrList += "<td width=\"60\">&nbsp;" + sbrutto->text () + "</td>";	// brutto
 
@@ -769,6 +799,7 @@ FormFra::makeInvoiceSummAll ()
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
   fraStrList += "<td width=\"48%\" valign=\"top\">";
   fraStrList += "<table width=\"90%\" class=\"stawki\" border=\"0\">";
+#ifdef QF_base__
   fraStrList += "<tr>";
   fraStrList +=
     "<td colspan=\"4\"><hr width=\"100%\" noshade=\"noshade\" color=\"black\" /></td>";
@@ -785,6 +816,7 @@ FormFra::makeInvoiceSummAll ()
   fraStrList += "<td>&nbsp;</td>";	// podatek
   fraStrList += "<td>&nbsp;</td>";	// brutto
   fraStrList += "</tr>";
+#endif
 
   fraStrList += "</table>";
   fraStrList += "</td>";
@@ -867,13 +899,28 @@ FormFra::makeInvoiceFooter ()
   fraStrList += "<tr class=\"podpisy\">";
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
   fraStrList += "<td witdh=\"48%\" align=\"center\"> ";
-  fraStrList +=
-    "Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT";
+
+#ifdef QF_base__
+  fraStrList += "Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT";
+#endif
+
+#ifdef QF_noVAT__
+  fraStrList += "Imiê i nazwisko osoby upowa¿nionej do wystawienia rachunku";
+#endif
+
   fraStrList += "</td>";
   fraStrList += "<td witdh=\"60\">&nbsp;</td>";
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
   fraStrList += "<td witdh=\"48%\" align=\"center\"> ";
+
+#ifdef QF_base__
   fraStrList += "Imiê i nazwisko osoby upowa¿nionej do odbioru faktury VAT";
+#endif
+
+#ifdef QF_noVAT__
+  fraStrList += "Imiê i nazwisko osoby upowa¿nionej do odbioru rachunku";
+#endif
+
   fraStrList += "</td>";
   fraStrList += "</tr>";
   fraStrList += "</table>";
@@ -1014,6 +1061,7 @@ FormFra::saveInvoice ()
   QSettings settings1;
   settings1.beginGroup ("elinux");
 
+#ifdef QF_base__
   if (caption ().right (3) == "VAT")
     {
       root.setAttribute ("type", "FVAT");
@@ -1026,6 +1074,13 @@ FormFra::saveInvoice ()
       settings1.writeEntry ("faktury/fpro", frNr->text ());
       ret += "FPro|";
     }
+#endif
+#ifdef QF_noVAT__
+    root.setAttribute ("type", "FVAT");
+    settings1.writeEntry ("faktury/fvat", frNr->text ());
+    ret += "FVAT|";
+#endif
+
   settings1.endGroup ();
 
   doc.appendChild (root);
@@ -1044,6 +1099,9 @@ FormFra::saveInvoice ()
   sprzedawca.setAttribute ("konto",
 			   settings.readEntry ("przelewy/user/konto").
 			   replace (" ", "-"));
+  sprzedawca.setAttribute ("telefon", settings.readEntry ("przelewy/user/phone"));
+  sprzedawca.setAttribute ("email", settings.readEntry ("przelewy/user/email"));
+  sprzedawca.setAttribute ("www", settings.readEntry ("przelewy/user/www"));
   root.appendChild (sprzedawca);
 
   QDomElement nabywca;

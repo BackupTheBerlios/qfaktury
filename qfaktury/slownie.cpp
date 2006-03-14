@@ -66,7 +66,7 @@ slownie (QString input, QString waluta)
 
   QStringList escia;
   escia << "dwadziescia" << "trzydziesci" << "czterdzie¶ci" <<
-    "piêdziesi±t" << "sze¶dziesi±t" << "siedemdziesi±t" <<
+    "piêdziesi±t" << "sze¶ædziesi±t" << "siedemdziesi±t" <<
     "osiemdziesi±t" << "dziewiêædziesi±t";
 
   QStringList sta;

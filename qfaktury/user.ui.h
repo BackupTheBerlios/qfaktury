@@ -12,6 +12,13 @@
 #include <qsettings.h>
 #include <qtextcodec.h>
 
+/* TODO
+  1. move settings to program directory
+  2. change main group to elinux
+*/
+
+
+
 
 /*!
   * init function read settings
@@ -27,11 +34,10 @@ Form2::init ()
   codeEdit->setText (settings.readEntry ("przelewy/user/kod"));
   addressEdit->setText (settings.readEntry ("przelewy/user/adres"));
   accountEdit->setText (settings.readEntry ("przelewy/user/konto"));
-  if (!settings.readEntry ("przelewy/user/secIdType").isNull ())
-    secIdType->setCurrentText (settings.
-			       readEntry ("przelewy/user/secIdType"));
   nipEdit->setText (settings.readEntry ("przelewy/user/nip"));
-  regonEdit->setText (settings.readEntry ("przelewy/user/regon"));
+  phoneEdit->setText (settings.readEntry ("przelewy/user/phone"));
+  emailEdit->setText (settings.readEntry ("przelewy/user/email"));
+  wwwEdit->setText (settings.readEntry ("przelewy/user/www"));
 }
 
 /*!
@@ -48,8 +54,9 @@ Form2::okClick ()
   settings.writeEntry ("user/adres", addressEdit->text ());
   settings.writeEntry ("user/konto", accountEdit->text ());
   settings.writeEntry ("user/nip", nipEdit->text ());
-  settings.writeEntry ("user/secIdType", secIdType->currentText ());
-  settings.writeEntry ("user/regon", regonEdit->text ());
+  settings.writeEntry ("user/phone", phoneEdit->text ());
+  settings.writeEntry ("user/email", emailEdit->text ());
+  settings.writeEntry ("user/www", wwwEdit->text ());
   settings.endGroup ();
   close ();
 }

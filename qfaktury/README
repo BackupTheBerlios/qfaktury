@@ -22,8 +22,11 @@ nale¿y
 	tar -zxf qfaktury-0.0.1.tar.gz
 2. wej¶æ do katalogu qfaktury
 	cd qfaktury
-3. u¿yæ programu qmake do wygenerowania skryptu kompilacji
-	qmake
+3. u¿yæ skryptu configure do wygenerowania skryptu kompilacji
+	./configure 
+   3a. jesli chcemy uzywac rachunkow zamiast faktur musimy
+       podac parametr --no_vat
+       ./configure --no_vat      
 4. skompilowaæ program
 	make
 5. zainstalowaæ:

@@ -30,6 +30,7 @@
 #include "korform.h"
 
 #include "version.h"
+#include "config.h"
 
 QString pdGlob;
 
@@ -112,6 +113,15 @@ Form1::init ()
   filtrEnd->setDate (QDate::fromString (dateTmp, Qt::ISODate));
 
   rereadHist ();
+
+#ifdef QF_noVAT__
+  fakturyPFormaAction->setVisible( FALSE );
+  fakturyDodajAction->setText( "Nowy rachunek" );
+  fakturyDodajAction->setMenuText( "Nowy rachunek" );
+#endif
+  QString ver = "QFaktury ";
+  ver += version;
+  setCaption( ver );	
 }
 
 bool
@@ -819,6 +829,10 @@ Form1::newFra ()
   FormFra *fraWindow = new FormFra;
   fraWindow->progDir2 = pdGlob;
   fraWindow->pforma = false;
+#ifdef QF_noVAT__
+  fraWindow->setCaption("Rachunek bez VAT");
+#endif
+
   if (fraWindow->exec () == QDialog::Accepted)
     {
       tableH->insertRows (tableH->numRows (), 1);
@@ -841,6 +855,10 @@ Form1::newPForm ()
   fraWindow->progDir2 = pdGlob;
   fraWindow->pforma = true;
   fraWindow->setCaption ("Faktura Pro Forma");
+#ifdef QF_noVAT__
+  fraWindow->setCaption ("Rachunek");
+#endif
+
   fraWindow->backBtnClick ();
   if (fraWindow->exec () == QDialog::Accepted)
     {

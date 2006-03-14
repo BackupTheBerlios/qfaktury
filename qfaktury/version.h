@@ -14,6 +14,6 @@ public:
 
 */
 
-#define version "0.0.2b";
+#define version "0.0.3";
 
 #endif
