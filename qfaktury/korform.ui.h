@@ -930,7 +930,7 @@ value
          tableTow->text (i,
          7).replace (",", ".").toDouble ();
        */
-     if (settings.readBoolEntry ("elinux/faktury_pozycje/vatprice"))
+      if (settings.readBoolEntry ("elinux/faktury_pozycje/vatprice"))
 	fraStrList += "<td>&nbsp;" + rowTxt[10] + "</td>";
       /*
          if ( settings.readBoolEntry("elinux/faktury_pozycje/vatprice")  )
@@ -1051,8 +1051,8 @@ korForm::makeInvoiceGoods ()
       tableTow->text (i, 6).replace (",", ".").toDouble ();
       fraStrList += "<tr class=\"towaryList\">";
 // lp, nazwa, kod, ilosc, jm, cena jm., netto, vat, brutto
-    if ( settings.readBoolEntry("elinux/faktury_pozycje/Lp")   )
-      fraStrList += "<td>&nbsp;" + tableTow->text (i, 0) + "</td>";
+      if (settings.readBoolEntry ("elinux/faktury_pozycje/Lp"))
+	fraStrList += "<td>&nbsp;" + tableTow->text (i, 0) + "</td>";
 
       if (settings.readBoolEntry ("elinux/faktury_pozycje/Nazwa"))
 	fraStrList += "<td>&nbsp;" + tableTow->text (i, 1) + "</td>";
@@ -1090,17 +1090,21 @@ value
 	fraStrList += "<td>&nbsp;" + tableTow->text (i, 9) + "%</td>";
 
       double vatPrice =
-	tableTow->text (i, 10).replace (",",".").toDouble () - tableTow->text (i,  8).
+	tableTow->text (i, 10).replace (",",
+					".").toDouble () - tableTow->text (i,
+									   8).
 	replace (",", ".").toDouble ();
 
-     if (settings.readBoolEntry ("elinux/faktury_pozycje/vatprice"))
-     fraStrList += "<td>&nbsp;" + fixStr (QString::number (vatPrice).replace (",", ".")) + "</td>";
+      if (settings.readBoolEntry ("elinux/faktury_pozycje/vatprice"))
+	fraStrList +=
+	  "<td>&nbsp;" +
+	  fixStr (QString::number (vatPrice).replace (",", ".")) + "</td>";
       /*
          if ( settings.readBoolEntry("elinux/faktury_pozycje/vatprice")  )
          fraStrList +=
          "<td>&nbsp;" + fixStr (QString::number (vatPrice)) + "</td>"; */
- if ( settings.readBoolEntry("elinux/faktury_pozycje/bruttoval")  )
-      fraStrList += "<td>&nbsp;" + tableTow->text (i, 10) + "</td>";
+      if (settings.readBoolEntry ("elinux/faktury_pozycje/bruttoval"))
+	fraStrList += "<td>&nbsp;" + tableTow->text (i, 10) + "</td>";
       fraStrList += "</tr>";
     }
 
@@ -1227,25 +1231,20 @@ korForm::makeInvoiceSummAll ()
 }
 
 
-QString korForm::getStawkami ()
+QString
+korForm::getStawkami ()
 {
-  QStringList
-    out;
-  QSettings
-    settings;
+  QStringList out;
+  QSettings settings;
   QStringList
     stawki =
     QStringList::split ("|", settings.readEntry ("elinux/faktury/stawki"));
-  QMap < int, double >
-    stawkiNetto;
-  QMap < int, double >
-    stawkiVat;
-  QMap < int, double >
-    stawkiBrutto;
+  QMap < int, double >stawkiNetto;
+  QMap < int, double >stawkiVat;
+  QMap < int, double >stawkiBrutto;
   // every currency in int value is equeal vat currncy
 
-  int
-    ssize = stawki.size ();
+  int ssize = stawki.size ();
   // qDebug( "%d", ssize ); 
 
   for (int i = 0; i < tableTow->numRows (); ++i)
@@ -1309,7 +1308,8 @@ korForm::makeInvoiceFooter ()
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
   fraStrList += "<td witdh=\"48%\" align=\"center\"> ";
 #ifdef QF_base__
-  fraStrList += "Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT";
+  fraStrList +=
+    "Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT";
 #endif
 
 #ifdef QF_noVAT__
@@ -1649,14 +1649,12 @@ korForm::saveInvoice ()
   accept ();
 }
 
-QString korForm::numbersCount (int in, int x)
+QString
+korForm::numbersCount (int in, int x)
 {
-  QString
-    tmp2,
-    tmp = QString::number (in);
+  QString tmp2, tmp = QString::number (in);
   tmp2 = "";
-  int
-    incr = x - tmp.length ();
+  int incr = x - tmp.length ();
   for (int i = 0; i < incr; ++i)
     tmp2 += "0";
   return tmp2 + tmp;

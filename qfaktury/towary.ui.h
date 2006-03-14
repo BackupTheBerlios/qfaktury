@@ -45,7 +45,7 @@ twAdd::readData (QString idx, QString type)
   else
     {
       setCaption ("Edytuj towar/us³ugê");
-      typeCombo->setEnabled( FALSE );
+      typeCombo->setEnabled (FALSE);
     }
 
   lastId = 1;
@@ -222,8 +222,7 @@ twAdd::init ()
 
 }
 
-bool
-twAdd::saveAll ()
+bool twAdd::saveAll ()
 {
   qDebug (__FUNCTION__);
   nettoChanged ();
@@ -240,12 +239,17 @@ twAdd::saveAll ()
      }
    */
 
-  QDomDocument doc ("towary");
-  QDomElement root;
-  QDomElement towary;
-  QDomElement uslugi;
+  QDomDocument
+  doc ("towary");
+  QDomElement
+    root;
+  QDomElement
+    towary;
+  QDomElement
+    uslugi;
 
-  QFile file (progDir + "/towary.xml");
+  QFile
+  file (progDir + "/towary.xml");
   if (!file.open (IO_ReadOnly))
     {
       qDebug ("can not open ");
@@ -260,7 +264,8 @@ twAdd::saveAll ()
     }
   else
     {
-      QTextStream stream (&file);
+      QTextStream
+      stream (&file);
       if (!doc.setContent (stream.read ()))
 
 	{
@@ -285,7 +290,8 @@ twAdd::saveAll ()
   // firma = 0; urzad = 1;
   if (typeCombo->currentItem () == 0)
     {
-      QDomElement elem = doc.createElement ("towar");
+      QDomElement
+	elem = doc.createElement ("towar");
       elem.setAttribute ("idx", idxEdit->text ());
       elem.setAttribute ("code", kodEdit->text ());
       elem.setAttribute ("name", nameEdit->text ());
@@ -305,7 +311,8 @@ twAdd::saveAll ()
 
   if (typeCombo->currentItem () == 1)
     {
-      QDomElement elem = doc.createElement ("usluga");
+      QDomElement
+	elem = doc.createElement ("usluga");
       elem.setAttribute ("idx", idxEdit->text ());
       elem.setAttribute ("name", nameEdit->text ());
       elem.setAttribute ("code", kodEdit->text ());
@@ -325,11 +332,13 @@ twAdd::saveAll ()
     }
 
 
-  QString xml = doc.toString ();
+  QString
+    xml = doc.toString ();
 
   file.close ();
   file.open (IO_WriteOnly);
-  QTextStream ts (&file);
+  QTextStream
+  ts (&file);
   ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
   ts << xml;
   file.close ();

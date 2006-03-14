@@ -55,11 +55,13 @@ Form7::okButtonClick ()
   accept ();
 }
 
-QString
-Form7::getAll (QListBox * lb)
+QString Form7::getAll (QListBox * lb)
 {
-  QString tmp;
-  int selNr, posCount = lb->count ();
+  QString
+    tmp;
+  int
+    selNr,
+    posCount = lb->count ();
   for (selNr = 0; selNr < posCount; ++selNr)
     {
       tmp += lb->text (selNr);

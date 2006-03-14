@@ -581,10 +581,11 @@ Form3::nextFunc ()
 }
 
 
-QString
-Form3::rozstrzel (QString in)
+QString Form3::rozstrzel (QString in)
 {
-  QString tmp, out;
+  QString
+    tmp,
+    out;
   switch (rozSp)
     {
     case 0:
@@ -606,7 +607,8 @@ Form3::rozstrzel (QString in)
       tmp = in.replace ("-", "     ");
       break;
     }
-  int x = tmp.length ();
+  int
+    x = tmp.length ();
   for (int i = 0; i < x; ++i)
     out += tmp[i] + " ";
   return out;
@@ -750,42 +752,56 @@ Form3::saveXML ()
 }
 
 
-QPixmap
-Form3::getPrzelew ()
+QPixmap Form3::getPrzelew ()
 {
   qDebug (__FUNCTION__);
   readSettings ();
-  QPixmap pix;
-  QPrinter printer;
+  QPixmap
+    pix;
+  QPrinter
+    printer;
   printer.setFullPage (TRUE);
-  QPainter a (&printer);
+  QPainter
+  a (&printer);
   if (!a.device ())
     return NULL;
-  QPaintDeviceMetrics metrics1 (a.device ());
-  int dpix1 = metrics1.logicalDpiX ();
-  int dpiy1 = metrics1.logicalDpiY ();
-  const int margin1 = 0;	// pt
+  QPaintDeviceMetrics
+  metrics1 (a.device ());
+  int
+    dpix1 = metrics1.logicalDpiX ();
+  int
+    dpiy1 = metrics1.logicalDpiY ();
+  const int
+    margin1 = 0;		// pt
   QRect
     body1 (margin1 * dpix1 / 72, margin1 * dpiy1 / 72,
 	   metrics1.width () - margin1 * dpix1 / 72 * 2,
 	   metrics1.height () - margin1 * dpiy1 / 72 * 2);
   pix.resize (body1.width (), body1.height ());
-  QPainter p (&pix);
+  QPainter
+  p (&pix);
   if (!p.device ())
     return NULL;
-  QPaintDeviceMetrics metrics (p.device ());
-  int dpix = metrics.logicalDpiX ();
-  int dpiy = metrics.logicalDpiY ();
-  const int margin = 0;		// pt
+  QPaintDeviceMetrics
+  metrics (p.device ());
+  int
+    dpix = metrics.logicalDpiX ();
+  int
+    dpiy = metrics.logicalDpiY ();
+  const int
+    margin = 0;			// pt
   QRect
     body (margin * dpix / 72, margin * dpiy / 72,
 	  metrics.width () - margin * dpix / 72 * 2,
 	  metrics.height () - margin * dpiy / 72 * 2);
-  QRect view (body);
+  QRect
+  view (body);
   if (!own)
     {
-      QDir abs (qApp->argv ()[0]);
-      QString graphDir;
+      QDir
+      abs (qApp->argv ()[0]);
+      QString
+	graphDir;
       if (QString (qApp->argv ()[0]).left (2) == "./")
 	graphDir = abs.absPath ();
       else
@@ -793,7 +809,8 @@ Form3::getPrzelew ()
 
 
       graphDir = graphDir.replace ("bin/eprzelewy", "share/eprzelewy");
-      QImage *img = new QImage (graphDir + "/druki/standard.png");
+      QImage *
+	img = new QImage (graphDir + "/druki/standard.png");
       p.drawImage (view, *img);
     }
   else
@@ -806,8 +823,10 @@ Form3::getPrzelew ()
 
   p.setBrush (QBrush (white, Qt::SolidPattern));
 
-  QFont serifFont ("Arial", 12, 75);
-  QFont sansFont ("Helvetica [Cronyx]", 12);
+  QFont
+  serifFont ("Arial", 12, 75);
+  QFont
+  sansFont ("Helvetica [Cronyx]", 12);
   p.setFont (font);
 
   if (radioButton2->isChecked ())
@@ -816,7 +835,9 @@ Form3::getPrzelew ()
       // przelew 1
       if (poziom)
 	p.rotate (-90);
-      int i, j;
+      int
+	i,
+	j;
       for (i = 1; i <= pages; ++i)
 	{
 	  j = i - 1;
@@ -844,7 +865,9 @@ Form3::getPrzelew ()
       // przelew 1
       if (poziom)
 	p.rotate (-90);
-      int i, j;
+      int
+	i,
+	j;
       for (i = 1; i <= pages; ++i)
 	{
 	  j = i - 1;

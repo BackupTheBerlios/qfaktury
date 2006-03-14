@@ -65,7 +65,7 @@ towList::init ()
   readTow (progDir);
   listView1->clear ();
   fillLv (0);
-  nameEdit->setEnabled(FALSE);
+  nameEdit->setEnabled (FALSE);
 }
 
 void
@@ -195,13 +195,13 @@ towList::comboBox1Changed (int x)
 {
   // qDebug (__FUNCTION__);
   selectedItem = "";
-  countEdit->setText(""); 
-  rabatSpin->setValue(0);
-  cenaEdit->setText("");
-  nettoLabel->setText("");
-  bruttoLabel->setText("");
-  nameEdit->setText("");
-  nameEdit->setEnabled(FALSE);
+  countEdit->setText ("");
+  rabatSpin->setValue (0);
+  cenaEdit->setText ("");
+  nettoLabel->setText ("");
+  bruttoLabel->setText ("");
+  nameEdit->setText ("");
+  nameEdit->setEnabled (FALSE);
 
 
   listView1->clear ();
@@ -278,10 +278,12 @@ towList::lv1selChanged (QListViewItem * item)
       id = item->text (0);
       selectedItem = item->text (1);
       calcNetto ();
-      nameEdit->setEnabled(TRUE);
+      nameEdit->setEnabled (TRUE);
       nameEdit->setText (item->text (1));
-    }  else {
-      nameEdit->setEnabled(FALSE);
+    }
+  else
+    {
+      nameEdit->setEnabled (FALSE);
     }
 }
 

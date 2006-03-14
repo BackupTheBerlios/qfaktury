@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "#ifndef __CONFIG_H__" > config.h
+echo "#define __CONFIG_H__" >> config.h
+
+if [ "$1" = '--no_vat' ]; then 
+	echo "#define QF_noVAT__" >> config.h;
+else
+	echo "#define QF_base__" >> config.h;
+fi
+
+echo "#endif" >> config.h
+qmake
+echo "Run make to compile program and make install to install it"
+echo "ENJOY" 

@@ -96,7 +96,7 @@ Form4::readData (QString name, QString type)
 	}
     }
   setCaption ("Edytuj kontrahenta");
-  typeCombo->setEnabled( FALSE );
+  typeCombo->setEnabled (FALSE);
 }
 
 void
@@ -168,8 +168,7 @@ Form4::init ()
 }
 
 
-bool
-Form4::saveAll ()
+bool Form4::saveAll ()
 {
 //  qDebug (__FUNCTION__);
 
@@ -190,12 +189,17 @@ Form4::saveAll ()
       return false;
     }
 
-  QDomDocument doc ("kontrahenci");
-  QDomElement root;
-  QDomElement urzad;
-  QDomElement firma;
+  QDomDocument
+  doc ("kontrahenci");
+  QDomElement
+    root;
+  QDomElement
+    urzad;
+  QDomElement
+    firma;
 
-  QFile file (progDir + "/kontrah.xml");
+  QFile
+  file (progDir + "/kontrah.xml");
   if (!file.open (IO_ReadOnly))
     {
       qDebug ("can not open ");
@@ -208,7 +212,8 @@ Form4::saveAll ()
     }
   else
     {
-      QTextStream stream (&file);
+      QTextStream
+      stream (&file);
       if (!doc.setContent (stream.read ()))
 
 	{
@@ -229,7 +234,8 @@ Form4::saveAll ()
   // firma = 0; urzad = 1;
   if (typeCombo->currentItem () == 0)
     {
-      QDomElement elem = doc.createElement ("firma");
+      QDomElement
+	elem = doc.createElement ("firma");
       elem.setAttribute ("name", nameEdit->text ());
       elem.setAttribute ("place", placeEdit->text ());
       elem.setAttribute ("code", codeEdit->text ());
@@ -245,7 +251,8 @@ Form4::saveAll ()
 
   if (typeCombo->currentItem () == 1)
     {
-      QDomElement elem = doc.createElement ("urzad");
+      QDomElement
+	elem = doc.createElement ("urzad");
       elem.setAttribute ("name", nameEdit->text ());
       elem.setAttribute ("place", placeEdit->text ());
       elem.setAttribute ("code", codeEdit->text ());
@@ -260,11 +267,13 @@ Form4::saveAll ()
     }
 
 
-  QString xml = doc.toString ();
+  QString
+    xml = doc.toString ();
 
   file.close ();
   file.open (IO_WriteOnly);
-  QTextStream ts (&file);
+  QTextStream
+  ts (&file);
   ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
   ts << xml;
   file.close ();
@@ -387,11 +396,10 @@ Form4::modifyOnly ()
   ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
   ts << xml;
   file.close ();
-  typeCombo->setEnabled(false);
+  typeCombo->setEnabled (false);
 }
 
-QString
-Form4::isEmpty (QString in)
+QString Form4::isEmpty (QString in)
 {
   if (in == "")
     return "-";

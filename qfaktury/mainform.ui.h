@@ -102,9 +102,9 @@ Form1::init ()
   filtrStart->setDate (QDate::currentDate ());
   filtrEnd->setDate (QDate::currentDate ());
 
-  QString dateTmp =
-    settings.readEntry ("elinux/faktury/filtrStart",
-			QDate::currentDate ().toString (Qt::ISODate));
+  QString dateTmp = settings.readEntry ("elinux/faktury/filtrStart",
+					QDate::currentDate ().
+					toString (Qt::ISODate));
   filtrStart->setDate (QDate::fromString (dateTmp, Qt::ISODate));
   // qDebug( dateTmp );
   dateTmp =
@@ -115,21 +115,22 @@ Form1::init ()
   rereadHist ();
 
 #ifdef QF_noVAT__
-  fakturyPFormaAction->setVisible( FALSE );
-  fakturyDodajAction->setText( "Nowy rachunek" );
-  fakturyDodajAction->setMenuText( "Nowy rachunek" );
+  fakturyPFormaAction->setVisible (FALSE);
+  fakturyDodajAction->setText ("Nowy rachunek");
+  fakturyDodajAction->setMenuText ("Nowy rachunek");
 #endif
   QString ver = "QFaktury ";
   ver += version;
-  setCaption( ver );	
+  setCaption (ver);
 }
 
-bool
-Form1::firstRun2 ()
+bool Form1::firstRun2 ()
 {
   // qDebug (__FUNCTION__);
-  QSettings settings;
-  bool ok;
+  QSettings
+    settings;
+  bool
+    ok;
   settings.readEntry ("elinux/faktury/renamed", "", &ok);
   if (ok == 0)
     {
@@ -143,12 +144,13 @@ Form1::firstRun2 ()
 }
 
 
-bool
-Form1::firstRun ()
+bool Form1::firstRun ()
 {
   // qDebug (__FUNCTION__);
-  QSettings settings;
-  bool ok;
+  QSettings
+    settings;
+  bool
+    ok;
   settings.readEntry ("elinux/faktury/firstrun", "", &ok);
   if (ok == 0)
     {
@@ -252,24 +254,20 @@ Form1::renameAll (QString progDir)
 }
 
 
-bool Form1::applyFiltr (QString nameToCheck)
+bool
+Form1::applyFiltr (QString nameToCheck)
 {
-  QString
-    tmp = nameToCheck;
+  QString tmp = nameToCheck;
   tmp = tmp.remove ("h");	// 24-01-2006 ---> 10
   tmp = tmp.left (10);
   tmp = tmp.remove ("-");
 
-  int
-    year = tmp.left (4).toInt ();
+  int year = tmp.left (4).toInt ();
   tmp = tmp.remove (0, 4);
-  int
-    month = tmp.left (2).toInt ();
+  int month = tmp.left (2).toInt ();
   tmp = tmp.remove (0, 2);
-  int
-    day = tmp.toInt ();
-  QDate
-  tmpDate (year, month, day);
+  int day = tmp.toInt ();
+  QDate tmpDate (year, month, day);
 
   if (tmpDate < filtrStart->date ())
     {
@@ -830,7 +828,7 @@ Form1::newFra ()
   fraWindow->progDir2 = pdGlob;
   fraWindow->pforma = false;
 #ifdef QF_noVAT__
-  fraWindow->setCaption("Rachunek bez VAT");
+  fraWindow->setCaption ("Rachunek bez VAT");
 #endif
 
   if (fraWindow->exec () == QDialog::Accepted)
@@ -918,7 +916,7 @@ Form1::newKor ()
 				"Do faktur Pro Forma nie wystawiamy korekt",
 				QMessageBox::Ok);
     }
-  
+
 // rereadHist (); // this shouldn't be here
 }
 
