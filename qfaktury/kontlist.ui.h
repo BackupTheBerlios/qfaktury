@@ -13,6 +13,9 @@
 #include <qdir.h>
 #include <qmessagebox.h>
 #include <qtextcodec.h>
+#include <qsettings.h>
+#include "version.h"
+
 
 QStringList listaFirmy;
 
@@ -21,9 +24,11 @@ QStringList listaUrzedy;
 void
 kontList::init ()
 {
-  QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForLocale (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForTr (QTextCodec::codecForName ("ISO8859-2"));
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
 
   QDir tmp;
   QString progDir = tmp.homeDirPath () + "/elinux";
@@ -114,7 +119,7 @@ kontList::doAccept ()
     }
   else
     {
-      QMessageBox::information (this, "QFaktury", "Wska¿ kontrahenta.",
+      QMessageBox::information (this, "QFaktury", tr("Wska¿ kontrahenta."),
 				QMessageBox::Ok);
     }
 }

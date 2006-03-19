@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE KDevPrjSession>
+<KDevPrjSession>
+ <DocsAndViews NumberOfDocuments="3" >
+  <Doc0 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/mainform.ui.h" >
+   <View0 line="44" Type="Source" />
+  </Doc0>
+  <Doc1 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/sett.ui.h" >
+   <View0 line="39" Type="Source" />
+  </Doc1>
+  <Doc2 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/main.cpp" >
+   <View0 line="2" Type="Source" />
+  </Doc2>
+ </DocsAndViews>
+ <pluginList>
+  <kdevdebugger>
+   <breakpointList/>
+  </kdevdebugger>
+  <kdevbookmarks>
+   <bookmarks>
+    <bookmark url="/home/moux/Projekty/qfaktury/fraform.ui.h" >
+     <mark line="1214" />
+    </bookmark>
+   </bookmarks>
+  </kdevbookmarks>
+  <kdevrbdebugger>
+   <breakpointList/>
+   <watchExpressions/>
+  </kdevrbdebugger>
+  <kdevvalgrind>
+   <executable path="" params="" />
+   <valgrind path="" params="" />
+   <calltree path="" params="" />
+   <kcachegrind path="" />
+  </kdevvalgrind>
+ </pluginList>
+</KDevPrjSession>

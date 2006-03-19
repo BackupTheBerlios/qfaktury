@@ -3,6 +3,9 @@
 # Subdir relative project main directory: .
 # Target is an application:  ./bin/qfaktury
 
+TRANSLATIONS     = polski.ts english.ts  
+LANGUAGE = C++ 
+DEFAULTCODEC = ISO8859-2 
 INSTALLS += templates \
             icons \
             applications \
@@ -17,6 +20,11 @@ icons.files += ./share/qfaktury/icons/*
 icons.path = /usr/share/qfaktury/icons 
 templates.files += ./share/qfaktury/templates/*.css 
 templates.path = /usr/share/qfaktury/templates 
+TARGET = ./bin/qfaktury 
+CONFIG += release \
+          warn_on \
+          qt 
+TEMPLATE = app 
 FORMS += kontr.ui \
          kreator.ui \
          mainform.ui \
@@ -34,28 +42,18 @@ HEADERS += chamount.ui.h \
            kontlist.ui.h \
            kontr.ui.h \
            korform.ui.h \
-           kreator.ui.h \
            mainform.ui.h \
-           preview.ui.h \
            sett.ui.h \
            slownie.h \
            towary.ui.h \
            towlist.ui.h \
            user.ui.h \
-           us.ui.h \
            version.h \
            zaokr.h \
-           zus.ui.h \
            config.h 
 SOURCES += main.cpp \
            slownie.cpp \
-           version.cpp \
            zaokr.cpp 
-TEMPLATE = app
-LANGUAGE = C++
-CONFIG += qt warn_on release
-DEFAULTCODEC = ISO8859-2
-TARGET = ./bin/qfaktury
 unix{
   UI_DIR = .ui
   MOC_DIR = .moc

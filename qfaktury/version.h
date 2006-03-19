@@ -4,16 +4,7 @@
 
 #include <qstring.h>
 
-/*
-class version {
-public:
-    version();
-    ~version();
-    QString name;
-};
-
-*/
-
 #define version "0.0.3";
+
 
 #endif

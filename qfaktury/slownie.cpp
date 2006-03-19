@@ -2,6 +2,7 @@
 
 //     slownieLbl->setText ( slownie(kwotaEdit->text ()) );
 
+
 QString
 slownie (QString input, QString waluta)
 {
@@ -32,8 +33,8 @@ slownie (QString input, QString waluta)
 
   QStringList jedynki;
 
-  jedynki << "jeden" << "dwa" << "trzy" << "cztery" <<
-    "piêæ" << "sze¶æ" << "siedem" << "osiem" << "dziewiêæ";
+  jedynki << QObject::tr("jeden") << QObject::tr("dwa") << QObject::tr("trzy") << QObject::tr("cztery") <<
+    QObject::tr("piêæ") << QObject::tr("sze¶æ") << QObject::tr("siedem") << QObject::tr("osiem") << QObject::tr("dziewiêæ");
 
 /*
     jedynki << "jeden z³otych" << "dwa z³ote"  << "trzy z³ote" << "cztery z³ote" <<
@@ -42,14 +43,14 @@ slownie (QString input, QString waluta)
     */
 
   QStringList jedynki1;
-  jedynki1 << "jeden" << "dwa" << "trzy" << "cztery" <<
-    "piêæ" << "sze¶æ" << "siedem" << "osiem" << "dziewiêæ";
+  jedynki1 << QObject::tr("jeden") << QObject::tr("dwa") << QObject::tr("trzy") << QObject::tr("cztery") <<
+    QObject::tr("piêæ") << QObject::tr("sze¶æ") << QObject::tr("siedem") << QObject::tr("osiem") << QObject::tr("dziewiêæ");
 
 
   QStringList nascie;
-  nascie << "jedena¶cie" << "dwana¶cie" << "trzyna¶cie" <<
-    "czterna¶cie" << "piêtna¶cie" << "szesna¶cie" <<
-    "siedemna¶cie" << "osiemna¶cie" << "dziewiêtna¶cie" << "dziesiêæ";
+  nascie << QObject::tr("jedena¶cie") << QObject::tr("dwana¶cie") << QObject::tr("trzyna¶cie") <<
+    QObject::tr("czterna¶cie") << QObject::tr("piêtna¶cie") << QObject::tr("szesna¶cie") <<
+    QObject::tr("siedemna¶cie") << QObject::tr("osiemna¶cie") << QObject::tr("dziewiêtna¶cie") << QObject::tr("dziesiêæ");
   /*
      nascie << "jedena¶cie z³otych" << "dwana¶cie z³otych" << "trzyna¶cie z³otych" <<
      "czterna¶cie z³otych" << "piêtna¶cie z³otych" << "szesna¶cie z³otych" <<
@@ -59,19 +60,19 @@ slownie (QString input, QString waluta)
    */
 
   QStringList nascie1;
-  nascie1 << "jedena¶cie" << "dwana¶cie" << "trzyna¶cie" <<
-    "czterna¶cie" << "piêtna¶cie" << "szesna¶cie" <<
-    "siedemna¶cie" << "osiemna¶cie" << "dziewiêtna¶cie" << "dziesiêæ";
+  nascie1 << QObject::tr("jedena¶cie") << QObject::tr("dwana¶cie") << QObject::tr("trzyna¶cie") <<
+    QObject::tr("czterna¶cie") << QObject::tr("piêtna¶cie") << QObject::tr("szesna¶cie") <<
+    QObject::tr("siedemna¶cie") << QObject::tr("osiemna¶cie") << QObject::tr("dziewiêtna¶cie") << QObject::tr("dziesiêæ");
 
 
   QStringList escia;
-  escia << "dwadziescia" << "trzydziesci" << "czterdzie¶ci" <<
-    "piêdziesi±t" << "sze¶ædziesi±t" << "siedemdziesi±t" <<
-    "osiemdziesi±t" << "dziewiêædziesi±t";
+  escia << QObject::tr("dwadziescia") << QObject::tr("trzydziesci") << QObject::tr("czterdzie¶ci") <<
+    QObject::tr("piêdziesi±t") << QObject::tr("sze¶ædziesi±t") << QObject::tr("siedemdziesi±t") <<
+    QObject::tr("osiemdziesi±t") << QObject::tr("dziewiêædziesi±t");
 
   QStringList sta;
-  sta << "sto" << "dwie¶cie" << "trzysta" << "czterysta"
-    << "piêæset" << "sze¶æset" << "siedemset" << "osiemset" << "dziewiêæset";
+  sta << QObject::tr("sto") << QObject::tr("dwie¶cie") << QObject::tr("trzysta") << QObject::tr("czterysta")
+    << QObject::tr("piêæset") << QObject::tr("sze¶æset") << QObject::tr("siedemset") << QObject::tr("osiemset") << QObject::tr("dziewiêæset");
 
 
   // ******************************************************************
@@ -219,7 +220,7 @@ slownie (QString input, QString waluta)
 
 
   if (out.length () > 2)
-    out += " tys.";
+    out += QObject::tr(" tys.");
 
 
   //***************************************************************
@@ -362,7 +363,7 @@ slownie (QString input, QString waluta)
 	  out += " " + jedynki[8];
 	  break;
 	case 0:
-	  out += " zero";	// waluta; // " z³otych";
+	  out += QObject::tr(" ");	// waluta; // " z³otych";
 	  break;
 	}
 

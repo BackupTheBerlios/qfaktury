@@ -32,13 +32,19 @@
 
 
 
+
 void
 Form7::init ()
 {
-  QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForTr (QTextCodec::codecForName ("ISO8859-2"));
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
   tablePos->setColumnWidth (0, 300);
   readSettings ();
+  getLanguages();
+  getEncodings();
 }
 
 void
@@ -47,6 +53,21 @@ Form7::apply ()
   saveSettings ();
   zastButton->setEnabled (false);
 }
+
+void
+Form7::getLanguages()
+{
+}
+
+void
+Form7::getEncodings()
+{
+ QTextCodec *codec;
+ int i;
+ for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)
+        codecList->insertItem( codec->name() );
+}
+
 
 void
 Form7::okButtonClick ()
@@ -175,71 +196,71 @@ Form7::readSettings ()
      settings.writeEntry ("payments",   getAll(paymlBox) ); // uwaga!! get first
      settings.writeEntry ("paym1",   getAll(paymlBox)[0] );   
    */
-  QCheckTableItem *cbItem1 = new QCheckTableItem (tablePos, "Lp.");
+  QCheckTableItem *cbItem1 = new QCheckTableItem (tablePos, tr("Lp.") );
   tablePos->setItem (0, 0, cbItem1);
   cbItem1->setChecked (settings.readBoolEntry ("elinux/faktury_pozycje/Lp"));
 
-  QCheckTableItem *cbItem2 = new QCheckTableItem (tablePos, "Nazwa");
+  QCheckTableItem *cbItem2 = new QCheckTableItem (tablePos, tr("Nazwa") );
   tablePos->setItem (1, 0, cbItem2);
   cbItem2->setChecked (settings.
 		       readBoolEntry ("elinux/faktury_pozycje/Nazwa"));
 
-  QCheckTableItem *cbItem3 = new QCheckTableItem (tablePos, "Kod");
+  QCheckTableItem *cbItem3 = new QCheckTableItem (tablePos, tr("Kod") );
   tablePos->setItem (2, 0, cbItem3);
   cbItem3->setChecked (settings.readBoolEntry ("elinux/faktury_pozycje/Kod"));
 
-  QCheckTableItem *cbItem4 = new QCheckTableItem (tablePos, "PKWiU");
+  QCheckTableItem *cbItem4 = new QCheckTableItem (tablePos, tr("PKWiU") );
   tablePos->setItem (3, 0, cbItem4);
   cbItem4->setChecked (settings.
 		       readBoolEntry ("elinux/faktury_pozycje/pkwiu"));
 
-  QCheckTableItem *cbItem5 = new QCheckTableItem (tablePos, "Ilo¶æ");
+  QCheckTableItem *cbItem5 = new QCheckTableItem (tablePos, tr("Ilo¶æ") );
   tablePos->setItem (4, 0, cbItem5);
   cbItem5->setChecked (settings.
 		       readBoolEntry ("elinux/faktury_pozycje/ilosc"));
 
-  QCheckTableItem *cbItem6 = new QCheckTableItem (tablePos, "Jm.");
+  QCheckTableItem *cbItem6 = new QCheckTableItem (tablePos, tr("Jm.") );
   tablePos->setItem (5, 0, cbItem6);
   cbItem6->setChecked (settings.readBoolEntry ("elinux/faktury_pozycje/jm"));
 
-  QCheckTableItem *cbItem7 = new QCheckTableItem (tablePos, "Cena jdn.");
+  QCheckTableItem *cbItem7 = new QCheckTableItem (tablePos, tr("Cena jdn.") );
   tablePos->setItem (6, 0, cbItem7);
   cbItem7->setChecked (settings.
 		       readBoolEntry ("elinux/faktury_pozycje/cenajedn"));
 
-  QCheckTableItem *cbItem8 = new QCheckTableItem (tablePos, "Warto¶æ Netto");
+  QCheckTableItem *cbItem8 = new QCheckTableItem (tablePos, tr("Warto¶æ Netto") );
   tablePos->setItem (7, 0, cbItem8);
   cbItem8->setChecked (settings.
 		       readBoolEntry ("elinux/faktury_pozycje/wartnetto"));
 
-  QCheckTableItem *cbItem9 = new QCheckTableItem (tablePos, "Rabat %");
+  QCheckTableItem *cbItem9 = new QCheckTableItem (tablePos, tr("Rabat %") );
   tablePos->setItem (8, 0, cbItem9);
   cbItem9->setChecked (settings.
 		       readBoolEntry ("elinux/faktury_pozycje/rabatperc"));
 
-  QCheckTableItem *cbItem10 = new QCheckTableItem (tablePos, "Rabat Warto¶æ");
+  QCheckTableItem *cbItem10 = new QCheckTableItem (tablePos, tr("Rabat Warto¶æ") );
   tablePos->setItem (9, 0, cbItem10);
   cbItem10->setChecked (settings.
 			readBoolEntry ("elinux/faktury_pozycje/rabatval"));
 
   QCheckTableItem *cbItem11 =
-    new QCheckTableItem (tablePos, "Netto po rabacie");
+    new QCheckTableItem (tablePos, tr("Netto po rabacie") );
   tablePos->setItem (10, 0, cbItem11);
   cbItem11->setChecked (settings.
 			readBoolEntry ("elinux/faktury_pozycje/nettoafter"));
 
-  QCheckTableItem *cbItem12 = new QCheckTableItem (tablePos, "Stawka VAT");
+  QCheckTableItem *cbItem12 = new QCheckTableItem (tablePos, tr("Stawka VAT") );
   tablePos->setItem (11, 0, cbItem12);
   cbItem12->setChecked (settings.
 			readBoolEntry ("elinux/faktury_pozycje/vatval"));
 
-  QCheckTableItem *cbItem13 = new QCheckTableItem (tablePos, "Kwota Vat");
+  QCheckTableItem *cbItem13 = new QCheckTableItem (tablePos, tr("Kwota Vat") );
   tablePos->setItem (12, 0, cbItem13);
   cbItem13->setChecked (settings.
 			readBoolEntry ("elinux/faktury_pozycje/vatprice"));
 
   QCheckTableItem *cbItem14 =
-    new QCheckTableItem (tablePos, "Warto¶æ Brutto");
+    new QCheckTableItem (tablePos, tr("Warto¶æ Brutto") );
   tablePos->setItem (13, 0, cbItem14);
   cbItem14->setChecked (settings.
 			readBoolEntry ("elinux/faktury_pozycje/bruttoval"));
@@ -274,16 +295,16 @@ Form7::addLogoBtnClick ()
 {
   // qDebug( "%s, %s, %d", __FUNCTION__ , __FILE__, __LINE__);
   QString ofn = QFileDialog::getOpenFileName ("/home",
-					      "Obrazki (*.jpg *.png)",
+					      tr("Obrazki (*.jpg *.png)"),
 					      this,
-					      "Wybierz logo",
-					      "Wybierz plik do wstawienia jako logo");
+					      tr("Wybierz logo"),
+					      tr("Wybierz plik do wstawienia jako logo"));
 
   QFile f (ofn);
   if (!f.open (IO_ReadOnly))
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Nie mo¿na dodaæ pliku. Plik tylko do odczytu.",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Nie mo¿na dodaæ pliku. Plik tylko do odczytu."),
 				QMessageBox::Ok);
       return;
     }
@@ -306,8 +327,8 @@ Form7::currAddBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Nie mo¿na dodaæ. Pole jest puste.",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Nie mo¿na dodaæ. Pole jest puste."),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -336,8 +357,8 @@ Form7::currDelBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby usuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby usuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -355,8 +376,8 @@ Form7::korAddBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Nie mo¿na dodaæ. Pole jest puste.",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Nie mo¿na dodaæ. Pole jest puste."),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -386,8 +407,8 @@ Form7::korDelBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby usuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby usuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -406,8 +427,8 @@ Form7::vatAddBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Nie mo¿na dodaæ. Pole jest puste.",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Nie mo¿na dodaæ. Pole jest puste."),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -436,8 +457,8 @@ Form7::vatDelBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby usuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby usuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -468,8 +489,8 @@ Form7::vatUpBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby przesuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby przesuwaæ"),
 				QMessageBox::Ok);
     }
 
@@ -500,8 +521,8 @@ Form7::vatDownBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby przesuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby przesuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -519,8 +540,8 @@ Form7::currencyAddBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Nie mo¿na dodaæ. Pole jest puste.",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Nie mo¿na dodaæ. Pole jest puste."),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -549,8 +570,8 @@ Form7::currencyDelBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby usuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby usuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -582,8 +603,8 @@ Form7::paymUpBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby przesuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby przesuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -615,8 +636,8 @@ Form7::paymDownBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby przesuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby przesuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -645,8 +666,8 @@ Form7::paymDelBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Musisz co¶ zaznaczyæ, ¿eby usuwaæ",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Musisz co¶ zaznaczyæ, ¿eby usuwaæ"),
 				QMessageBox::Ok);
     }
   zastButton->setEnabled (true);
@@ -670,8 +691,8 @@ Form7::paymAddBtnClick ()
     }
   else
     {
-      QMessageBox::information (this, "Uwaga!!",
-				"Nie mo¿na dodaæ. Pole jest puste.",
+      QMessageBox::information (this, tr("Uwaga!!"),
+				tr("Nie mo¿na dodaæ. Pole jest puste."),
 				QMessageBox::Ok);
     }
 
@@ -694,5 +715,5 @@ Form7::changeBrowser ()
 void
 Form7::defTextBtn ()
 {
-  additText->setText (tr ("towar odebra³em zgodnie z faktur±"));
+  additText->setText ( tr("towar odebra³em zgodnie z faktur±") );
 }

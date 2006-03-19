@@ -37,11 +37,14 @@ QString pdGlob;
 void
 Form1::init ()
 {
-  QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForLocale (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForTr (QTextCodec::codecForName ("ISO8859-2"));
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
+
   //  create local user directory for store xml files
-  // works only on Linux -> see also licence Qt 3
+  //  works only on Linux -> see also licence Qt 3
   QDir tmp;
   QString progDir = tmp.homeDirPath () + "/elinux";
   pdGlob = progDir;
@@ -98,7 +101,6 @@ Form1::init ()
 
   createMenuDodatki ();
 
-  QSettings settings;
   filtrStart->setDate (QDate::currentDate ());
   filtrEnd->setDate (QDate::currentDate ());
 
@@ -116,10 +118,10 @@ Form1::init ()
 
 #ifdef QF_noVAT__
   fakturyPFormaAction->setVisible (FALSE);
-  fakturyDodajAction->setText ("Nowy rachunek");
-  fakturyDodajAction->setMenuText ("Nowy rachunek");
+  fakturyDodajAction->setText ( tr("Nowy rachunek") );
+  fakturyDodajAction->setMenuText ( tr("Nowy rachunek") );
 #endif
-  QString ver = "QFaktury ";
+  QString ver = "QFaktury wersja ";
   ver += version;
   setCaption (ver);
 }
@@ -285,8 +287,6 @@ Form1::applyFiltr (QString nameToCheck)
 void
 Form1::readHist (QString progDir)
 {
-
-
   /*!
    * step one: get list of files from directory
    */
@@ -366,21 +366,17 @@ Form1::oProg ()
   ver += version;
   QString msg;
   msg =
-    "Program do wystawiania faktur. \n Koordynator projektu: \n\tGrzegorz Rêkawek www.e-linux.pl \n";
+    tr("Program do wystawiania faktur. \n Koordynator projektu: \n\tGrzegorz Rêkawek www.e-linux.pl \n");;
   msg +=
-    "Programista:\n\tTomasz 'moux' Pielech \nGrafika:\n\tDariusz Arciszewski \n\n";
-  msg += "Support: info@e-linux.pl\n\n";
-  msg += "UWAGA!!!\n";
-  msg +=
-    "Ten program komputerowy dostarczany jest przez autora w formie \"takiej, jaki jest\"\n";
-  msg +=
-    "Autor nie udziela ¿adnej gwarancji oraz rêkojmi, ¿e program bêdzie dzia³a³\n";
-  msg += "prawid³owo, jest odpowiedniej jako¶ci oraz ¿e spe³ni oczekiwania\n";
-  msg +=
-    "u¿ytkownika. Autor nie odpowiada za jakiekolwiek straty wynik³e z u¿ywania\n";
-  msg +=
-    "programu, w tym utratê spodziewanych korzy¶ci, danych, informacji\n";
-  msg += "gospodarczych lub koszt urz±dzeñ lub programów zastêpczych.";
+    tr("Programista:\n\tTomasz 'moux' Pielech \nGrafika:\n\tDariusz Arciszewski \n\n");
+  msg += tr("Support: info@e-linux.pl\n\n");
+  msg += tr("UWAGA!!!\n");
+  msg += tr("Ten program komputerowy dostarczany jest przez autora w formie \"takiej, jaki jest\"\n");
+  msg += tr("Autor nie udziela ¿adnej gwarancji oraz rêkojmi, ¿e program bêdzie dzia³a³\n");
+  msg += tr("prawid³owo, jest odpowiedniej jako¶ci oraz ¿e spe³ni oczekiwania\n");
+  msg += tr("u¿ytkownika. Autor nie odpowiada za jakiekolwiek straty wynik³e z u¿ywania\n");
+  msg += tr("programu, w tym utratê spodziewanych korzy¶ci, danych, informacji\n");
+  msg += tr("gospodarczych lub koszt urz±dzeñ lub programów zastêpczych.");
   QMessageBox::about (this, ver, msg);
 }
 
@@ -388,7 +384,6 @@ void
 Form1::editFHist ()
 {
   // qDebug (__FUNCTION__);
-
   QSettings settings;
 
   int row, max = tableH->numRows ();
@@ -397,9 +392,9 @@ Form1::editFHist ()
       if (tableH->isRowSelected (row))
 	break;
     }
-  // qDebug (__FUNCTION__);
 
-  if (tableH->text (row, 3) == "korekta")
+  // what to do with this??
+  if (tableH->text (row, 3) == tr("korekta"))
     {
       // QMessageBox::information( this, "QFaktury", "Jeszcze nie ma", QMessageBox::Ok );
       korForm *korWindow = new korForm;
@@ -418,14 +413,15 @@ Form1::editFHist ()
     }
 
 
-  if ((tableH->text (row, 3) == "FVAT") || (tableH->text (row, 3) == "FPro"))
+  if ((tableH->text (row, 3) == tr("FVAT")) 
+	|| (tableH->text (row, 3) == tr("FPro")))
     {
       // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
       FormFra *fraWindow = new FormFra;
       fraWindow->progDir2 = pdGlob;
       qDebug (pdGlob);
       int co = 0;
-      if (tableH->text (row, 3) == "FVAT")
+      if (tableH->text (row, 3) == tr("FVAT"))
 	co = 0;
       else
 	co = 1;
@@ -450,8 +446,8 @@ Form1::delFHist ()
 {
   if (QMessageBox::
       warning (this, "QFaktury",
-	       "Czy napewno chcesz usun±æ t± fakturê z historii?", "Tak",
-	       "Nie", 0, 0, 1) == 0)
+	       tr("Czy napewno chcesz usun±æ t± fakturê z historii?"), tr("Tak"),
+	       tr("Nie"), 0, 0, 1) == 0)
     {
 
       int row, max = tableH->numRows ();
@@ -645,7 +641,7 @@ Form1::daneFirmyClick ()
 void
 Form1::settClick ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+  // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   Form7 *settWindow = new Form7;
   settWindow->show ();
 }
@@ -653,31 +649,18 @@ Form1::settClick ()
 void
 Form1::kretorClick ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
-//     QMessageBox::information( this, "QFaktury", "Funkcja jeszcze nie gotowa. Uzyj menu faktury->Nowy", QMessageBox::Ok );
+  // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   Form3 *kreatorWindow = new Form3;
   if (kreatorWindow->exec () == QDialog::Accepted)
     {
       kreatorWindow->print ();
-      // tableClear (tableH);
-      // readHist (pdGlob);
-      /*
-         QStringList row = QStringList::split( "|",  kreatorWindow->ret );
-         tableH->insertRows (tableH->numRows (), 1);
-         tableH->setText (tableH->numRows () - 1, 0, row[0]); // nazwa pliku
-         tableH->setText (tableH->numRows () - 1, 1, row[1]); 
-         tableH->setText (tableH->numRows () - 1, 2, row[2]); 
-         tableH->setText (tableH->numRows () - 1, 4, row[3]); 
-         tableH->setText (tableH->numRows () - 1, 3, row[4]); 
-       */
     }
-  // delete kreatorWindow;
 }
 
 void
 Form1::kontrClick ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+  // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   Form4 *kontrWindow = new Form4;
   if (kontrWindow->exec () == QDialog::Accepted)
     {
@@ -687,7 +670,6 @@ Form1::kontrClick ()
       qDebug (progDir);
       tmp.mkdir (progDir, TRUE);
 
-      // readKontr (progDir);
       tableK->insertRows (tableK->numRows (), 1);
       QStringList row = QStringList::split ("|", kontrWindow->ret);
       tableK->setText (tableK->numRows () - 1, 0, row[0]);	// name
@@ -703,7 +685,7 @@ Form1::kontrDel ()
 {
   if (QMessageBox::
       warning (this, "QFaktury",
-	       "Czy napewno chcesz usun±æ tego kontrahenta?", "Tak", "Nie", 0,
+	       tr("Czy napewno chcesz usun±æ tego kontrahenta?"), tr("Tak"), tr("Nie"), 0,
 	       0, 1) == 0)
     {
 
@@ -789,7 +771,7 @@ Form1::kontrDel ()
 void
 Form1::kontrEd ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+  // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   int row, max = tableK->numRows ();
 
   for (row = 0; row < max; ++row)
@@ -803,13 +785,6 @@ Form1::kontrEd ()
   kontrWindow->readData (tableK->text (row, 0), tableK->text (row, 1));
   if (kontrWindow->exec () == QDialog::Accepted)
     {
-      /*
-         tableClear (tableK);
-         QDir tmp;
-         QString progDir = tmp.homeDirPath () + "/elinux";
-         qDebug (progDir);
-         readKontr (progDir);
-       */
       QStringList rowTxt = QStringList::split ("|", kontrWindow->ret);
       tableK->setText (row, 0, rowTxt[0]);	// name
       tableK->setText (row, 1, rowTxt[1]);	// type
@@ -823,12 +798,12 @@ Form1::kontrEd ()
 void
 Form1::newFra ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+  // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   FormFra *fraWindow = new FormFra;
   fraWindow->progDir2 = pdGlob;
   fraWindow->pforma = false;
 #ifdef QF_noVAT__
-  fraWindow->setCaption ("Rachunek bez VAT");
+  fraWindow->setCaption ( tr("Rachunek bez VAT") );
 #endif
 
   if (fraWindow->exec () == QDialog::Accepted)
@@ -848,13 +823,13 @@ Form1::newFra ()
 void
 Form1::newPForm ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+  // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   FormFra *fraWindow = new FormFra;
   fraWindow->progDir2 = pdGlob;
   fraWindow->pforma = true;
-  fraWindow->setCaption ("Faktura Pro Forma");
+  fraWindow->setCaption ( tr("Faktura Pro Forma") );
 #ifdef QF_noVAT__
-  fraWindow->setCaption ("Rachunek");
+  fraWindow->setCaption ( tr("Rachunek") );
 #endif
 
   fraWindow->backBtnClick ();
@@ -875,9 +850,7 @@ Form1::newPForm ()
 void
 Form1::newKor ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
-
-  qDebug (__FUNCTION__);
+  // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   int row, max = tableH->numRows ();
   for (row = 0; row < max; ++row)
     {
@@ -886,6 +859,7 @@ Form1::newKor ()
     }
   // qDebug (__FUNCTION__);
 
+  // same question what to do with this??
   if ((tableH->text (row, 3) == "FVAT"))
     {
       korForm *korWindow = new korForm;
@@ -907,13 +881,13 @@ Form1::newKor ()
   if ((tableH->text (row, 3) == "korekta"))
     {
       QMessageBox::information (this, "QFaktury",
-				"Do korekt nie wystawiamy korekt",
+				tr("Do korekt nie wystawiamy korekt"),
 				QMessageBox::Ok);
     }
   if ((tableH->text (row, 3) == "FPro"))
     {
       QMessageBox::information (this, "QFaktury",
-				"Do faktur Pro Forma nie wystawiamy korekt",
+				tr("Do faktur Pro Forma nie wystawiamy korekt"),
 				QMessageBox::Ok);
     }
 
@@ -925,7 +899,7 @@ Form1::closeEvent (QCloseEvent * e)
 {
   if (QMessageBox::
       warning (this, "QFaktury",
-	       "Czy chcesz wyj¶æ z programu?", "Tak", "Nie", 0, 0, 1) == 0)
+	       tr("Czy chcesz wyj¶æ z programu?"), tr("Tak"), tr("Nie"), 0, 0, 1) == 0)
     {
       QSettings settings;
       settings.beginGroup ("elinux/faktury");
@@ -962,8 +936,7 @@ Form1::pomoc ()
 void
 Form1::towaryDodaj ()
 {
-// 
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+// qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   twAdd *towWindow = new twAdd;
   if (towWindow->exec () == QDialog::Accepted)
     {
@@ -1007,9 +980,8 @@ Form1::towaryUsun ()
 
   if (QMessageBox::
       warning (this, "QFaktury",
-	       "Czy napewno chcesz usun±æ towar " + tableT->text (row,
-								  0) + "/" +
-	       tableT->text (row, 1) + "?", "Tak", "Nie", 0, 0, 1) == 0)
+	       tr("Czy napewno chcesz usun±æ towar ") + tableT->text (row, 0) + "/" +
+	       tableT->text (row, 1) + "?", tr("Tak"), tr("Nie"), 0, 0, 1) == 0)
     {
 
       QDomDocument doc ("towary");
@@ -1073,13 +1045,6 @@ Form1::towaryUsun ()
 
 	  file.close ();
 	  tableT->removeRow (row);
-	  /*
-	     tableClear (tableT);
-	     QDir tmp;
-	     QString progDir = tmp.homeDirPath () + "/elinux";
-	     qDebug (progDir);
-	     readTw (progDir);
-	   */
 	}
 
     }
@@ -1089,7 +1054,7 @@ Form1::towaryUsun ()
 void
 Form1::towaryEdycja ()
 {
-  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+//  qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   int row, max = tableT->numRows ();
 
   for (row = 0; row < max; ++row)
@@ -1103,13 +1068,6 @@ Form1::towaryEdycja ()
   towWindow->readData (tableT->text (row, 0), tableT->text (row, 5));
   if (towWindow->exec () == QDialog::Accepted)
     {
-      /*
-         tableClear (tableT);
-         QDir tmp;
-         QString progDir = tmp.homeDirPath () + "/elinux";
-         qDebug (progDir);
-         readTw(progDir);
-       */
       QStringList rowTxt = QStringList::split ("|", towWindow->ret);
       tableT->setText (row, 0, rowTxt[0]);
       tableT->setText (row, 1, rowTxt[1]);
@@ -1132,18 +1090,20 @@ void
 Form1::saveAllSett ()
 {
   QSettings settings;
+  // should i change those settings names?
   settings.beginGroup ("elinux/faktury");
   settings.writeEntry ("firstrun", "nie");
   settings.writeEntry ("logo", "");
-  settings.writeEntry ("jednostki", "szt.|kg.|g.|m|km.|godz.");
-  settings.writeEntry ("stawki", "22|7|0|zw.");
-  settings.writeEntry ("waluty", "PLN|EUR|USD");
-  settings.writeEntry ("payments", "gotówka|przelew");	// uwaga!! get first
-  settings.writeEntry ("paym1", "gotówka");
-  settings.writeEntry ("pkorekty", "zmiana ilo¶ci");
-  settings.writeEntry ("addText", tr ("towar odebra³em zgodnie z faktur±"));
+  settings.writeEntry ("jednostki", tr("szt.|kg.|g.|m|km.|godz.") );
+  settings.writeEntry ("stawki", tr("22|7|0|zw.") );
+  settings.writeEntry ("waluty", tr("PLN|EUR|USD") );
+  settings.writeEntry ("payments", tr("gotówka|przelew") );	// uwaga!! get first
+  settings.writeEntry ("paym1", tr("gotówka") );
+  settings.writeEntry ("pkorekty", tr("zmiana ilo¶ci") );
+  settings.writeEntry ("addText", tr("towar odebra³em zgodnie z faktur±"));
   settings.endGroup ();
 
+  // here we could add special code for Rachunek
   settings.beginGroup ("elinux/faktury_pozycje");
   settings.writeEntry ("Lp", true);
   settings.writeEntry ("Nazwa", true);
@@ -1196,7 +1156,7 @@ void
 Form1::createMenuDodatki ()
 {
   QDir allFiles;
-  int tmp;			// thats freaky
+  int tmp; // thats freaky
 
 
   allFiles.setPath (QDir::homeDirPath () + "/elinux/scripts");
@@ -1260,7 +1220,7 @@ Form1::skryptSlot (int id)
   if (!cmd.start ())
     {
       QMessageBox::information (this, "QFaktury",
-				"Uruchomienie siê nie powiod³o. Prawdopodobnie skrypt nie dzia³a.",
+				tr("Uruchomienie siê nie powiod³o. Prawdopodobnie skrypt nie dzia³a."),
 				QMessageBox::Ok);
     }
 }

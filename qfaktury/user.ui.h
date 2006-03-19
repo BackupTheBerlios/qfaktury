@@ -11,6 +11,8 @@
 *****************************************************************************/
 #include <qsettings.h>
 #include <qtextcodec.h>
+#include "version.h"
+
 
 /* TODO
   1. move settings to program directory
@@ -26,9 +28,12 @@
 void
 Form2::init ()
 {
-  QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
-
   QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
+
   nameEdit->setText (settings.readEntry ("przelewy/user/nazwa"));
   placeEdit->setText (settings.readEntry ("przelewy/user/miejscowosc"));
   codeEdit->setText (settings.readEntry ("przelewy/user/kod"));

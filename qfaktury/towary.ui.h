@@ -28,12 +28,16 @@ vatEdit
 */
 
 
+/*! 
+ @todo same as in kontr and fraform 
+ */
 
+bool editTow;
 
 void
 twAdd::readData (QString idx, QString type)
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
   if (idx == "")
     {
       netto.append ("0,00");
@@ -44,7 +48,8 @@ twAdd::readData (QString idx, QString type)
     }
   else
     {
-      setCaption ("Edytuj towar/us³ugê");
+      setCaption ( tr("Edytuj towar/us³ugê") );
+      editTow = true;
       typeCombo->setEnabled (FALSE);
     }
 
@@ -142,7 +147,7 @@ twAdd::readData (QString idx, QString type)
 void
 twAdd::getStuffList ()
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
   QString progDir2 = QDir::homeDirPath () + "/elinux";
 
   QDomDocument doc ("towary");
@@ -196,16 +201,18 @@ twAdd::getStuffList ()
 void
 twAdd::init ()
 {
-  qDebug (__FUNCTION__);
-  QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForLocale (QTextCodec::codecForName ("ISO8859-2"));
+  // qDebug (__FUNCTION__);
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
+  editTow = false;
 
   progDir = QDir::homeDirPath () + "/elinux";
   readData ("", "");
   idxEdit->setText (QString::number (lastId));
   // cbVat->setCurrentText ("22");
-
-  QSettings settings;
 
   //  settings.writeEntry ("firstrun", "nie");
   // logoEdit->setText( settings.readEntry("elinux/faktury/logo") );
@@ -224,7 +231,11 @@ twAdd::init ()
 
 bool twAdd::saveAll ()
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
+  QSettings settings;
+  QString encoding = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (encoding));
+
   nettoChanged ();
 
   // getStuffList ();
@@ -306,7 +317,7 @@ bool twAdd::saveAll ()
       // qDebug("1 netto4" + netto[3]);
       elem.setAttribute ("vat", cbVat->currentText ());
       towary.appendChild (elem);
-      qDebug ("dodano towar");
+      // qDebug ("dodano towar");
     }
 
   if (typeCombo->currentItem () == 1)
@@ -328,7 +339,7 @@ bool twAdd::saveAll ()
       elem.setAttribute ("vat", cbVat->currentText ());
       // elem.setAttribute ("vat", vatEdit->text ());
       uslugi.appendChild (elem);
-      qDebug ("dodano usluge");
+      // qDebug ("dodano usluge");
     }
 
 
@@ -339,7 +350,7 @@ bool twAdd::saveAll ()
   file.open (IO_WriteOnly);
   QTextStream
   ts (&file);
-  ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
+  ts.setCodec (QTextCodec::codecForName (encoding));
   ts << xml;
   file.close ();
 
@@ -349,7 +360,11 @@ bool twAdd::saveAll ()
 void
 twAdd::modifyOnly ()
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
+  QSettings settings;
+  QString encoding = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (encoding));
+  
   nettoChanged ();
 
   /*
@@ -427,7 +442,7 @@ twAdd::modifyOnly ()
       // qDebug("2 netto4" + netto[3]);
       elem.setAttribute ("vat", cbVat->currentText ());
       towary.appendChild (elem);
-      qDebug ("modyfikacja towary");
+      // qDebug ("modyfikacja towary");
     }
 
   if (typeCombo->currentItem () == 1)
@@ -457,7 +472,7 @@ twAdd::modifyOnly ()
       // qDebug("2 netto4" + netto[3]);
       elem.setAttribute ("vat", cbVat->currentText ());
       uslugi.appendChild (elem);
-      qDebug ("modyfikacja uslugi");
+      // qDebug ("modyfikacja uslugi");
     }
 
 
@@ -466,7 +481,7 @@ twAdd::modifyOnly ()
   file.close ();
   file.open (IO_WriteOnly);
   QTextStream ts (&file);
-  ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
+  ts.setCodec (QTextCodec::codecForName (encoding));
   ts << xml;
   file.close ();
 
@@ -481,7 +496,7 @@ twAdd::okClick ()
 
   if (nameEdit->text () == "")
     {
-      QMessageBox::critical (0, "QFaktury", "Musisz podaæ chocia¿ nazwe.");
+      QMessageBox::critical (0, tr("QFaktury"), tr("Musisz podaæ chocia¿ nazwe.") );
       return;
     }
 
@@ -538,7 +553,7 @@ twAdd::okClick ()
 void
 twAdd::spinChanged (int a)
 {
-  qDebug (__FUNCTION__);
+  // qDebug (__FUNCTION__);
   nettoEdit->setText (netto[a - 1]);
 }
 
@@ -546,8 +561,8 @@ twAdd::spinChanged (int a)
 void
 twAdd::nettoChanged ()
 {
-  qDebug (__FUNCTION__);
-  qDebug (nettoEdit->text ());
+  // qDebug (__FUNCTION__);
+  // qDebug (nettoEdit->text ());
   netto[spinBox2->value () - 1] = nettoEdit->text ();
 }
 

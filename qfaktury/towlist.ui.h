@@ -2,8 +2,10 @@
 #include <qdir.h>
 #include <qmessagebox.h>
 #include <qtextcodec.h>
+#include <qsettings.h>
 
 #include "zaokr.h"
+
 
 class dane
 {
@@ -53,8 +55,11 @@ QString vat;
 void
 towList::init ()
 {
-  QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForLocale (QTextCodec::codecForName ("ISO8859-2"));
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
   ret = "";
   QDir tmp;
   progDir = tmp.homeDirPath () + "/elinux";
@@ -142,7 +147,7 @@ towList::doAccept ()
 {
   if (countEdit->text () == "")
     {
-      QMessageBox::information (this, "QFaktury", "Podaj ilo¶æ",
+      QMessageBox::information (this, tr("QFaktury"), tr("Podaj ilo¶æ"),
 				QMessageBox::Ok);
       return;
     }
@@ -185,7 +190,7 @@ towList::doAccept ()
     }
   else
     {
-      QMessageBox::information (this, "QFaktury", "Wska¿ towar",
+      QMessageBox::information (this, tr("QFaktury"), tr("Wska¿ towar"),
 				QMessageBox::Ok);
     }
 }

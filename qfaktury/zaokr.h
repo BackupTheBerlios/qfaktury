@@ -5,6 +5,7 @@
 #include <qstringlist.h>
 #include <math.h>
 
+
 QString doRound (QString in);
 QString fixStr (QString in);
 float getPrice (QString count, QString netto, QString vat);

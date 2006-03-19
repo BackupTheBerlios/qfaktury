@@ -13,16 +13,23 @@
 #include <qtextcodec.h>
 #include <qdir.h>
 #include <qdom.h>
+#include <qsettings.h>
 
 
 QString progDir;
 QString nazwaEdit;
+bool editKontr;
+
+/*! @todo
+ 1. CAPTION!!!!!!!!!!!!!!!
+         */
+
 
 void
 Form4::readData (QString name, QString type)
 {
   nazwaEdit = name;
-  qDebug (name + "   " + type);
+  // qDebug (name + "   " + type);
   QDomDocument doc ("kontrahenci");
   QDomElement root;
   QDomElement urzad;
@@ -52,7 +59,7 @@ Form4::readData (QString name, QString type)
 	}
       QString text;
 
-      if (type.compare ("firma") == 0)
+      if (type.compare ( tr("firma")) == 0)
 	{
 	  for (QDomNode n = firma.firstChild (); !n.isNull ();
 	       n = n.nextSibling ())
@@ -69,7 +76,8 @@ Form4::readData (QString name, QString type)
 		  telefonEdit->setText (n.toElement ().attribute ("telefon"));
 		  emailEdit->setText (n.toElement ().attribute ("email"));
 		  wwwEdit->setText (n.toElement ().attribute ("www"));
-		  typeCombo->setCurrentText ("firma");
+		  // what to do with that?
+		  typeCombo->setCurrentText ( tr("firma") );
 		}
 	    }
 	}
@@ -90,12 +98,14 @@ Form4::readData (QString name, QString type)
 		  accountEdit->setText (n.toElement ().attribute ("account"));
 		  emailEdit->setText (n.toElement ().attribute ("email"));
 		  wwwEdit->setText (n.toElement ().attribute ("www"));
-		  typeCombo->setCurrentText ("Urz±d");
+		  // what to do with that?
+		  typeCombo->setCurrentText ( tr("urz±d") );
 		}
 	    }
 	}
     }
-  setCaption ("Edytuj kontrahenta");
+  setCaption ( tr("Edytuj kontrahenta") );
+  editKontr = true;
   typeCombo->setEnabled (FALSE);
 }
 
@@ -161,31 +171,37 @@ Form4::getFirmList ()
 void
 Form4::init ()
 {
-  QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
-  QTextCodec::setCodecForLocale (QTextCodec::codecForName ("ISO8859-2"));
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
 
   progDir = QDir::homeDirPath () + "/elinux";
+  editKontr = false;
 }
 
 
 bool Form4::saveAll ()
 {
 //  qDebug (__FUNCTION__);
+  QSettings settings;
+  QString encoding = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
 
   getFirmList ();
   QStringList::iterator it = allNames.find (nameEdit->text ());
   if ((*it) == nameEdit->text ())
     {
-      QMessageBox::critical (0, "Faktury",
-			     "Kontrahent nie moze zostaæ dodany poniewa¿ istnieje ju¿ kontrahent o tej nazwie.");
+      QMessageBox::critical (0, "QFaktury",
+			     tr("Kontrahent nie moze zostaæ dodany poniewa¿ istnieje ju¿ kontrahent o tej nazwie.") );
       return false;
     }
 
   it = allNames.find (nipEdit->text ());
   if ((*it) == nipEdit->text ())
     {
-      QMessageBox::critical (0, "Faktury",
-			     "Kontrahent nie moze zostaæ dodany poniewa¿ istnieje ju¿ kontrahent o takim NIP'ie.");
+      QMessageBox::critical (0, "QFaktury",
+			     tr("Kontrahent nie moze zostaæ dodany poniewa¿ istnieje ju¿ kontrahent o takim NIP'ie.") );
       return false;
     }
 
@@ -274,7 +290,7 @@ bool Form4::saveAll ()
   file.open (IO_WriteOnly);
   QTextStream
   ts (&file);
-  ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
+  ts.setCodec (QTextCodec::codecForName (encoding));
   ts << xml;
   file.close ();
 
@@ -285,7 +301,10 @@ void
 Form4::modifyOnly ()
 {
   // qDebug (__FUNCTION__);
-
+  QSettings settings;
+  QString encoding = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  QTextCodec::setCodecForCStrings (QTextCodec::codecForName (encoding));
+  
   /*
      getFirmList ();
      QStringList::iterator it = allNames.find (nameEdit->text ());
@@ -358,7 +377,7 @@ Form4::modifyOnly ()
       elem.setAttribute ("email", emailEdit->text ());
       elem.setAttribute ("www", wwwEdit->text ());
       firma.appendChild (elem);
-      qDebug ("modyfikacja firme");
+      // qDebug ("modyfikacja firme");
     }
 
   if (typeCombo->currentItem () == 1)
@@ -384,7 +403,7 @@ Form4::modifyOnly ()
       elem.setAttribute ("email", emailEdit->text ());
       elem.setAttribute ("www", wwwEdit->text ());
       urzad.appendChild (elem);
-      qDebug ("modyfikacja urzad");
+      // qDebug ("modyfikacja urzad");
     }
 
 
@@ -393,7 +412,7 @@ Form4::modifyOnly ()
   file.close ();
   file.open (IO_WriteOnly);
   QTextStream ts (&file);
-  ts.setCodec (QTextCodec::codecForName ("ISO8859-2"));
+  ts.setCodec (QTextCodec::codecForName (encoding));
   ts << xml;
   file.close ();
   typeCombo->setEnabled (false);
@@ -415,16 +434,16 @@ Form4::okClick ()
   /* TODO
    * validation account must have 26 chars
    */
-  if (this->caption () == "Edytuj kontrahenta")
+  if (editKontr)
     {
       modifyOnly ();
       QString typ;
       if (typeCombo->currentItem () == 1)
 	{
-	  typ = "urzad";
+	  typ = tr("urzad");
 	}
       else
-	typ = "firma";
+	typ = tr("firma");
       ret =
 	isEmpty (nameEdit->text ()) + "|" + isEmpty (typ) + "|" +
 	isEmpty (placeEdit->text ()) + "|" + isEmpty (addressEdit->text ()) +
@@ -438,10 +457,10 @@ Form4::okClick ()
 	  QString typ;
 	  if (typeCombo->currentItem () == 1)
 	    {
-	      typ = "urzad";
+	      typ = tr("urzad");
 	    }
 	  else
-	    typ = "firma";
+	    typ = tr("firma");
 	  ret =
 	    isEmpty (nameEdit->text ()) + "|" + isEmpty (typ) + "|" +
 	    isEmpty (placeEdit->text ()) + "|" +

@@ -1,4 +1,6 @@
 #include <qapplication.h>
+#include <qtranslator.h> 
+#include <qsettings.h>
 #include "mainform.h"
 
 // do splasha
@@ -12,8 +14,18 @@ int
 main (int argc, char **argv)
 {
   QApplication a (argc, argv);
+  QRect screen = QApplication::desktop ()->screenGeometry ();
 
-  QLabel splash ("Hello world!", 0, "",
+  QSettings settings;
+  QString lang = settings.readEntry ("elinux/lang", "polski");
+
+
+  QTranslator qfaktury( 0 );
+  qfaktury.load( QString( lang ), "." );
+  a.installTranslator( &qfaktury );
+
+#ifndef QF_nosplash__
+  QLabel splash ("", 0, "splash",
 		 Qt::WStyle_NoBorder | Qt::WStyle_Customize | Qt::
 		 WStyle_StaysOnTop | Qt::WShowModal);
   splash.resize (380, 450);
@@ -28,21 +40,27 @@ main (int argc, char **argv)
   // qDebug (graphDir);
 
   splash.setPixmap (QPixmap (graphDir + "/icons/splash.png"));
-  QRect screen = QApplication::desktop ()->screenGeometry ();
   splash.move (screen.center () - QPoint (splash.width () / 2,
 					  splash.height () / 2));
   splash.show ();
 
   QTimer slip, slip2;
+#endif
   Form1 w;
   w.move (screen.center () - QPoint (w.width () / 2, w.height () / 2));
 
+#ifndef QF_nosplash__
   QObject::connect (&slip, SIGNAL (timeout ()), &splash, SLOT (close ()));
   slip.start (4000);
   w.hide ();
 
   QObject::connect (&slip2, SIGNAL (timeout ()), &w, SLOT (show ()));
   slip2.start (3800);
+#endif
+
+#ifdef QF_nosplash__
+  w.show ();
+#endif
 
   a.connect (&a, SIGNAL (lastWindowClosed ()), &a, SLOT (quit ()));
   return a.exec ();

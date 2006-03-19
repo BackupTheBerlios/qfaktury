@@ -1,5 +1,11 @@
 #include "zaokr.h"
 
+/*!
+  Question: what currency separator is used in other countries?
+@todo
+  ask someone!!
+*/
+
 
 /*!
   This round digits to the 2 places after commas.
