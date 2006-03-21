@@ -29,20 +29,23 @@ void
 Form2::init ()
 {
   QSettings settings;
+  //QDir::setPath ("$HOME/elinux");
+  //settings.insertSearchPath( QSettings::Unix, "$HOME/elinux" );// move settings to program directory
   QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+  //settings.setPath("elinux", ".qfaktury");
   QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
   QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
   QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
 
-  nameEdit->setText (settings.readEntry ("przelewy/user/nazwa"));
-  placeEdit->setText (settings.readEntry ("przelewy/user/miejscowosc"));
-  codeEdit->setText (settings.readEntry ("przelewy/user/kod"));
-  addressEdit->setText (settings.readEntry ("przelewy/user/adres"));
-  accountEdit->setText (settings.readEntry ("przelewy/user/konto"));
-  nipEdit->setText (settings.readEntry ("przelewy/user/nip"));
-  phoneEdit->setText (settings.readEntry ("przelewy/user/phone"));
-  emailEdit->setText (settings.readEntry ("przelewy/user/email"));
-  wwwEdit->setText (settings.readEntry ("przelewy/user/www"));
+  nameEdit->setText (settings.readEntry ("elinux/user/nazwa"));
+  placeEdit->setText (settings.readEntry ("elinux/user/miejscowosc"));
+  codeEdit->setText (settings.readEntry ("elinux/user/kod"));
+  addressEdit->setText (settings.readEntry ("elinux/user/adres"));
+  accountEdit->setText (settings.readEntry ("elinux/user/konto"));
+  nipEdit->setText (settings.readEntry ("elinux/user/nip"));
+  phoneEdit->setText (settings.readEntry ("elinux/user/phone"));
+  emailEdit->setText (settings.readEntry ("elinux/user/email"));
+  wwwEdit->setText (settings.readEntry ("elinux/user/www"));
 }
 
 /*!
@@ -52,7 +55,9 @@ void
 Form2::okClick ()
 {
   QSettings settings;
-  settings.beginGroup ("przelewy");
+  //settings.insertSearchPath( QSettings::Unix, "$HOME/elinux" );// move settings to program directory
+  //settings.setPath("elinux", ".qfaktury");
+  settings.beginGroup ("elinux");
   settings.writeEntry ("user/nazwa", nameEdit->text ());	// zapis String
   settings.writeEntry ("user/miejscowosc", placeEdit->text ());
   settings.writeEntry ("user/kod", codeEdit->text ());

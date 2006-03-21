@@ -117,15 +117,15 @@ pUS::init ()
   QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
   QTextCodec::setCodecForTr (QTextCodec::codecForName ("ISO8859-2"));
   QSettings settings;
-  nameEdit->setText (settings.readEntry ("przelewy/user/nazwa"));
-  placeEdit->setText (settings.readEntry ("przelewy/user/miejscowosc"));
-  codeEdit->setText (settings.readEntry ("przelewy/user/kod"));
-  addressEdit->setText (settings.readEntry ("przelewy/user/adres"));
-  accountEdit->setText (settings.readEntry ("przelewy/user/konto"));
-  if (!settings.readEntry ("przelewy/user/secIdType").isNull ())
+  nameEdit->setText (settings.readEntry ("elinux/user/nazwa"));
+  placeEdit->setText (settings.readEntry ("elinux/user/miejscowosc"));
+  codeEdit->setText (settings.readEntry ("elinux/user/kod"));
+  addressEdit->setText (settings.readEntry ("elinux/user/adres"));
+  accountEdit->setText (settings.readEntry ("elinux/user/konto"));
+  if (!settings.readEntry ("elinux/user/secIdType").isNull ())
     secIdType->setCurrentText (settings.
-			       readEntry ("przelewy/user/secIdType"));
-  nipEdit->setText (settings.readEntry ("przelewy/user/nip"));
+			       readEntry ("elinux/user/secIdType"));
+  nipEdit->setText (settings.readEntry ("elinux/user/nip"));
 
   // wczytaj liste urzedow
 
@@ -602,8 +602,8 @@ pUS::readSettings ()
      accountEdit->setText( settings.readEntry( "przelewy/user/konto" ) );    
    */
   // 
-  font.fromString (settings.readEntry ("przelewy/czcionka"));
-  rozSp = settings.readEntry ("przelewy/przerwy").toInt ();
+  font.fromString (settings.readEntry ("elinux/czcionka"));
+  rozSp = settings.readEntry ("elinux/przerwy").toInt ();
 
   /*
      // checkboxy
@@ -616,32 +616,32 @@ pUS::readSettings ()
    */
   // looop for przelew
 
-  u_id = QStringList::split (";", settings.readEntry ("przelewy/u_id"));
-  u_idzob = QStringList::split (";", settings.readEntry ("przelewy/u_idzob"));
-  u_ksw = QStringList::split (";", settings.readEntry ("przelewy/u_ksw"));
-  u_kwota = QStringList::split (";", settings.readEntry ("przelewy/u_kwota"));
-  uWx = QStringList::split (";", settings.readEntry ("przelewy/u_wx"));
-  uPx = QStringList::split (";", settings.readEntry ("przelewy/u_px"));
+  u_id = QStringList::split (";", settings.readEntry ("elinux/u_id"));
+  u_idzob = QStringList::split (";", settings.readEntry ("elinux/u_idzob"));
+  u_ksw = QStringList::split (";", settings.readEntry ("elinux/u_ksw"));
+  u_kwota = QStringList::split (";", settings.readEntry ("elinux/u_kwota"));
+  uWx = QStringList::split (";", settings.readEntry ("elinux/u_wx"));
+  uPx = QStringList::split (";", settings.readEntry ("elinux/u_px"));
   u_nazwa1 =
-    QStringList::split (";", settings.readEntry ("przelewy/u_nazwa1"));
+    QStringList::split (";", settings.readEntry ("elinux/u_nazwa1"));
   u_nazwa2 =
-    QStringList::split (";", settings.readEntry ("przelewy/u_nazwa2"));
-  u_nip = QStringList::split (";", settings.readEntry ("przelewy/u_nip"));
+    QStringList::split (";", settings.readEntry ("elinux/u_nazwa2"));
+  u_nip = QStringList::split (";", settings.readEntry ("elinux/u_nip"));
   u_nrrach =
-    QStringList::split (";", settings.readEntry ("przelewy/u_nrrach"));
-  u_okres = QStringList::split (";", settings.readEntry ("przelewy/u_okres"));
+    QStringList::split (";", settings.readEntry ("elinux/u_nrrach"));
+  u_okres = QStringList::split (";", settings.readEntry ("elinux/u_okres"));
   u_symbol =
-    QStringList::split (";", settings.readEntry ("przelewy/u_symbol"));
-  u_zlec1 = QStringList::split (";", settings.readEntry ("przelewy/u_zlec1"));
-  u_zlec2 = QStringList::split (";", settings.readEntry ("przelewy/u_zlec2"));
+    QStringList::split (";", settings.readEntry ("elinux/u_symbol"));
+  u_zlec1 = QStringList::split (";", settings.readEntry ("elinux/u_zlec1"));
+  u_zlec2 = QStringList::split (";", settings.readEntry ("elinux/u_zlec2"));
 
-  pages = settings.readEntry ("przelewy/us_strony").toInt ();
-  if (settings.readEntry ("przelewy/us_widok").compare ("poziomy") == 0)
+  pages = settings.readEntry ("elinux/us_strony").toInt ();
+  if (settings.readEntry ("elinux/us_widok").compare ("poziomy") == 0)
     poziom = true;
   else
     poziom = false;
 
-  if (settings.readEntry ("przelewy/us_wbud").compare ("true") == 0)
+  if (settings.readEntry ("elinux/us_wbud").compare ("true") == 0)
     own = false;
   else
     own = true;

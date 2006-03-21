@@ -58,11 +58,11 @@ void
 Form3::fillEdits ()
 {
   QSettings settings;
-  nameEdit->setText (settings.readEntry ("przelewy/user/nazwa"));
-  placeEdit->setText (settings.readEntry ("przelewy/user/miejscowosc"));
-  codeEdit->setText (settings.readEntry ("przelewy/user/kod"));
-  addressEdit->setText (settings.readEntry ("przelewy/user/adres"));
-  accountEdit->setText (settings.readEntry ("przelewy/user/konto"));
+  nameEdit->setText (settings.readEntry ("elinux/user/nazwa"));
+  placeEdit->setText (settings.readEntry ("elinux/user/miejscowosc"));
+  codeEdit->setText (settings.readEntry ("elinux/user/kod"));
+  addressEdit->setText (settings.readEntry ("elinux/user/adres"));
+  accountEdit->setText (settings.readEntry ("elinux/user/konto"));
 }
 
 void
@@ -437,7 +437,7 @@ void
 Form3::getFirmList ()
 {
   qDebug (__FUNCTION__);
-  QString progDir2 = QDir::homeDirPath () + "/przelewy";
+  QString progDir2 = QDir::homeDirPath () + "/elinux";
 
   QDomDocument doc ("kontrahenci");
   QDomElement root;
@@ -484,7 +484,7 @@ Form3::getOdbData ()
 {
 
   qDebug (__FUNCTION__);
-  QString progDir2 = QDir::homeDirPath () + "/przelewy";
+  QString progDir2 = QDir::homeDirPath () + "/elinux";
 
   QDomDocument doc ("kontrahenci");
   QDomElement root;
@@ -639,30 +639,30 @@ void
 Form3::readSettings ()
 {
   QSettings settings;
-  font.fromString (settings.readEntry ("przelewy/czcionka"));
-  rozSp = settings.readEntry ("przelewy/przerwy").toInt ();
+  font.fromString (settings.readEntry ("elinux/czcionka"));
+  rozSp = settings.readEntry ("elinux/przerwy").toInt ();
 
   pOdb1 =
-    QStringList::split (";", settings.readEntry ("przelewy/p_odbiorca1"));
+    QStringList::split (";", settings.readEntry ("elinux/p_odbiorca1"));
   pOdb2 =
-    QStringList::split (";", settings.readEntry ("przelewy/p_odbiorca2"));
-  pWal = QStringList::split (";", settings.readEntry ("przelewy/p_waluta"));
+    QStringList::split (";", settings.readEntry ("elinux/p_odbiorca2"));
+  pWal = QStringList::split (";", settings.readEntry ("elinux/p_waluta"));
   pNrrach =
-    QStringList::split (";", settings.readEntry ("przelewy/p_nrrach"));
-  pKwota = QStringList::split (";", settings.readEntry ("przelewy/p_kwota"));
-  pKsw = QStringList::split (";", settings.readEntry ("przelewy/p_ksw"));
-  pWx = QStringList::split (";", settings.readEntry ("przelewy/p_wx"));
-  pPx = QStringList::split (";", settings.readEntry ("przelewy/p_px"));
-  pZlec1 = QStringList::split (";", settings.readEntry ("przelewy/p_zlec1"));
-  pZlec2 = QStringList::split (";", settings.readEntry ("przelewy/p_zlec2"));
-  pTyt1 = QStringList::split (";", settings.readEntry ("przelewy/p_tyt1"));
-  pTyt2 = QStringList::split (";", settings.readEntry ("przelewy/p_tyt2"));
-  pages = settings.readEntry ("przelewy/przelew_strony").toInt ();
-  if (settings.readEntry ("przelewy/przelew_widok").compare ("poziomy") == 0)
+    QStringList::split (";", settings.readEntry ("elinux/p_nrrach"));
+  pKwota = QStringList::split (";", settings.readEntry ("elinux/p_kwota"));
+  pKsw = QStringList::split (";", settings.readEntry ("elinux/p_ksw"));
+  pWx = QStringList::split (";", settings.readEntry ("elinux/p_wx"));
+  pPx = QStringList::split (";", settings.readEntry ("elinux/p_px"));
+  pZlec1 = QStringList::split (";", settings.readEntry ("elinux/p_zlec1"));
+  pZlec2 = QStringList::split (";", settings.readEntry ("elinux/p_zlec2"));
+  pTyt1 = QStringList::split (";", settings.readEntry ("elinux/p_tyt1"));
+  pTyt2 = QStringList::split (";", settings.readEntry ("elinux/p_tyt2"));
+  pages = settings.readEntry ("elinux/przelew_strony").toInt ();
+  if (settings.readEntry ("elinux/przelew_widok").compare ("poziomy") == 0)
     poziom = true;
   else
     poziom = false;
-  if (settings.readEntry ("przelewy/przelew_wbud").compare ("true") == 0)
+  if (settings.readEntry ("elinux/przelew_wbud").compare ("true") == 0)
     own = false;
   else
     own = true;

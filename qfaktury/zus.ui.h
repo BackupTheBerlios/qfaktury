@@ -120,16 +120,16 @@ pZUS::init ()
   QTextCodec::setCodecForCStrings (QTextCodec::codecForName ("ISO8859-2"));
   QTextCodec::setCodecForTr (QTextCodec::codecForName ("ISO8859-2"));
   QSettings settings;
-  nameEdit->setText (settings.readEntry ("przelewy/user/nazwa"));
-  placeEdit->setText (settings.readEntry ("przelewy/user/miejscowosc"));
-  codeEdit->setText (settings.readEntry ("przelewy/user/kod"));
-  addressEdit->setText (settings.readEntry ("przelewy/user/adres"));
-  accountEdit->setText (settings.readEntry ("przelewy/user/konto"));
-  if (!settings.readEntry ("przelewy/user/secIdType").isNull ())
+  nameEdit->setText (settings.readEntry ("elinux/user/nazwa"));
+  placeEdit->setText (settings.readEntry ("elinux/user/miejscowosc"));
+  codeEdit->setText (settings.readEntry ("elinux/user/kod"));
+  addressEdit->setText (settings.readEntry ("elinux/user/adres"));
+  accountEdit->setText (settings.readEntry ("elinux/user/konto"));
+  if (!settings.readEntry ("elinux/user/secIdType").isNull ())
     secIdType->setCurrentText (settings.
-			       readEntry ("przelewy/user/secIdType"));
-  nipEdit->setText (settings.readEntry ("przelewy/user/nip"));
-  regonEdit->setText (settings.readEntry ("przelewy/user/regon"));
+			       readEntry ("elinux/user/secIdType"));
+  nipEdit->setText (settings.readEntry ("elinux/user/nip"));
+  regonEdit->setText (settings.readEntry ("elinux/user/regon"));
   progDir2 = QDir::homeDirPath () + "/przelewy";
 }
 
@@ -564,8 +564,8 @@ pZUS::readSettings ()
      accountEdit->setText( settings.readEntry( "przelewy/user/konto" ) );    
    */
   // 
-  font.fromString (settings.readEntry ("przelewy/czcionka"));
-  rozSp = settings.readEntry ("przelewy/przerwy").toInt ();
+  font.fromString (settings.readEntry ("elinux/czcionka"));
+  rozSp = settings.readEntry ("elinux/przerwy").toInt ();
 
   /*
      // checkboxy
@@ -578,30 +578,30 @@ pZUS::readSettings ()
    */
   // looop for przelew
 
-  z_dek = QStringList::split (";", settings.readEntry ("przelewy/z_dek"));
-  zWx = QStringList::split (";", settings.readEntry ("przelewy/z_wx"));
-  zPx = QStringList::split (";", settings.readEntry ("przelewy/z_px"));
-  z_id = QStringList::split (";", settings.readEntry ("przelewy/z_id"));
-  z_konto = QStringList::split (";", settings.readEntry ("przelewy/z_konto"));
-  z_ksw = QStringList::split (";", settings.readEntry ("przelewy/z_ksw"));
-  z_kwota = QStringList::split (";", settings.readEntry ("przelewy/z_kwota"));
+  z_dek = QStringList::split (";", settings.readEntry ("elinux/z_dek"));
+  zWx = QStringList::split (";", settings.readEntry ("elinux/z_wx"));
+  zPx = QStringList::split (";", settings.readEntry ("elinux/z_px"));
+  z_id = QStringList::split (";", settings.readEntry ("elinux/z_id"));
+  z_konto = QStringList::split (";", settings.readEntry ("elinux/z_konto"));
+  z_ksw = QStringList::split (";", settings.readEntry ("elinux/z_ksw"));
+  z_kwota = QStringList::split (";", settings.readEntry ("elinux/z_kwota"));
   z_nazwa1 =
-    QStringList::split (";", settings.readEntry ("przelewy/z_nazwa1"));
+    QStringList::split (";", settings.readEntry ("elinux/z_nazwa1"));
   z_nazwa2 =
-    QStringList::split (";", settings.readEntry ("przelewy/z_nazwa2"));
-  z_nip = QStringList::split (";", settings.readEntry ("przelewy/z_nip"));
-  z_nrdec = QStringList::split (";", settings.readEntry ("przelewy/z_nrdec"));
-  z_nrdek = QStringList::split (";", settings.readEntry ("przelewy/z_nrdek"));
-  z_typid = QStringList::split (";", settings.readEntry ("przelewy/z_typid"));
-  z_typwp = QStringList::split (";", settings.readEntry ("przelewy/z_typwp"));
+    QStringList::split (";", settings.readEntry ("elinux/z_nazwa2"));
+  z_nip = QStringList::split (";", settings.readEntry ("elinux/z_nip"));
+  z_nrdec = QStringList::split (";", settings.readEntry ("elinux/z_nrdec"));
+  z_nrdek = QStringList::split (";", settings.readEntry ("elinux/z_nrdek"));
+  z_typid = QStringList::split (";", settings.readEntry ("elinux/z_typid"));
+  z_typwp = QStringList::split (";", settings.readEntry ("elinux/z_typwp"));
 
-  pages = settings.readEntry ("przelewy/zus_strony").toInt ();
-  if (settings.readEntry ("przelewy/zus_widok").compare ("poziomy") == 0)
+  pages = settings.readEntry ("elinux/zus_strony").toInt ();
+  if (settings.readEntry ("elinux/zus_widok").compare ("poziomy") == 0)
     poziom = true;
   else
     poziom = false;
 
-  if (settings.readEntry ("przelewy/zus_wbud").compare ("true") == 0)
+  if (settings.readEntry ("elinux/zus_wbud").compare ("true") == 0)
     own = false;
   else
     own = true;

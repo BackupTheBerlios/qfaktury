@@ -511,7 +511,7 @@ FormFra::makeInvoiceHeadar ()
 
   fraStrList += "--></style>";
   fraStrList += "<body>";
-  fraStrList += "<table width=\"700\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+  fraStrList += "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
   //  class=\"page_break\" ------>>>> think about this
   fraStrList += "<tr comment=\"headar\"><td>";
   fraStrList +=
@@ -538,7 +538,7 @@ FormFra::makeInvoiceHeadar ()
   fraStrList += "<td>";
 
 #ifdef QF_base__
-  if (invType = FVat)
+  if (invType == FVat)
     {
       fraStrList += tr("<h2>FAKTURA VAT<br>");
       fraStrList += "NR: " + frNr->text () + "<br></h2>";
@@ -582,26 +582,26 @@ FormFra::makeInvoiceBody ()
   fraStrList += "<td width=\"48%\" valign=\"top\">";
   fraStrList += tr("<h4>Sprzedawca:</h4>");
   QSettings settings;
-  fraStrList += "<h5>" + settings.readEntry ("przelewy/user/nazwa") + "<br>";
+  fraStrList += "<h5>" + settings.readEntry ("elinux/user/nazwa") + "<br>";
   fraStrList +=
-    settings.readEntry ("przelewy/user/kod") + " " +
-    settings.readEntry ("przelewy/user/miejscowosc") + "<br>";
-  fraStrList += settings.readEntry ("przelewy/user/adres") + "<br>";	// "ul. " + 
-  fraStrList += "NIP: " + settings.readEntry ("przelewy/user/nip") + "<br>";
+    settings.readEntry ("elinux/user/kod") + " " +
+    settings.readEntry ("elinux/user/miejscowosc") + "<br>";
+  fraStrList += settings.readEntry ("elinux/user/adres") + "<br>";	// "ul. " + 
+  fraStrList += "NIP: " + settings.readEntry ("elinux/user/nip") + "<br>";
   fraStrList +=
-    "Nr konta: " + settings.readEntry ("przelewy/user/konto").replace ("-",
+    "Nr konta: " + settings.readEntry ("elinux/user/konto").replace ("-",
 								       " ") +
     "<br>";
 
-  if (settings.readEntry ("przelewy/user/phone") != "")
+  if (settings.readEntry ("elinux/user/phone") != "")
     fraStrList +=
-      tr ("Telefon: ") + settings.readEntry ("przelewy/user/phone") + "<br>";
-  if (settings.readEntry ("przelewy/user/email") != "")
+      tr ("Telefon: ") + settings.readEntry ("elinux/user/phone") + "<br>";
+  if (settings.readEntry ("elinux/user/email") != "")
     fraStrList +=
-      tr ("E-mail: ") + settings.readEntry ("przelewy/user/email") + "<br>";
-  if (settings.readEntry ("przelewy/user/www") != "")
+      tr ("E-mail: ") + settings.readEntry ("elinux/user/email") + "<br>";
+  if (settings.readEntry ("elinux/user/www") != "")
     fraStrList +=
-      tr ("WWW: ") + settings.readEntry ("przelewy/user/www") + "<br>";
+      tr ("WWW: ") + settings.readEntry ("elinux/user/www") + "<br>";
 
 
   fraStrList += "</h5>";
@@ -1094,20 +1094,20 @@ FormFra::saveInvoice ()
   QDomElement sprzedawca;
   sprzedawca = doc.createElement ("sprzedawca"); // do we need to change this (for eng trans)??
   QSettings settings;
-  sprzedawca.setAttribute ("nazwa", settings.readEntry ("przelewy/user/nazwa"));
-  sprzedawca.setAttribute ("kod", settings.readEntry ("przelewy/user/kod"));
-  sprzedawca.setAttribute ("miasto", settings.readEntry ("przelewy/user/miejscowosc"));
+  sprzedawca.setAttribute ("nazwa", settings.readEntry ("elinux/user/nazwa"));
+  sprzedawca.setAttribute ("kod", settings.readEntry ("elinux/user/kod"));
+  sprzedawca.setAttribute ("miasto", settings.readEntry ("elinux/user/miejscowosc"));
   sprzedawca.setAttribute ("ulica",
-			   settings.readEntry ("przelewy/user/adres"));
-  sprzedawca.setAttribute ("nip", settings.readEntry ("przelewy/user/nip"));
+			   settings.readEntry ("elinux/user/adres"));
+  sprzedawca.setAttribute ("nip", settings.readEntry ("elinux/user/nip"));
   sprzedawca.setAttribute ("konto",
-			   settings.readEntry ("przelewy/user/konto").
+			   settings.readEntry ("elinux/user/konto").
 			   replace (" ", "-"));
   sprzedawca.setAttribute ("telefon",
-			   settings.readEntry ("przelewy/user/phone"));
+			   settings.readEntry ("elinux/user/phone"));
   sprzedawca.setAttribute ("email",
-			   settings.readEntry ("przelewy/user/email"));
-  sprzedawca.setAttribute ("www", settings.readEntry ("przelewy/user/www"));
+			   settings.readEntry ("elinux/user/email"));
+  sprzedawca.setAttribute ("www", settings.readEntry ("elinux/user/www"));
   root.appendChild (sprzedawca);
 
   QDomElement nabywca;
