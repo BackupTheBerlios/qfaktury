@@ -1472,8 +1472,8 @@ korForm::saveInvoice ()
   QSettings settings1;
   settings1.beginGroup ("elinux");
 
-  ret += "korekta|";
-  root.setAttribute ("type", "korekta");
+  ret += tr("korekta") + "|";
+  root.setAttribute ("type", tr("korekta"));
   settings1.writeEntry ("faktury/korNr", korNr->text ());
 
   settings1.endGroup ();

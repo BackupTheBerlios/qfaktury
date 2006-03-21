@@ -450,6 +450,10 @@ Grafika:
         <source>Uruchomienie si&#xea; nie powiod&#xb3;o. Prawdopodobnie skrypt nie dzia&#xb3;a.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>wersja</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Form2</name>
@@ -511,237 +515,6 @@ Grafika:
     </message>
     <message>
         <source>99-9999-9999-9999-9999-9999-9999; </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Form3</name>
-    <message>
-        <source>Kreator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kreator nowego przelewu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;font size=&quot;+2&quot;&gt;&lt;b&gt;Witaj !!&lt;/b&gt;&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Co chcesz zrobic?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Wpłata</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Przelew</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Krok 2 z 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nazwa zleceniodawcy:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nazwa:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Miejscowość:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kod:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Adres:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nr konta:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>99-9999-9999-9999-9999-9999-9999; </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Krok 3 z 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Krok 4 z 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Pozostałe dane: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Słownie:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kwota:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>,</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>999999,99; </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Tytułem:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>jeden</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwa</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cztery</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;&#xe6;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sze&#xb6;&#xe6;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;&#xe6;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>jedena&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwana&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzyna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>czterna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;tna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>szesna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedemna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiemna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;tna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwadziescia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzydziesci</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>czterdzie&#xb6;ci</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sze&#xb6;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedemdziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiemdziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;&#xe6;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sto</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwie&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzysta</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>czterysta</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;&#xe6;set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sze&#xb6;&#xe6;set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedemset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiemset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;&#xe6;set</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1479,15 +1252,11 @@ to na fakturze pojawi sie napis: zapłacono.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>nr</source>
+        <source>FVAT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>data.wyst</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>data.sprzed</source>
+        <source>FPro</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2072,6 +1841,10 @@ to na fakturze pojawi sie napis: zapłacono.</source>
     </message>
     <message>
         <source>Nie ma towar&#xf3;w</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>korekta</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

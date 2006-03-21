@@ -1060,11 +1060,11 @@ FormFra::saveInvoice ()
   // if (!file.open (IO_ReadOnly)) {
 
   root = doc.createElement ("faktura");
-  root.setAttribute (tr("nr"), frNr->text ());
+  root.setAttribute ( "nr", frNr->text ());
   ret += frNr->text () + "|";
-  root.setAttribute ( tr("data.wyst"), QDate::currentDate ().toString ("yyyy-MM-dd"));
+  root.setAttribute ( "data.wyst", QDate::currentDate ().toString ("yyyy-MM-dd"));
   ret += QDate::currentDate ().toString ("yyyy-MM-dd") + "|";
-  root.setAttribute ( tr("data.sprzed"), sellingDate->date ().toString ("yyyy-MM-dd"));
+  root.setAttribute ( "data.sprzed", sellingDate->date ().toString ("yyyy-MM-dd"));
 
   QSettings settings1;
   settings1.beginGroup ("elinux");
@@ -1072,22 +1072,22 @@ FormFra::saveInvoice ()
 #ifdef QF_base__
   if (invType == FVat)
     {
-      root.setAttribute ("type", "FVAT");
+      root.setAttribute ("type", tr("FVAT"));
       settings1.writeEntry ("faktury/fvat", frNr->text ());
-      ret += "FVAT|";
+      ret += tr("FVAT") + "|";
     }
   else
     {
-      root.setAttribute ("type", "FPro");
+      root.setAttribute ("type", tr("FPro"));
       settings1.writeEntry ("faktury/fpro", frNr->text ());
-      ret += "FPro|";
+      ret += tr("FPro") + "|";
     }
 #endif
 
 #ifdef QF_noVAT__
-  root.setAttribute ("type", "FVAT");
+  root.setAttribute ("type", tr("FVAT"));
   settings1.writeEntry ("faktury/fvat", frNr->text ());
-  ret += "FVAT|";
+  ret += tr("FVAT") + "|";
 #endif
 
   settings1.endGroup ();

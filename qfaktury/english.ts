@@ -188,7 +188,7 @@
     </message>
     <message>
         <source>Q</source>
-        <translation>Q</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Edytuj</source>
@@ -272,7 +272,7 @@
     </message>
     <message>
         <source>Nowa korekta</source>
-        <translation>New proofs</translation>
+        <translation>New revision</translation>
     </message>
     <message>
         <source>Nowa pro forma</source>
@@ -348,30 +348,30 @@ Grapics:(new line)
     <message>
         <source>Autor nie udziela &#xbf;adnej gwarancji oraz r&#xea;kojmi, &#xbf;e program b&#xea;dzie dzia&#xb3;a&#xb3;
 </source>
-        <translation>   </translation>
+        <translation></translation>
     </message>
     <message>
         <source>prawid&#xb3;owo, jest odpowiedniej jako&#xb6;ci oraz &#xbf;e spe&#xb3;ni oczekiwania
 </source>
-        <translation>   </translation>
+        <translation></translation>
     </message>
     <message>
         <source>u&#xbf;ytkownika. Autor nie odpowiada za jakiekolwiek straty wynik&#xb3;e z u&#xbf;ywania
 </source>
-        <translation>   </translation>
+        <translation></translation>
     </message>
     <message>
         <source>programu, w tym utrat&#xea; spodziewanych korzy&#xb6;ci, danych, informacji
 </source>
-        <translation>   </translation>
+        <translation></translation>
     </message>
     <message>
         <source>gospodarczych lub koszt urz&#xb1;dze&#xf1; lub program&#xf3;w zast&#xea;pczych.</source>
-        <translation type="unfinished">   </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>korekta</source>
-        <translation>revision</translation>
+        <translation>REVISION</translation>
     </message>
     <message>
         <source>FVAT</source>
@@ -457,6 +457,10 @@ Grapics:(new line)
         <source>Uruchomienie si&#xea; nie powiod&#xb3;o. Prawdopodobnie skrypt nie dzia&#xb3;a.</source>
         <translation>Script faild. Check script and try again. </translation>
     </message>
+    <message>
+        <source>wersja</source>
+        <translation type="unfinished">version</translation>
+    </message>
 </context>
 <context>
     <name>Form2</name>
@@ -466,7 +470,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>O&amp;K</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O&amp;K</translation>
     </message>
     <message>
         <source>Alt+K</source>
@@ -474,7 +478,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>Can&amp;cel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Can&amp;cel</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -510,11 +514,11 @@ Grapics:(new line)
     </message>
     <message>
         <source>E-mail:</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail:</translation>
     </message>
     <message>
         <source>WWW:</source>
-        <translation type="unfinished"></translation>
+        <translation>WWW: </translation>
     </message>
     <message>
         <source>99-9999-9999-9999-9999-9999-9999; </source>
@@ -525,231 +529,23 @@ Grapics:(new line)
     <name>Form3</name>
     <message>
         <source>Kreator</source>
-        <translation type="unfinished">Wizard</translation>
-    </message>
-    <message>
-        <source>Kreator nowego przelewu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;font size=&quot;+2&quot;&gt;&lt;b&gt;Witaj !!&lt;/b&gt;&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Co chcesz zrobic?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Wpłata</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Przelew</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Krok 2 z 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nazwa zleceniodawcy:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Wizard</translation>
     </message>
     <message>
         <source>Nazwa:</source>
-        <translation type="unfinished">Name:</translation>
+        <translation type="obsolete">Name:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Miejscowość:</source>
-        <translation type="unfinished">City:</translation>
-    </message>
-    <message>
-        <source>Kod:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">City:</translation>
     </message>
     <message>
         <source>Adres:</source>
-        <translation type="unfinished">Address:</translation>
+        <translation type="obsolete">Address:</translation>
     </message>
     <message>
         <source>Nr konta:</source>
-        <translation type="unfinished">IBAN:</translation>
-    </message>
-    <message>
-        <source>99-9999-9999-9999-9999-9999-9999; </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Krok 3 z 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Krok 4 z 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Pozostałe dane: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Słownie:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kwota:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>,</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>999999,99; </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <source>Tytułem:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>jeden</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwa</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cztery</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;&#xe6;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sze&#xb6;&#xe6;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;&#xe6;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>jedena&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwana&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzyna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>czterna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;tna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>szesna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedemna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiemna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;tna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwadziescia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzydziesci</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>czterdzie&#xb6;ci</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sze&#xb6;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedemdziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiemdziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;&#xe6;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sto</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dwie&#xb6;cie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>trzysta</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>czterysta</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>pi&#xea;&#xe6;set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sze&#xb6;&#xe6;set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>siedemset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>osiemset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dziewi&#xea;&#xe6;set</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">IBAN:</translation>
     </message>
 </context>
 <context>
@@ -760,7 +556,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>O&amp;K</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O&amp;K</translation>
     </message>
     <message>
         <source>Alt+K</source>
@@ -768,7 +564,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>Can&amp;cel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Can&amp;cel</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -859,7 +655,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>O&amp;K</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O&amp;K</translation>
     </message>
     <message>
         <source>Alt+K</source>
@@ -875,7 +671,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>Can&amp;cel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Can&amp;cel</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -967,7 +763,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>Jedn/Korekty</source>
-        <translation>Proofs</translation>
+        <translation>Revisions</translation>
     </message>
     <message>
         <source>Spis jednostek:</source>
@@ -975,7 +771,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>Nowa:</source>
-        <translation type="unfinished">New</translation>
+        <translation>New:</translation>
     </message>
     <message encoding="UTF-8">
         <source>&amp;Usuń</source>
@@ -987,7 +783,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>&amp;Dodaj</source>
-        <translation type="unfinished">Add</translation>
+        <translation>&amp;Add</translation>
     </message>
     <message>
         <source>Alt+D</source>
@@ -1012,7 +808,7 @@ korekt:</source>
     </message>
     <message encoding="UTF-8">
         <source>&amp;Góra</source>
-        <translation type="unfinished">Up</translation>
+        <translation>&amp;Up</translation>
     </message>
     <message>
         <source>Alt+G</source>
@@ -1032,7 +828,7 @@ korekt:</source>
     </message>
     <message encoding="UTF-8">
         <source>Gó&amp;ra</source>
-        <translation type="unfinished">Up</translation>
+        <translation>&amp;Up</translation>
     </message>
     <message>
         <source>Alt+R</source>
@@ -1056,7 +852,7 @@ Pozycja, która znajduje się na samym początku tej listy
 w większości przypadków powinna być gotówką, gdyż 
 jeśli przy wystawianiu faktury wybierzemy pierwszy elemant
 to na fakturze pojawi sie napis: zapłacono.</source>
-        <translation>&lt;b&gt;Attention!!&lt;/b&gt;&lt;br&gt;(new line)
+        <translation>&lt;b&gt;Attention!!&lt;/b&gt;&lt;br&gt;
 Position from the top of this list should be cash, because
 if we choose on the invoice this position on the invoice
 print will shown: payments done. </translation>
@@ -1198,7 +994,7 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>co&amp;fnij</source>
-        <translation type="unfinished">Undo: </translation>
+        <translation>Un&amp;do</translation>
     </message>
     <message>
         <source>Alt+F</source>
@@ -1210,7 +1006,7 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Dru&amp;kuj</source>
-        <translation type="unfinished">Print: </translation>
+        <translation>Pri&amp;nt</translation>
     </message>
     <message>
         <source>Alt+K</source>
@@ -1326,7 +1122,7 @@ print will shown: payments done. </translation>
     </message>
     <message encoding="UTF-8">
         <source>Stały</source>
-        <translation type="unfinished">Const.</translation>
+        <translation>Constant</translation>
     </message>
     <message>
         <source>Edytuje Faktur&#xea; VAT</source>
@@ -1490,15 +1286,23 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>nr</source>
-        <translation>Number</translation>
+        <translation type="obsolete">Number</translation>
     </message>
     <message>
         <source>data.wyst</source>
-        <translation>creation.date</translation>
+        <translation type="obsolete">creation.date</translation>
     </message>
     <message>
         <source>data.sprzed</source>
-        <translation>sell.date</translation>
+        <translation type="obsolete">sell.date</translation>
+    </message>
+    <message>
+        <source>FVAT</source>
+        <translation type="unfinished">INVOICE</translation>
+    </message>
+    <message>
+        <source>FPro</source>
+        <translation type="unfinished">PROFORMA</translation>
     </message>
 </context>
 <context>
@@ -1653,6 +1457,10 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2079,6 +1887,10 @@ print will shown: payments done. </translation>
     <message>
         <source>Nie ma towar&#xf3;w</source>
         <translation>No goods</translation>
+    </message>
+    <message>
+        <source>korekta</source>
+        <translation>REVISION</translation>
     </message>
 </context>
 <context encoding="UTF-8">

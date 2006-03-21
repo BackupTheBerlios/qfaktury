@@ -20,7 +20,7 @@
 #include <qdom.h>
 
 #include "kontr.h"
-#include "kreator.h"
+// #include "kreator.h"
 #include "mainform.h"
 #include "preview.h"
 #include "sett.h"
@@ -42,6 +42,34 @@ Form1::init ()
   QTextCodec::setCodecForCStrings (QTextCodec::codecForName (localEnc));
   QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
   QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
+
+
+  bool ok;
+  settings.readEntry ("elinux/user/nazwa", "", &ok);
+  if (ok) {
+	// qDebug("jest");
+	} else {
+	// qDebug("nima");
+	QString tmp = settings.readEntry ("przelewy/user/nazwa");
+	  	settings.writeEntry ("elinux/user/nazwa", tmp);	// zapis String
+	tmp = settings.readEntry ("przelewy/user/miejscowosc");
+		settings.writeEntry ("elinux/user/miejscowosc", tmp);
+	tmp = settings.readEntry ("przelewy/user/kod");
+	  	settings.writeEntry ("elinux/user/kod", tmp);
+	tmp = settings.readEntry ("przelewy/user/adres");
+	  	settings.writeEntry ("elinux/user/adres", tmp);
+	tmp = settings.readEntry ("przelewy/user/konto");
+	  	settings.writeEntry ("elinux/user/konto", tmp);
+	tmp = settings.readEntry ("przelewy/user/nip");
+	  	settings.writeEntry ("elinux/user/nip", tmp);
+	tmp = settings.readEntry ("przelewy/user/phone");
+	  	settings.writeEntry ("elinux/user/phone", tmp);
+	tmp = settings.readEntry ("przelewy/user/email");
+	  	settings.writeEntry ("elinux/user/email", tmp);
+	tmp = settings.readEntry ("przelewy/user/www");
+	  	settings.writeEntry ("elinux/user/www", tmp);
+	}
+
 
   //  create local user directory for store xml files
   //  works only on Linux -> see also licence Qt 3
@@ -121,7 +149,7 @@ Form1::init ()
   fakturyDodajAction->setText ( tr("Nowy rachunek") );
   fakturyDodajAction->setMenuText ( tr("Nowy rachunek") );
 #endif
-  QString ver = "QFaktury wersja ";
+  QString ver = "QFaktury " + tr("wersja") + " ";
   ver += version;
   setCaption (ver);
 }
@@ -306,7 +334,6 @@ Form1::readHist (QString progDir)
   for (i = 0; i < max; ++i)
     {
       // qDebug(pliczki[i]);
-
       if (applyFiltr (pliczki[i]))
 	{
 
@@ -650,11 +677,14 @@ void
 Form1::kretorClick ()
 {
   // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+  /*
   Form3 *kreatorWindow = new Form3;
   if (kreatorWindow->exec () == QDialog::Accepted)
     {
       kreatorWindow->print ();
     }
+  // we don't want this s%
+  */
 }
 
 void
@@ -860,7 +890,7 @@ Form1::newKor ()
   // qDebug (__FUNCTION__);
 
   // same question what to do with this??
-  if ((tableH->text (row, 3) == "FVAT"))
+  if ((tableH->text (row, 3) == tr("FVAT")))
     {
       korForm *korWindow = new korForm;
       // qDebug( pdGlob );
@@ -878,7 +908,7 @@ Form1::newKor ()
 	  tableH->setText (tableH->numRows () - 1, 5, row[5]);	// NIP
 	}
     }
-  if ((tableH->text (row, 3) == "korekta"))
+  if ((tableH->text (row, 3) == tr("korekta")))
     {
       QMessageBox::information (this, "QFaktury",
 				tr("Do korekt nie wystawiamy korekt"),

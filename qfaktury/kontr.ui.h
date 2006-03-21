@@ -24,11 +24,12 @@ bool editKontr;
  1. CAPTION!!!!!!!!!!!!!!!
          */
 
-
+// kontrWindow->readData (tableK->text (row, 0), tableK->text (row, 1));
 void
 Form4::readData (QString name, QString type)
 {
   nazwaEdit = name;
+
   // qDebug (name + "   " + type);
   QDomDocument doc ("kontrahenci");
   QDomElement root;

@@ -42,9 +42,9 @@ Form7::init ()
   QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
   QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
   tablePos->setColumnWidth (0, 300);
-  readSettings ();
   getLanguages();
   getEncodings();
+  readSettings ();
 }
 
 void
@@ -57,6 +57,25 @@ Form7::apply ()
 void
 Form7::getLanguages()
 {
+ QDir abs (qApp->argv ()[0]);
+ QString graphDir;
+ if (QString (qApp->argv ()[0]).left (2) == "./")
+   graphDir = abs.absPath ();
+ else
+   graphDir = "/usr/bin/qfaktury";
+  graphDir = graphDir.replace ("bin", "share");
+  graphDir = graphDir + "/translations/";
+  QDir allFiles;
+  allFiles.setPath ( graphDir );
+  allFiles.setFilter (QDir::Files);
+  allFiles.setNameFilter ("*.qm");
+  QStringList pliczki = allFiles.entryList ();
+  int i, max = pliczki.count ();
+  for (i = 0; i < max; ++i)
+    {
+     langList->insertItem( pliczki[i].remove(".qm", FALSE) );
+    }
+
 }
 
 void
@@ -99,6 +118,8 @@ Form7::saveSettings ()
   settings.beginGroup ("elinux");
   settings.writeEntry ("default_browser", cbBrowser->isChecked ());
   settings.writeEntry ("browser_name", editBrName->text ());
+  settings.writeEntry ("lang", langList->currentText() );
+  settings.writeEntry ("localEnc", codecList->currentText() );
   settings.endGroup ();
 
   settings.beginGroup ("elinux/faktury");
@@ -287,6 +308,12 @@ Form7::readSettings ()
 			 readBoolEntry ("elinux/faktury/editSymbol"));
   spbNumb->setValue (settings.
 		     readNumEntry ("elinux/faktury/chars_in_symbol"));
+
+ codecList->setCurrentText( settings.readEntry ("elinux/localEnc", "ISO 8859-2") );
+
+
+ langList->setCurrentText( settings.readEntry ("elinux/lang", "english") );
+ 
 }
 
 

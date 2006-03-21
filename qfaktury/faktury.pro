@@ -3,12 +3,10 @@
 # Subdir relative project main directory: .
 # Target is an application:  ./bin/qfaktury
 
-TRANSLATIONS     = polski.ts english.ts  
-LANGUAGE = C++ 
-DEFAULTCODEC = ISO8859-2 
 INSTALLS += templates \
             icons \
             applications \
+	    translations \
             pixmaps \
             target 
 target.path = /usr/bin 
@@ -16,17 +14,13 @@ pixmaps.files += ./share/qfaktury/icons/qfaktury_48.png
 pixmaps.path = /usr/share/pixmaps 
 applications.files += ./share/applications/*.desktop 
 applications.path = /usr/share/applications 
+translations.files += ./share/applications/*.qm
+translations.path = /usr/share/qfaktury/translations/*
 icons.files += ./share/qfaktury/icons/* 
 icons.path = /usr/share/qfaktury/icons 
 templates.files += ./share/qfaktury/templates/*.css 
 templates.path = /usr/share/qfaktury/templates 
-TARGET = ./bin/qfaktury 
-CONFIG += release \
-          warn_on \
-          qt 
-TEMPLATE = app 
 FORMS += kontr.ui \
-         kreator.ui \
          mainform.ui \
          preview.ui \
          fraform.ui \
@@ -37,6 +31,8 @@ FORMS += kontr.ui \
          chamount.ui \
          korform.ui \
          towary.ui 
+TRANSLATIONS += polski.ts \
+                english.ts 
 HEADERS += chamount.ui.h \
            fraform.ui.h \
            kontlist.ui.h \
@@ -54,6 +50,13 @@ HEADERS += chamount.ui.h \
 SOURCES += main.cpp \
            slownie.cpp \
            zaokr.cpp 
+LANGUAGE = C++
+DEFAULTCODEC = ISO8859-2
+TARGET = ./bin/qfaktury
+CONFIG += release \
+warn_on \
+qt
+TEMPLATE = app
 unix{
   UI_DIR = .ui
   MOC_DIR = .moc

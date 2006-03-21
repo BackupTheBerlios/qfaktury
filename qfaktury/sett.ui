@@ -1605,6 +1605,18 @@ to na fakturze pojawi sie napis: zapłacono.</string>
         <receiver>Form7</receiver>
         <slot>defTextBtn()</slot>
     </connection>
+    <connection>
+        <sender>codecList</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
+    <connection>
+        <sender>langList</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>Form7</receiver>
+        <slot>zastBtnEnable()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>closeButton</tabstop>

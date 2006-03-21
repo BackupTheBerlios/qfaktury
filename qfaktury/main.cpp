@@ -17,18 +17,8 @@ main (int argc, char **argv)
   QRect screen = QApplication::desktop ()->screenGeometry ();
 
   QSettings settings;
-  QString lang = settings.readEntry ("elinux/lang", "polski");
+  QString lang = settings.readEntry ("elinux/lang", "english");
 
-
-  QTranslator qfaktury( 0 );
-  qfaktury.load( QString( lang ), "." );
-  a.installTranslator( &qfaktury );
-
-#ifndef QF_nosplash__
-  QLabel splash ("", 0, "splash",
-		 Qt::WStyle_NoBorder | Qt::WStyle_Customize | Qt::
-		 WStyle_StaysOnTop | Qt::WShowModal);
-  splash.resize (380, 450);
   QDir abs (a.argv ()[0]);
   QString graphDir;
   if (QString (a.argv ()[0]).left (2) == "./")
@@ -38,6 +28,19 @@ main (int argc, char **argv)
   //absPath();
   graphDir = graphDir.replace ("bin", "share");
   // qDebug (graphDir);
+  QString langDir = graphDir + "/translations/";
+
+  QTranslator qfaktury( 0 );
+  qfaktury.load( QString( lang ), langDir  );
+  a.installTranslator( &qfaktury );
+
+
+#ifndef QF_nosplash__
+  QLabel splash ("", 0, "splash",
+		 Qt::WStyle_NoBorder | Qt::WStyle_Customize | Qt::
+		 WStyle_StaysOnTop | Qt::WShowModal);
+  splash.resize (380, 450);
+
 
   splash.setPixmap (QPixmap (graphDir + "/icons/splash.png"));
   splash.move (screen.center () - QPoint (splash.width () / 2,
