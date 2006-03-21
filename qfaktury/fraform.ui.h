@@ -471,9 +471,12 @@ QStringList fraStrList;
 void
 FormFra::makeInvoiceHeadar ()
 {
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+
 
   fraStrList += "<html><head>";
-  fraStrList += tr("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-2\" />");
+  fraStrList += tr("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=" + localEnc + "\" />");
   fraStrList += "<meta name=\"creator\" value=\"http://www.e-linux.pl\" />";
   fraStrList += "</head>";
 
@@ -521,7 +524,7 @@ FormFra::makeInvoiceHeadar ()
     "<td colspan=\"2\" width=\"60%\" align=\"left\" valign=\"center\" class=\"podpisy\">";
   // logo code
   // eof logo
-  QSettings settings;
+
   QString logo = settings.readEntry ("elinux/faktury/logo");
   if (logo != "")
     {

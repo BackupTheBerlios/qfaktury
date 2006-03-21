@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Jedn.</source>
-        <translation type="unfinished">Currency</translation>
+        <translation>Curr.</translation>
     </message>
     <message>
         <source>Netto1</source>
@@ -176,7 +176,7 @@
     </message>
     <message>
         <source>O &amp;Qt</source>
-        <translation type="unfinished">About Qt</translation>
+        <translation>About &amp;Qt</translation>
     </message>
     <message>
         <source>O Qt</source>
@@ -248,7 +248,7 @@
     </message>
     <message>
         <source>Ctrl+T</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Export do EDI</source>
@@ -284,15 +284,15 @@
     </message>
     <message>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Action_2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Nowa faktura</source>
@@ -300,7 +300,7 @@
     </message>
     <message>
         <source>F5</source>
-        <translation type="unfinished"></translation>
+        <translation>F5</translation>
     </message>
     <message>
         <source>Nowy rachunek</source>
@@ -343,35 +343,35 @@ Grapics:(new line)
     <message>
         <source>Ten program komputerowy dostarczany jest przez autora w formie &quot;takiej, jaki jest&quot;
 </source>
-        <translation type="unfinished">This program is provided AS IS with no WARRANTY OF ANY KIND INCLUDING THE WARRANTY OF DESIGN MARCHANTABILITY AND FITNESS OF ANY PARTICULAR PURPOSE. </translation>
+        <translation>This program is provided &quot;AS IS&quot; with no WARRANTY OF ANY KIND INCLUDING THE WARRANTY OF DESIGN MARCHANTABILITY AND FITNESS OF ANY PARTICULAR PURPOSE</translation>
     </message>
     <message>
         <source>Autor nie udziela &#xbf;adnej gwarancji oraz r&#xea;kojmi, &#xbf;e program b&#xea;dzie dzia&#xb3;a&#xb3;
 </source>
-        <translation></translation>
+        <translation>   </translation>
     </message>
     <message>
         <source>prawid&#xb3;owo, jest odpowiedniej jako&#xb6;ci oraz &#xbf;e spe&#xb3;ni oczekiwania
 </source>
-        <translation></translation>
+        <translation>   </translation>
     </message>
     <message>
         <source>u&#xbf;ytkownika. Autor nie odpowiada za jakiekolwiek straty wynik&#xb3;e z u&#xbf;ywania
 </source>
-        <translation></translation>
+        <translation>   </translation>
     </message>
     <message>
         <source>programu, w tym utrat&#xea; spodziewanych korzy&#xb6;ci, danych, informacji
 </source>
-        <translation></translation>
+        <translation>   </translation>
     </message>
     <message>
         <source>gospodarczych lub koszt urz&#xb1;dze&#xf1; lub program&#xf3;w zast&#xea;pczych.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">   </translation>
     </message>
     <message>
         <source>korekta</source>
-        <translation>proofs</translation>
+        <translation>revision</translation>
     </message>
     <message>
         <source>FVAT</source>
@@ -525,7 +525,7 @@ Grapics:(new line)
     <name>Form3</name>
     <message>
         <source>Kreator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wizard</translation>
     </message>
     <message>
         <source>Kreator nowego przelewu</source>
@@ -557,11 +557,11 @@ Grapics:(new line)
     </message>
     <message>
         <source>Nazwa:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Name:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Miejscowość:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">City:</translation>
     </message>
     <message>
         <source>Kod:</source>
@@ -569,11 +569,11 @@ Grapics:(new line)
     </message>
     <message>
         <source>Adres:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Address:</translation>
     </message>
     <message>
         <source>Nr konta:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IBAN:</translation>
     </message>
     <message>
         <source>99-9999-9999-9999-9999-9999-9999; </source>
@@ -891,7 +891,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>Nazwa pozycji</source>
-        <translation type="unfinished">Postion name</translation>
+        <translation>Position name</translation>
     </message>
     <message encoding="UTF-8">
         <source>Język:</source>
@@ -907,7 +907,7 @@ Grapics:(new line)
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Faktury</source>
@@ -991,24 +991,24 @@ Grapics:(new line)
     </message>
     <message>
         <source>Alt+D</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alt+D</translation>
     </message>
     <message>
         <source>Przyczyny 
 korekt:</source>
-        <translation type="unfinished">Reason</translation>
+        <translation>Reason: </translation>
     </message>
     <message>
         <source>Stawki/Waluty</source>
-        <translation type="unfinished">Units:</translation>
+        <translation>Units</translation>
     </message>
     <message>
         <source>Spis walut:</source>
-        <translation type="unfinished">Currencies:</translation>
+        <translation>Currencies:</translation>
     </message>
     <message>
         <source>Spis stawek:</source>
-        <translation type="unfinished">Units:</translation>
+        <translation>Units:</translation>
     </message>
     <message encoding="UTF-8">
         <source>&amp;Góra</source>
@@ -1016,19 +1016,19 @@ korekt:</source>
     </message>
     <message>
         <source>Alt+G</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message encoding="UTF-8">
         <source>Dół</source>
-        <translation type="unfinished">Down</translation>
+        <translation>Down</translation>
     </message>
     <message encoding="UTF-8">
         <source>Płatności</source>
-        <translation type="unfinished">Payments</translation>
+        <translation>Payments</translation>
     </message>
     <message encoding="UTF-8">
         <source>Forma płatności:</source>
-        <translation type="unfinished">Payments type:</translation>
+        <translation>Payments type:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Gó&amp;ra</source>
@@ -1056,14 +1056,14 @@ Pozycja, która znajduje się na samym początku tej listy
 w większości przypadków powinna być gotówką, gdyż 
 jeśli przy wystawianiu faktury wybierzemy pierwszy elemant
 to na fakturze pojawi sie napis: zapłacono.</source>
-        <translation type="unfinished">&lt;b&gt;Attention!!&lt;/b&gt;&lt;br&gt;(new line)
+        <translation>&lt;b&gt;Attention!!&lt;/b&gt;&lt;br&gt;(new line)
 Position from the top of this list should be cash, because
 if we choose on the invoice this position on the invoice
 print will shown: payments done. </translation>
     </message>
     <message>
         <source>Wydruki</source>
-        <translation type="unfinished">Prints</translation>
+        <translation>Prints</translation>
     </message>
     <message encoding="UTF-8">
         <source>Ustawienia przeglądarki: </source>
@@ -1071,23 +1071,23 @@ print will shown: payments done. </translation>
     </message>
     <message encoding="UTF-8">
         <source>Domyślna systemowa</source>
-        <translation type="unfinished">System default</translation>
+        <translation>System default</translation>
     </message>
     <message>
         <source>Inna:</source>
-        <translation type="unfinished">Other: </translation>
+        <translation>Other: </translation>
     </message>
     <message>
         <source>Lp.</source>
-        <translation type="unfinished">Num.</translation>
+        <translation>Num.</translation>
     </message>
     <message>
         <source>Nazwa</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>Kod</source>
-        <translation type="unfinished">Code</translation>
+        <translation>Code</translation>
     </message>
     <message>
         <source>PKWiU</source>
@@ -1095,7 +1095,7 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Ilo&#xb6;&#xe6;</source>
-        <translation type="unfinished">Amount</translation>
+        <translation>Amount</translation>
     </message>
     <message>
         <source>Jm.</source>
@@ -1107,55 +1107,55 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Warto&#xb6;&#xe6; Netto</source>
-        <translation type="unfinished">Nett</translation>
+        <translation>Nett</translation>
     </message>
     <message>
         <source>Rabat %</source>
-        <translation type="unfinished">Discount %</translation>
+        <translation>Discount %</translation>
     </message>
     <message>
         <source>Rabat Warto&#xb6;&#xe6;</source>
-        <translation type="unfinished">Discount value</translation>
+        <translation>Discount value</translation>
     </message>
     <message>
         <source>Netto po rabacie</source>
-        <translation type="unfinished">Nett minus discount</translation>
+        <translation>Nett minus discount</translation>
     </message>
     <message>
         <source>Stawka VAT</source>
-        <translation type="unfinished">Tax value</translation>
+        <translation>Tax value</translation>
     </message>
     <message>
         <source>Kwota Vat</source>
-        <translation type="unfinished">Tax</translation>
+        <translation>Tax</translation>
     </message>
     <message>
         <source>Warto&#xb6;&#xe6; Brutto</source>
-        <translation type="unfinished">Gross</translation>
+        <translation>Gross</translation>
     </message>
     <message>
         <source>Obrazki (*.jpg *.png)</source>
-        <translation type="unfinished">Images (*.jpg *.png)</translation>
+        <translation>Images (*.jpg *.png)</translation>
     </message>
     <message>
         <source>Wybierz logo</source>
-        <translation type="unfinished">Choose logo</translation>
+        <translation>Choose logo</translation>
     </message>
     <message>
         <source>Wybierz plik do wstawienia jako logo</source>
-        <translation type="unfinished">Choose file to put as logo</translation>
+        <translation>Choose file to put as logo</translation>
     </message>
     <message>
         <source>Uwaga!!</source>
-        <translation type="unfinished">Attention!!</translation>
+        <translation>Attention!!</translation>
     </message>
     <message>
         <source>Nie mo&#xbf;na doda&#xe6; pliku. Plik tylko do odczytu.</source>
-        <translation type="unfinished">This file can&apos;t be added. File only for read.</translation>
+        <translation>This file can&apos;t be added. File only for read.</translation>
     </message>
     <message>
         <source>Nie mo&#xbf;na doda&#xe6;. Pole jest puste.</source>
-        <translation type="unfinished">Can&apos;t be added. Field is empty.</translation>
+        <translation>Can&apos;t be added. Field is empty.</translation>
     </message>
     <message>
         <source>Musisz co&#xb6; zaznaczy&#xe6;, &#xbf;eby usuwa&#xe6;</source>
@@ -1174,11 +1174,11 @@ print will shown: payments done. </translation>
     <name>FormFra</name>
     <message>
         <source>Faktura VAT</source>
-        <translation type="unfinished">Invoice</translation>
+        <translation>Invoice</translation>
     </message>
     <message>
         <source>Kontrahent:</source>
-        <translation type="unfinished">Contractor: </translation>
+        <translation>Contractor: </translation>
     </message>
     <message>
         <source>wybier&amp;z</source>
@@ -1186,15 +1186,15 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Alt+Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Symbol:</source>
-        <translation type="unfinished">Symbol:</translation>
+        <translation>Symbol:</translation>
     </message>
     <message>
         <source>1/1/2006</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>co&amp;fnij</source>
@@ -1202,11 +1202,11 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Alt+F</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message encoding="UTF-8">
         <source>Data sprzedaży:</source>
-        <translation type="unfinished">Selling date:</translation>
+        <translation>Selling date:</translation>
     </message>
     <message>
         <source>Dru&amp;kuj</source>
@@ -1214,7 +1214,7 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Alt+K</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Zapis&amp;z</source>
@@ -1226,11 +1226,11 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Dodatkowy tekst:</source>
-        <translation type="unfinished">Additional text</translation>
+        <translation>Additional text:</translation>
     </message>
     <message encoding="UTF-8">
         <source>towar odebrałem zgodnie z fakturą</source>
@@ -1238,27 +1238,27 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Razem netto:</source>
-        <translation type="unfinished">Nett sum:</translation>
+        <translation>Nett sum:</translation>
     </message>
     <message>
         <source>Rabat:</source>
-        <translation type="unfinished">Discount:</translation>
+        <translation>Discount:</translation>
     </message>
     <message>
         <source>Do zaplaty:</source>
-        <translation type="unfinished">Total: </translation>
+        <translation>Total: </translation>
     </message>
     <message>
         <source>0,00</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message encoding="UTF-8">
         <source>Płatność:</source>
-        <translation type="unfinished">Payments method: </translation>
+        <translation>Payments method: </translation>
     </message>
     <message>
         <source>Termin:</source>
-        <translation type="unfinished">Due date:</translation>
+        <translation>Due date:</translation>
     </message>
     <message>
         <source>Waluta:</source>
@@ -1266,183 +1266,179 @@ print will shown: payments done. </translation>
     </message>
     <message encoding="UTF-8">
         <source>Lista towarów/usług:</source>
-        <translation type="unfinished">List of goods/servieces:</translation>
+        <translation>List of goods/servieces:</translation>
     </message>
     <message>
         <source>Lp.</source>
-        <translation type="unfinished">Num.</translation>
+        <translation>Num.</translation>
     </message>
     <message>
         <source>Nazwa</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>Kod</source>
-        <translation type="unfinished">Code</translation>
+        <translation>Code</translation>
     </message>
     <message>
         <source>PKWiU</source>
-        <translation type="unfinished">Classification</translation>
+        <translation>Classification</translation>
     </message>
     <message encoding="UTF-8">
         <source>Ilość</source>
-        <translation type="unfinished"></translation>
+        <translation>Amount</translation>
     </message>
     <message>
         <source>Jm.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un.</translation>
     </message>
     <message>
         <source>Rabat</source>
-        <translation type="unfinished"></translation>
+        <translation>Discount</translation>
     </message>
     <message>
         <source>Cena jn.</source>
-        <translation type="unfinished"></translation>
+        <translation>Price/unit.</translation>
     </message>
     <message>
         <source>Netto</source>
-        <translation type="unfinished"></translation>
+        <translation>Nett</translation>
     </message>
     <message>
         <source>Vat</source>
-        <translation type="unfinished"></translation>
+        <translation>Tax</translation>
     </message>
     <message>
         <source>Brutto</source>
-        <translation type="unfinished"></translation>
+        <translation>Gross</translation>
     </message>
     <message>
         <source>Dodaj</source>
-        <translation type="unfinished"></translation>
+        <translation>Add</translation>
     </message>
     <message encoding="UTF-8">
         <source>Usuń</source>
-        <translation type="unfinished"></translation>
+        <translation>Delete</translation>
     </message>
     <message>
         <source>Edycja</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit</translation>
     </message>
     <message encoding="UTF-8">
         <source>Stały</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Const.</translation>
     </message>
     <message>
         <source>Edytuje Faktur&#xea; VAT</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit Invoice</translation>
     </message>
     <message>
         <source>Edytuje Faktur&#xea; Pro Forma</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit Pro Forma</translation>
     </message>
     <message>
         <source>Edytuje Rachunek</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-2&quot; /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit no-taxable invoice</translation>
     </message>
     <message>
         <source>&lt;title&gt;______Faktura VAT______&lt;/title&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;title&gt;______INVOICE______&lt;/title&gt;</translation>
     </message>
     <message>
         <source>&lt;title&gt;______Faktura Pro Forma______&lt;/title&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;title&gt;______Pro Forma______&lt;/title&gt;</translation>
     </message>
     <message>
         <source>&lt;title&gt;______Rachunek______&lt;/title&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;title&gt;______Receipt no tax______&lt;/title&gt;</translation>
     </message>
     <message>
         <source>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Piecz&#xea;&#xe6; wystawcy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Stamp</translation>
     </message>
     <message>
         <source>&lt;h2&gt;FAKTURA VAT&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;Invoice&lt;br&gt;</translation>
     </message>
     <message>
         <source>&lt;h2&gt;FAKTURA Pro Forma&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;Pro Forma&lt;br&gt;</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Rachunek&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;Receipt&lt;br&gt;</translation>
     </message>
     <message>
         <source>&lt;h5&gt;Data wystawienia: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h5&gt;Date:</translation>
     </message>
     <message>
         <source>Data sprzeda&#xbf;y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Selling date:</translation>
     </message>
     <message>
         <source>ORYGINA&#xa3;/KOPIA</source>
-        <translation type="unfinished"></translation>
+        <translation>ORGINAL/DUPLICATE</translation>
     </message>
     <message>
         <source>&lt;h4&gt;Sprzedawca:&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h4&gt;Seller: &lt;!-- im not sure... --&gt;&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>Telefon: </source>
-        <translation type="unfinished"></translation>
+        <translation>Phone:</translation>
     </message>
     <message>
         <source>E-mail: </source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail:</translation>
     </message>
     <message>
         <source>WWW: </source>
-        <translation type="unfinished"></translation>
+        <translation>WWW: </translation>
     </message>
     <message>
         <source>&lt;h4&gt;Nabywca:&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h4&gt;Bill to:&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>Ilo&#xb6;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>Amount</translation>
     </message>
     <message>
         <source>Cena jdn.</source>
-        <translation type="unfinished"></translation>
+        <translation>Price/unit.</translation>
     </message>
     <message>
         <source>Warto&#xb6;&#xe6; Netto</source>
-        <translation type="unfinished"></translation>
+        <translation>Nett</translation>
     </message>
     <message>
         <source>Rabat %</source>
-        <translation type="unfinished"></translation>
+        <translation>Discount %</translation>
     </message>
     <message>
         <source>Rabat Warto&#xb6;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>Discount value</translation>
     </message>
     <message>
         <source>Netto po rabacie</source>
-        <translation type="unfinished"></translation>
+        <translation>Nett minus discount</translation>
     </message>
     <message>
         <source>Stawka VAT</source>
-        <translation type="unfinished"></translation>
+        <translation>Tax value</translation>
     </message>
     <message>
         <source>Kwota Vat</source>
-        <translation type="unfinished"></translation>
+        <translation>Tax</translation>
     </message>
     <message>
         <source>Warto&#xb6;&#xe6; Brutto</source>
-        <translation type="unfinished"></translation>
+        <translation>Gross</translation>
     </message>
     <message>
         <source>&lt;td width=&quot;140&quot;&gt;&amp;nbsp;Razem:&lt;/td&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;td width=&quot;140&quot;&gt;&amp;nbsp;Summ:&lt;/td&gt;</translation>
     </message>
     <message>
         <source>&lt;tr comment=&quot;podsumowanie&quot;&gt;&lt;td&gt;</source>
@@ -1450,210 +1446,210 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>forma p&#xb3;atno&#xb6;ci: </source>
-        <translation type="unfinished"></translation>
+        <translation>Payment method:</translation>
     </message>
     <message>
         <source>termin p&#xb3;atno&#xb6;ci: </source>
-        <translation type="unfinished"></translation>
+        <translation>Payment date: </translation>
     </message>
     <message>
         <source>&lt;b&gt;Zap&#xb3;acono got&#xf3;wk&#xb1;&lt;/b&gt; &lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;payments done&lt;/b&gt; &lt;br&gt;</translation>
     </message>
     <message>
         <source>Og&#xf3;&#xb3;em stawkami:</source>
-        <translation type="unfinished"></translation>
+        <translation>Summary: </translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do wystawienia faktury VAT</source>
-        <translation type="unfinished"></translation>
+        <translation>Name and surname of preson who done this Invoice</translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do wystawienia rachunku</source>
-        <translation type="unfinished"></translation>
+        <translation>Name and surname of person who done this receipt</translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do odbioru faktury VAT</source>
-        <translation type="unfinished"></translation>
+        <translation>Name and surname of person who received this invoice</translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do odbioru rachunku</source>
-        <translation type="unfinished"></translation>
+        <translation>Name i surname of person who received this receipt</translation>
     </message>
     <message>
         <source>QFaktury e-linux.pl wersja</source>
-        <translation type="unfinished"></translation>
+        <translation>QFaktury e-linux.pl version</translation>
     </message>
     <message>
         <source>Wybierz kontrahenta</source>
-        <translation type="unfinished"></translation>
+        <translation>Choose contractor</translation>
     </message>
     <message>
         <source>Nie ma towar&#xf3;w</source>
-        <translation type="unfinished"></translation>
+        <translation>No goods</translation>
     </message>
     <message>
         <source>nr</source>
-        <translation type="unfinished"></translation>
+        <translation>Number</translation>
     </message>
     <message>
         <source>data.wyst</source>
-        <translation type="unfinished"></translation>
+        <translation>creation.date</translation>
     </message>
     <message>
         <source>data.sprzed</source>
-        <translation type="unfinished"></translation>
+        <translation>sell.date</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>jeden</source>
-        <translation type="unfinished"></translation>
+        <translation>one</translation>
     </message>
     <message>
         <source>dwa</source>
-        <translation type="unfinished"></translation>
+        <translation>two</translation>
     </message>
     <message>
         <source>trzy</source>
-        <translation type="unfinished"></translation>
+        <translation>three</translation>
     </message>
     <message>
         <source>cztery</source>
-        <translation type="unfinished"></translation>
+        <translation>four</translation>
     </message>
     <message>
         <source>pi&#xea;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>five</translation>
     </message>
     <message>
         <source>sze&#xb6;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>six</translation>
     </message>
     <message>
         <source>siedem</source>
-        <translation type="unfinished"></translation>
+        <translation>seven</translation>
     </message>
     <message>
         <source>osiem</source>
-        <translation type="unfinished"></translation>
+        <translation>eight</translation>
     </message>
     <message>
         <source>dziewi&#xea;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>nine</translation>
     </message>
     <message>
         <source>jedena&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>ten</translation>
     </message>
     <message>
         <source>dwana&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>eleven</translation>
     </message>
     <message>
         <source>trzyna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>twelve</translation>
     </message>
     <message>
         <source>czterna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>thirteen</translation>
     </message>
     <message>
         <source>pi&#xea;tna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>fourteen</translation>
     </message>
     <message>
         <source>szesna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>sixteen</translation>
     </message>
     <message>
         <source>siedemna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>seventeen</translation>
     </message>
     <message>
         <source>osiemna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>eighteen</translation>
     </message>
     <message>
         <source>dziewi&#xea;tna&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>nineteen</translation>
     </message>
     <message>
         <source>dziesi&#xea;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>nine</translation>
     </message>
     <message>
         <source>dwadziescia</source>
-        <translation type="unfinished"></translation>
+        <translation>twenty</translation>
     </message>
     <message>
         <source>trzydziesci</source>
-        <translation type="unfinished"></translation>
+        <translation>thirty</translation>
     </message>
     <message>
         <source>czterdzie&#xb6;ci</source>
-        <translation type="unfinished"></translation>
+        <translation>forty</translation>
     </message>
     <message>
         <source>pi&#xea;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
+        <translation>fifty</translation>
     </message>
     <message>
         <source>sze&#xb6;&#xe6;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
+        <translation>sixty</translation>
     </message>
     <message>
         <source>siedemdziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
+        <translation>seventy</translation>
     </message>
     <message>
         <source>osiemdziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
+        <translation>eighty</translation>
     </message>
     <message>
         <source>dziewi&#xea;&#xe6;dziesi&#xb1;t</source>
-        <translation type="unfinished"></translation>
+        <translation>ninety</translation>
     </message>
     <message>
         <source>sto</source>
-        <translation type="unfinished"></translation>
+        <translation>hundred</translation>
     </message>
     <message>
         <source>dwie&#xb6;cie</source>
-        <translation type="unfinished"></translation>
+        <translation>two hundred</translation>
     </message>
     <message>
         <source>trzysta</source>
-        <translation type="unfinished"></translation>
+        <translation>three hundred</translation>
     </message>
     <message>
         <source>czterysta</source>
-        <translation type="unfinished"></translation>
+        <translation>four hundred</translation>
     </message>
     <message>
         <source>pi&#xea;&#xe6;set</source>
-        <translation type="unfinished"></translation>
+        <translation>five hundred</translation>
     </message>
     <message>
         <source>sze&#xb6;&#xe6;set</source>
-        <translation type="unfinished"></translation>
+        <translation>six hundred</translation>
     </message>
     <message>
         <source>siedemset</source>
-        <translation type="unfinished"></translation>
+        <translation>seven hundred</translation>
     </message>
     <message>
         <source>osiemset</source>
-        <translation type="unfinished"></translation>
+        <translation>eight hundred</translation>
     </message>
     <message>
         <source>dziewi&#xea;&#xe6;set</source>
-        <translation type="unfinished"></translation>
+        <translation>nine hundred</translation>
     </message>
     <message>
         <source> tys.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">thousand</translation>
     </message>
     <message>
         <source></source>
@@ -1664,622 +1660,618 @@ print will shown: payments done. </translation>
     <name>chAmount</name>
     <message encoding="UTF-8">
         <source>Zmień ilość</source>
-        <translation type="unfinished"></translation>
+        <translation>Change amount</translation>
     </message>
     <message>
         <source>Nazwa towaru:</source>
-        <translation type="unfinished"></translation>
+        <translation>Name:</translation>
     </message>
     <message>
         <source>Kod:</source>
-        <translation type="unfinished"></translation>
+        <translation>Code:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Ilość:</source>
-        <translation type="unfinished"></translation>
+        <translation>Amount:</translation>
     </message>
     <message>
         <source>Rabat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Discount:</translation>
     </message>
     <message encoding="UTF-8">
         <source>zmień</source>
-        <translation type="unfinished"></translation>
+        <translation>change</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>Alt+O</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cancel</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>kontList</name>
     <message>
         <source>Wybierz kontrahenta z listy</source>
-        <translation type="unfinished"></translation>
+        <translation>Choose contractor</translation>
     </message>
     <message>
         <source>Typ:</source>
-        <translation type="unfinished"></translation>
+        <translation>Type:</translation>
     </message>
     <message>
         <source>Firma</source>
-        <translation type="unfinished"></translation>
+        <translation>Company</translation>
     </message>
     <message encoding="UTF-8">
         <source>Urząd</source>
-        <translation type="unfinished"></translation>
+        <translation>Office</translation>
     </message>
     <message>
         <source>O&amp;K</source>
-        <translation type="unfinished"></translation>
+        <translation>O&amp;K</translation>
     </message>
     <message>
         <source>Alt+K</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Can&amp;cel</source>
-        <translation type="unfinished"></translation>
+        <translation>Can&amp;cel</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Wska&#xbf; kontrahenta.</source>
-        <translation type="unfinished"></translation>
+        <translation>Select contractor.</translation>
     </message>
 </context>
 <context>
     <name>korForm</name>
     <message>
         <source>Nowa korekta</source>
-        <translation type="unfinished"></translation>
+        <translation>New revision</translation>
     </message>
     <message>
         <source>Dotyczy faktury:</source>
-        <translation type="unfinished"></translation>
+        <translation>Regard invoice:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Data sprzedaży:</source>
-        <translation type="unfinished"></translation>
+        <translation>Selling date:</translation>
     </message>
     <message>
         <source>Kontrahent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contractor: </translation>
     </message>
     <message encoding="UTF-8">
         <source>Płatność:</source>
-        <translation type="unfinished"></translation>
+        <translation>Payments method: </translation>
     </message>
     <message encoding="UTF-8">
         <source>gotówka</source>
-        <translation type="unfinished"></translation>
+        <translation>cash</translation>
     </message>
     <message>
         <source>Symbol:</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbol:</translation>
     </message>
     <message>
         <source>1/1/2006</source>
-        <translation type="unfinished"></translation>
+        <translation>1/1/2006</translation>
     </message>
     <message>
         <source>co&amp;fnij</source>
-        <translation type="unfinished"></translation>
+        <translation>ba&amp;ck</translation>
     </message>
     <message>
         <source>Alt+F</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Data wystawienia:</source>
-        <translation type="unfinished"></translation>
+        <translation>Creation date:</translation>
     </message>
     <message>
         <source>Termin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Due date:</translation>
     </message>
     <message>
         <source>Przyczyna:</source>
-        <translation type="unfinished"></translation>
+        <translation>Reason:</translation>
     </message>
     <message>
         <source>Dodatkowy tekst:</source>
-        <translation type="unfinished"></translation>
+        <translation>Additional text:</translation>
     </message>
     <message>
         <source>Dru&amp;kuj</source>
-        <translation type="unfinished"></translation>
+        <translation>Prin&amp;t</translation>
     </message>
     <message>
         <source>Alt+K</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Zapis&amp;z</source>
-        <translation type="unfinished"></translation>
+        <translation>Sav&amp;e</translation>
     </message>
     <message>
         <source>Alt+Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>&amp;Anuluj</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cancel</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message encoding="UTF-8">
         <source>Wartość faktury:</source>
-        <translation type="unfinished"></translation>
+        <translation>Summ:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Wartość korekty:</source>
-        <translation type="unfinished"></translation>
+        <translation>Summ:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Różnica</source>
-        <translation type="unfinished"></translation>
+        <translation>Differentes</translation>
     </message>
     <message>
         <source>0,00</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message encoding="UTF-8">
         <source>Lista towarów/usług:</source>
-        <translation type="unfinished"></translation>
+        <translation>List of goods/servieces:</translation>
     </message>
     <message>
         <source>Lp.</source>
-        <translation type="unfinished"></translation>
+        <translation>Num.</translation>
     </message>
     <message>
         <source>Nazwa</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>Kod</source>
-        <translation type="unfinished"></translation>
+        <translation>Code</translation>
     </message>
     <message>
         <source>PKWiU</source>
-        <translation type="unfinished"></translation>
+        <translation>Classification</translation>
     </message>
     <message encoding="UTF-8">
         <source>Ilość</source>
-        <translation type="unfinished"></translation>
+        <translation>Amount</translation>
     </message>
     <message>
         <source>Jm.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un.</translation>
     </message>
     <message>
         <source>Rabat</source>
-        <translation type="unfinished"></translation>
+        <translation>Discount</translation>
     </message>
     <message>
         <source>Cena jn.</source>
-        <translation type="unfinished"></translation>
+        <translation>Price/unit.</translation>
     </message>
     <message>
         <source>Netto</source>
-        <translation type="unfinished"></translation>
+        <translation>Nett</translation>
     </message>
     <message>
         <source>Vat</source>
-        <translation type="unfinished"></translation>
+        <translation>Tax</translation>
     </message>
     <message>
         <source>Brutto</source>
-        <translation type="unfinished"></translation>
+        <translation>Gross</translation>
     </message>
     <message>
         <source>Dodaj</source>
-        <translation type="unfinished"></translation>
+        <translation>Add</translation>
     </message>
     <message encoding="UTF-8">
         <source>Usuń</source>
-        <translation type="unfinished"></translation>
+        <translation>Delete</translation>
     </message>
     <message>
         <source>Edycja</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit</translation>
     </message>
     <message encoding="UTF-8">
         <source>Stały</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Rabat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Discount:</translation>
     </message>
     <message>
         <source>Edytuje korekt&#xea;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-2&quot;/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit revision</translation>
     </message>
     <message>
         <source>______Korekta______</source>
-        <translation type="unfinished"></translation>
+        <translation>_____Revision_____</translation>
     </message>
     <message>
         <source>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Piecz&#xea;&#xe6; wystawcy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Stamp</translation>
     </message>
     <message>
         <source>FAKTURA VAT&lt;br&gt;koryguj&#xb1;ca&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>INVOICE &lt;br&gt; revision &lt;br&gt;</translation>
     </message>
     <message>
         <source>NR: </source>
-        <translation type="unfinished"></translation>
+        <translation>Num:</translation>
     </message>
     <message>
         <source>Rachunek&lt;br&gt;koryguj&#xb1;cy&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Receipt&lt;br&gt;revision&lt;br&gt;</translation>
     </message>
     <message>
         <source>Data wystawienia: </source>
-        <translation type="unfinished"></translation>
+        <translation>Creation date:</translation>
     </message>
     <message>
         <source>ORYGINA&#xa3;/KOPIA</source>
-        <translation type="unfinished"></translation>
+        <translation>ORGINAL/DUPLICATE</translation>
     </message>
     <message>
         <source>Sprzedawca:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seller:</translation>
     </message>
     <message>
         <source>Telefon: </source>
-        <translation type="unfinished"></translation>
+        <translation>Phone:</translation>
     </message>
     <message>
         <source>E-mail: </source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail:</translation>
     </message>
     <message>
         <source>WWW: </source>
-        <translation type="unfinished"></translation>
+        <translation>WWW: </translation>
     </message>
     <message>
         <source>Nabywca:</source>
-        <translation type="unfinished"></translation>
+        <translation>Buyer:</translation>
     </message>
     <message>
         <source>Nr faktury VAT: </source>
-        <translation type="unfinished"></translation>
+        <translation>Invoice number:</translation>
     </message>
     <message>
         <source>Data sprzeda&#xbf;y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Selling date:</translation>
     </message>
     <message>
         <source>Forma p&#xb3;atno&#xb6;ci faktury: </source>
-        <translation type="unfinished"></translation>
+        <translation>Payment method:</translation>
     </message>
     <message>
         <source>Nr rachunku: </source>
-        <translation type="unfinished"></translation>
+        <translation>Receipt number:</translation>
     </message>
     <message>
         <source>Forma p&#xb3;atno&#xb6;ci rachunku: </source>
-        <translation type="unfinished"></translation>
+        <translation>Receipt payment method:</translation>
     </message>
     <message>
         <source>Pow&#xf3;d korekty: </source>
-        <translation type="unfinished"></translation>
+        <translation>Revision reason:</translation>
     </message>
     <message>
         <source>Termin rozliczenia: </source>
-        <translation type="unfinished"></translation>
+        <translation>Due date:</translation>
     </message>
     <message>
         <source>Pozycje na fakturze przed korekt&#xb1;: </source>
-        <translation type="unfinished"></translation>
+        <translation>Invoice before revision:</translation>
     </message>
     <message>
         <source>Pozycje na rachunku przed korekt&#xb1;: </source>
-        <translation type="unfinished"></translation>
+        <translation>Receipt before revision:</translation>
     </message>
     <message>
         <source>Ilo&#xb6;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>Amount</translation>
     </message>
     <message>
         <source>Cena jdn.</source>
-        <translation type="unfinished"></translation>
+        <translation>Price/unit.</translation>
     </message>
     <message>
         <source>Stawka VAT</source>
-        <translation type="unfinished"></translation>
+        <translation>Tax value</translation>
     </message>
     <message>
         <source>Kwota Vat</source>
-        <translation type="unfinished"></translation>
+        <translation>Tax</translation>
     </message>
     <message>
         <source>Warto&#xb6;&#xe6; Brutto</source>
-        <translation type="unfinished"></translation>
+        <translation>Gross</translation>
     </message>
     <message>
         <source>Razem:</source>
-        <translation type="unfinished"></translation>
+        <translation>Summ:</translation>
     </message>
     <message>
         <source>Pozycje na fakturze po korekcie: </source>
-        <translation type="unfinished"></translation>
+        <translation>Invoice after revision:</translation>
     </message>
     <message>
         <source>Pozycje na rachunku po korekcie: </source>
-        <translation type="unfinished"></translation>
+        <translation>Invoice after revosion:</translation>
     </message>
     <message>
         <source>Do zap&#xb3;aty: </source>
-        <translation type="unfinished"></translation>
+        <translation>Total to pay: </translation>
     </message>
     <message>
         <source>Do zwrotu: </source>
-        <translation type="unfinished"></translation>
+        <translation>Total to pay back:</translation>
     </message>
     <message>
         <source>s&#xb3;ownie:</source>
-        <translation type="unfinished"></translation>
+        <translation>verbal: </translation>
     </message>
     <message>
         <source>forma p&#xb3;atno&#xb6;ci: </source>
-        <translation type="unfinished"></translation>
+        <translation>Payment method:</translation>
     </message>
     <message>
         <source>termin p&#xb3;atno&#xb6;ci: </source>
-        <translation type="unfinished"></translation>
+        <translation>Payment date: </translation>
     </message>
     <message>
         <source>Zap&#xb3;acono got&#xf3;wk&#xb1;</source>
-        <translation type="unfinished"></translation>
+        <translation>Payments done</translation>
     </message>
     <message>
         <source>Og&#xf3;&#xb3;em stawkami:</source>
-        <translation type="unfinished"></translation>
+        <translation>Summary: </translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do wystawienia faktury VAT</source>
-        <translation type="unfinished"></translation>
+        <translation>Name and surname of preson who done this Invoice</translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do wystawienia rachunku</source>
-        <translation type="unfinished"></translation>
+        <translation>Name and surname of person who done this receipt</translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do odbioru faktury VAT</source>
-        <translation type="unfinished"></translation>
+        <translation>Name and surname of person who received this invoice</translation>
     </message>
     <message>
         <source>Imi&#xea; i nazwisko osoby upowa&#xbf;nionej do odbioru rachunku</source>
-        <translation type="unfinished"></translation>
+        <translation>Name i surname of person who received this receipt</translation>
     </message>
     <message>
         <source> wersja </source>
-        <translation type="unfinished"></translation>
+        <translation>version</translation>
     </message>
     <message>
         <source>Wybierz kontrahenta</source>
-        <translation type="unfinished"></translation>
+        <translation>Choose contractor</translation>
     </message>
     <message>
         <source>Nie ma towar&#xf3;w</source>
-        <translation type="unfinished"></translation>
+        <translation>No goods</translation>
     </message>
 </context>
 <context encoding="UTF-8">
     <name>preview</name>
     <message encoding="UTF-8">
         <source>Podgląd wydruku</source>
-        <translation type="unfinished"></translation>
+        <translation>Print preview</translation>
     </message>
 </context>
 <context>
     <name>towList</name>
     <message>
         <source>Wybierz towar z listy</source>
-        <translation type="unfinished"></translation>
+        <translation>Choose article from the list</translation>
     </message>
     <message>
         <source>Typ:</source>
-        <translation type="unfinished"></translation>
+        <translation>Type:</translation>
     </message>
     <message>
         <source>Towar</source>
-        <translation type="unfinished"></translation>
+        <translation>Article</translation>
     </message>
     <message encoding="UTF-8">
         <source>Usługa</source>
-        <translation type="unfinished"></translation>
+        <translation>Service</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Index</translation>
     </message>
     <message>
         <source>Nazwa</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>Nazwa:</source>
-        <translation type="unfinished"></translation>
+        <translation>Name:</translation>
     </message>
     <message>
         <source>Cena:</source>
-        <translation type="unfinished"></translation>
+        <translation>Price:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Ilość:</source>
-        <translation type="unfinished"></translation>
+        <translation>Amount:</translation>
     </message>
     <message>
         <source>Rabat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Discount:</translation>
     </message>
     <message>
         <source>0,00</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>99999999,99; </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>99999999; </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Netto:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nett:</translation>
     </message>
     <message>
         <source>Brutto:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gross:</translation>
     </message>
     <message>
         <source>O&amp;K</source>
-        <translation type="unfinished"></translation>
+        <translation>O&amp;K</translation>
     </message>
     <message>
         <source>Alt+K</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Can&amp;cel</source>
-        <translation type="unfinished"></translation>
+        <translation>Can&amp;cel</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>QFaktury</source>
-        <translation type="unfinished"></translation>
+        <translation>QFaktury</translation>
     </message>
     <message>
         <source>Podaj ilo&#xb6;&#xe6;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fill amount field</translation>
     </message>
     <message>
         <source>Wska&#xbf; towar</source>
-        <translation type="unfinished"></translation>
+        <translation>Select article</translation>
     </message>
 </context>
 <context>
     <name>twAdd</name>
     <message>
         <source>Dodaj towar</source>
-        <translation type="unfinished"></translation>
+        <translation>Add article</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Index:</translation>
     </message>
     <message>
         <source>Nazwa:</source>
-        <translation type="unfinished"></translation>
+        <translation>Name:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Skrót:</source>
-        <translation type="unfinished"></translation>
+        <translation>Short name:</translation>
     </message>
     <message>
         <source>Kod:</source>
-        <translation type="unfinished"></translation>
+        <translation>Code:</translation>
     </message>
     <message>
         <source>PKWiU:</source>
-        <translation type="unfinished"></translation>
+        <translation>Classification:</translation>
     </message>
     <message>
         <source>Typ:</source>
-        <translation type="unfinished"></translation>
+        <translation>Type:</translation>
     </message>
     <message>
         <source>Cena:</source>
-        <translation type="unfinished"></translation>
+        <translation>Price:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Z&amp;najdź</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin&amp;d</translation>
     </message>
     <message>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>towar</source>
-        <translation type="unfinished"></translation>
+        <translation>article</translation>
     </message>
     <message encoding="UTF-8">
         <source>usługa</source>
-        <translation type="unfinished"></translation>
+        <translation>service</translation>
     </message>
     <message>
         <source>Jedn.:</source>
-        <translation type="unfinished"></translation>
+        <translation>Units:</translation>
     </message>
     <message>
         <source>szt.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">each</translation>
     </message>
     <message>
         <source>0000000,00; </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Vat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tax:</translation>
     </message>
     <message>
         <source>O&amp;K</source>
-        <translation type="unfinished"></translation>
+        <translation>O&amp;K</translation>
     </message>
     <message>
         <source>Alt+K</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Can&amp;cel</source>
-        <translation type="unfinished"></translation>
+        <translation>Can&amp;cel</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Edytuj towar/us&#xb3;ug&#xea;</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit article/service</translation>
     </message>
     <message>
         <source>QFaktury</source>
-        <translation type="unfinished"></translation>
+        <translation>QFaktury</translation>
     </message>
     <message>
         <source>Musisz poda&#xe6; chocia&#xbf; nazwe.</source>
-        <translation type="unfinished"></translation>
+        <translation>You have to fill name field.</translation>
     </message>
 </context>
 </TS>

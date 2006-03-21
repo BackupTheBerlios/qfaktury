@@ -1331,10 +1331,6 @@ to na fakturze pojawi sie napis: zapłacono.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-2&quot; /&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;title&gt;______Faktura VAT______&lt;/title&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1904,10 +1900,6 @@ to na fakturze pojawi sie napis: zapłacono.</source>
     </message>
     <message>
         <source>Edytuje korekt&#xea;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-2&quot;/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

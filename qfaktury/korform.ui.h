@@ -659,9 +659,12 @@ void
 korForm::makeInvoiceHeadar ()
 {
 
+  QSettings settings;
+  QString localEnc = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
+
   fraStrList += "<html><head>";
 
-  fraStrList += tr("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-2\"/>");
+  fraStrList += tr("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=" + localEnc + "\"/>");
   // or maybe sth like --> read encoding from a settings
 
   fraStrList += "<meta name=\"creator\" value=\"http://www.e-linux.pl\"/>";
@@ -694,7 +697,6 @@ korForm::makeInvoiceHeadar ()
   fraStrList += "<td colspan=\"2\" width=\"60%\" align=\"left\" valign=\"center\" class=\"podpisy\">";
   // logo code
   // eof logo
-  QSettings settings;
   QString logo = settings.readEntry ("elinux/faktury/logo");
   if (logo != "")
     {

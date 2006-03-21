@@ -1,3 +1,6 @@
+20-03-2006
+ - netto od brutto... feature dla kas fiskalnych
+
 12-03-2006
  - tlumaczenie na inne jezyki
  - przeniesienie ustawien do katalogu razem jako elinux
@@ -10,7 +13,7 @@
 /done/- formatowanie symbolu faktury
 
 18-01-2006
- - sprawdzanie czy nip istnieje przy dodawaniu kontrahenta
+/done/ - sprawdzanie czy nip istnieje przy dodawaniu kontrahenta
 
 17-01-2006
  - automatyczne obliczanie terminy platnosci...
