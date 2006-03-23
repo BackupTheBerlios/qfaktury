@@ -235,6 +235,8 @@ bool twAdd::saveAll ()
   QSettings settings;
   QString encoding = settings.readEntry ("elinux/localEnc", "ISO 8859-2");
   QTextCodec::setCodecForCStrings (QTextCodec::codecForName (encoding));
+  QTextCodec::setCodecForTr (QTextCodec::codecForName (encoding));
+  QTextCodec::setCodecForLocale (QTextCodec::codecForName (encoding));
 
   nettoChanged ();
 

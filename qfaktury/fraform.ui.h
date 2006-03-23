@@ -43,7 +43,10 @@ FormFra::init ()
   QTextCodec::setCodecForTr (QTextCodec::codecForName (localEnc));
   QTextCodec::setCodecForLocale (QTextCodec::codecForName (localEnc));
 
+  // qDebug( localEnc );
+
   invType = FVat;
+  if ( pforma ) invType = FPro;
   // invoice fra1;
   // dodac do settingsow!!
 
@@ -132,7 +135,7 @@ FormFra::readData (QString fraFile, int co)
   if (co == 0)
     {
       setCaption ( tr("Edytuje Fakturê VAT") );
-      invType = EFVat;
+      invType = FVat;
       type = 0;
     }
   else  {
@@ -140,7 +143,7 @@ FormFra::readData (QString fraFile, int co)
 #ifdef QF_noVAT__
     setCaption ( tr("Edytuje Rachunek"));
 #endif
-    invType = EFPro;
+    invType = FPro;
   }
 
 
@@ -179,7 +182,7 @@ FormFra::readData (QString fraFile, int co)
   nabywca = tmp.toElement ();
   kontrName->setText (nabywca.attribute ("nazwa") + "," +
 		      nabywca.attribute ("miasto") + "," +
-		      nabywca.attribute ("ulica") + ", NIP: " +
+		      nabywca.attribute ("ulica") + ", " + tr("NIP: ") + 
 		      nabywca.attribute ("nip"));
   kontrName->setCursorPosition (1);
 
@@ -234,6 +237,8 @@ FormFra::readData (QString fraFile, int co)
       editTw->setEnabled (FALSE);
       saveBtn->setEnabled (FALSE);
       constRab->setEnabled (FALSE);
+      kListGet->setEnabled (FALSE);
+      currCombo->setEnabled (FALSE);
       if (rabatValue->value () == 0)
 	{
 	  constRab->setChecked (true);
@@ -263,6 +268,8 @@ FormFra::readData (QString fraFile, int co)
       rmTow->setEnabled (TRUE);
       editTw->setEnabled (TRUE);
       saveBtn->setEnabled (TRUE);
+      kListGet->setEnabled (TRUE);
+      currCombo->setEnabled (TRUE);
     }
 
 
@@ -491,6 +498,18 @@ FormFra::makeInvoiceHeadar ()
     }
 #endif
 
+#ifdef QF_vatmp__
+  if (invType == FVat)
+    {
+      fraStrList += tr("<title>______Faktura VAT - MP______</title>");
+    }
+  else
+    {
+      fraStrList += tr("<title>____Faktura VAT - MP - Pro Forma____</title>");
+    }
+#endif
+
+
 #ifdef QF_noVAT__
   fraStrList += tr("<title>______Rachunek______</title>");
 #endif
@@ -514,7 +533,7 @@ FormFra::makeInvoiceHeadar ()
 
   fraStrList += "--></style>";
   fraStrList += "<body>";
-  fraStrList += "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+  fraStrList += "<table width=\"700\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
   //  class=\"page_break\" ------>>>> think about this
   fraStrList += "<tr comment=\"headar\"><td>";
   fraStrList +=
@@ -544,18 +563,32 @@ FormFra::makeInvoiceHeadar ()
   if (invType == FVat)
     {
       fraStrList += tr("<h2>FAKTURA VAT<br>");
-      fraStrList += "NR: " + frNr->text () + "<br></h2>";
+      fraStrList += tr("NR: ") + frNr->text () + "<br></h2>";
     }
   else
     {
       fraStrList += tr("<h2>FAKTURA Pro Forma<br>");
-      fraStrList += "NR: " + frNr->text () + "<br></h2>";
+      fraStrList += tr("NR: ") + frNr->text () + "<br></h2>";
     }
 #endif
 
+#ifdef QF_vatmp__
+  if (invType == FVat)
+    {
+      fraStrList += tr("<h2>FAKTURA VAT MP<br>");
+      fraStrList += tr("NR: ") + frNr->text () + "<br></h2>";
+    }
+  else
+    {
+      fraStrList += tr("<h2>FAKTURA VAT MP <br>Pro Forma<br>");
+      fraStrList += tr("NR: ") + frNr->text () + "<br></h2>";
+    }
+#endif
+
+
 #ifdef QF_noVAT__
   fraStrList += tr("<h2>Rachunek<br>");
-  fraStrList += "NR: " + frNr->text () + "<br></h2>";
+  fraStrList += tr("NR: ") + frNr->text () + "<br></h2>";
 #endif
 
   fraStrList += tr("<h5>Data wystawienia: ") + QDate::currentDate ().toString ("yyyy-MM-dd") +"<br>";
@@ -590,9 +623,9 @@ FormFra::makeInvoiceBody ()
     settings.readEntry ("elinux/user/kod") + " " +
     settings.readEntry ("elinux/user/miejscowosc") + "<br>";
   fraStrList += settings.readEntry ("elinux/user/adres") + "<br>";	// "ul. " + 
-  fraStrList += "NIP: " + settings.readEntry ("elinux/user/nip") + "<br>";
+  fraStrList += tr("NIP: ") + settings.readEntry ("elinux/user/nip") + "<br>";
   fraStrList +=
-    "Nr konta: " + settings.readEntry ("elinux/user/konto").replace ("-",
+    tr("Nr konta: ") + settings.readEntry ("elinux/user/konto").replace ("-",
 								       " ") +
     "<br>";
 
@@ -823,6 +856,26 @@ FormFra::makeInvoiceSummAll ()
   fraStrList += "</tr>";
 #endif
 
+#ifdef QF_vatmp__
+  fraStrList += "<tr>";
+  fraStrList +=
+    "<td colspan=\"4\"><hr width=\"100%\" noshade=\"noshade\" color=\"black\" /></td>";
+  fraStrList += "</tr>";
+  fraStrList += "<tr>";
+  fraStrList += "<td colspan=\"4\"><h5>" + tr("Ogó³em stawkami:") + "</h5>";
+  fraStrList += "</td>";	// Ogó³em stawkami:
+  fraStrList += "</tr>";
+  fraStrList += getStawkami ();
+
+  fraStrList += "<tr>";
+  fraStrList += "<td>&nbsp;</td>";	// netto
+  fraStrList += "<td>&nbsp;</td>";	// stawka
+  fraStrList += "<td>&nbsp;</td>";	// podatek
+  fraStrList += "<td>&nbsp;</td>";	// brutto
+  fraStrList += "</tr>";
+#endif
+
+
   fraStrList += "</table>";
   fraStrList += "</td>";
   fraStrList += "</tr>";
@@ -914,6 +967,11 @@ FormFra::makeInvoiceFooter ()
   fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT");
 #endif
 
+#ifdef QF_vatmp__
+  fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT");
+  // VAT MP is too long :(
+#endif
+
 #ifdef QF_noVAT__
   fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do wystawienia rachunku");
 #endif
@@ -924,6 +982,10 @@ FormFra::makeInvoiceFooter ()
   fraStrList += "<td witdh=\"48%\" align=\"center\"> ";
 
 #ifdef QF_base__
+  fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do odbioru faktury VAT");
+#endif
+
+#ifdef QF_vatmp__
   fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do odbioru faktury VAT");
 #endif
 
@@ -1084,6 +1146,22 @@ FormFra::saveInvoice ()
     }
 #endif
 
+#ifdef QF_vatmp__
+  if (invType == FVat)
+    {
+      root.setAttribute ("type", tr("FVAT"));
+      settings1.writeEntry ("faktury/fvat", frNr->text ());
+      ret += tr("FVAT") + "|";
+    }
+  else
+    {
+      root.setAttribute ("type", tr("FPro"));
+      settings1.writeEntry ("faktury/fpro", frNr->text ());
+      ret += tr("FPro") + "|";
+    }
+#endif
+
+
 #ifdef QF_noVAT__
   root.setAttribute ("type", tr("FVAT"));
   settings1.writeEntry ("faktury/fvat", frNr->text ());
@@ -1124,7 +1202,8 @@ FormFra::saveInvoice ()
   nabywca.setAttribute ("miasto", kht[1]);
   nabywca.setAttribute ("ulica", kht[2]);
 
-  nabywca.setAttribute ("nip", kht[3].replace (" ", "").replace ("NIP:", ""));
+  nabywca.setAttribute ("nip", kht[3].replace (" ", "").replace ( tr("NIP:"), ""));
+  // qDebug( kht[3].replace (" ", "").replace ( tr("NIP:"), "") );
   ret += kht[3].simplifyWhiteSpace ();
   // nabywca.setAttribute ("nip", kht[3].replace (" ", "").replace("NIP:", "NIP: ")); 
   // .replace (" ", "").replace ("NIP:", ""));

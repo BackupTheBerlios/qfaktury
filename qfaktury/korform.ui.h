@@ -157,7 +157,7 @@ korForm::readData (QString fraFile)
   nabywca = tmp.toElement ();
   kontrName->setText (nabywca.attribute ("nazwa") + "," +
 		      nabywca.attribute ("miasto") + "," +
-		      nabywca.attribute ("ulica") + ", NIP: " +
+		      nabywca.attribute ("ulica") + ", " + tr("NIP: ") +
 		      nabywca.attribute ("nip"));
   kontrName->setCursorPosition (1);
 
@@ -266,6 +266,7 @@ korForm::readData (QString fraFile)
 	{
 	  constRab->setChecked (true);
 	}
+      constRab->setEnabled (FALSE);
     }
   else
     {
@@ -291,6 +292,7 @@ korForm::readData (QString fraFile)
       rmTow->setEnabled (TRUE);
       editTw->setEnabled (TRUE);
       saveBtn->setEnabled (TRUE);
+      constRab->setEnabled (TRUE);
     }
 
 
@@ -341,7 +343,7 @@ korForm::readDataNewKor (QString fraFile)
   nabywca = tmp.toElement ();
   kontrName->setText (nabywca.attribute ("nazwa") + "," +
 		      nabywca.attribute ("miasto") + "," +
-		      nabywca.attribute ("ulica") + ", NIP: " +
+		      nabywca.attribute ("ulica") + ", " + tr("NIP: ") +
 		      nabywca.attribute ("nip"));
   kontrName->setCursorPosition (1);
 
@@ -717,6 +719,11 @@ korForm::makeInvoiceHeadar ()
   fraStrList += tr("NR: ") + korNr->text () + "<br></h2>";
 #endif
 
+#ifdef QF_vatmp__
+  fraStrList += "<h2>" + tr("FAKTURA VAT MP<br>koryguj±ca<br>");
+  fraStrList += tr("NR: ") + korNr->text () + "<br></h2>";
+#endif
+
 #ifdef QF_noVAT__
   fraStrList += "<h2>" tr("Rachunek<br>koryguj±cy<br>");
   fraStrList += tr("NR: ") + korNr->text () + "<br></h2>";
@@ -755,9 +762,9 @@ korForm::makeInvoiceBody ()
     settings.readEntry ("elinux/user/kod") + " " +
     settings.readEntry ("elinux/user/miejscowosc") + "<br>";
   fraStrList += settings.readEntry ("elinux/user/adres") + "<br>";	// "ul." + 
-  fraStrList += "NIP: " + settings.readEntry ("elinux/user/nip") + "<br>";
+  fraStrList += tr("NIP: ") + settings.readEntry ("elinux/user/nip") + "<br>";
   fraStrList +=
-    "Nr konta: " + settings.readEntry ("elinux/user/konto").replace ("-",
+    tr("Nr konta: ") + settings.readEntry ("elinux/user/konto").replace ("-",
 								       " ") +
     "<br>";
   if (settings.readEntry ("elinux/user/phone") != "")
@@ -792,7 +799,15 @@ korForm::makeInvoiceCorr ()
   fraStrList += "<tr>";
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
   fraStrList += "<td width=\"48%\"> ";
+
 #ifdef QF_base__
+  fraStrList += "<h5>" + tr("Nr faktury VAT: ") + frNr->text ();
+  fraStrList += "<br>" + tr("Data wystawienia: ") + sellingDate->date ().toString ("yyyy-MM-dd"); 
+  fraStrList += "<br>" + tr("Data sprzeda¿y: ") + sellingDate->date ().toString ("yyyy-MM-dd");
+  fraStrList += "<br>" + tr("Forma p³atno¶ci faktury: ") + paymFry->text () + "</h5>";
+#endif
+
+#ifdef QF_vatmp__
   fraStrList += "<h5>" + tr("Nr faktury VAT: ") + frNr->text ();
   fraStrList += "<br>" + tr("Data wystawienia: ") + sellingDate->date ().toString ("yyyy-MM-dd"); 
   fraStrList += "<br>" + tr("Data sprzeda¿y: ") + sellingDate->date ().toString ("yyyy-MM-dd");
@@ -822,9 +837,15 @@ void
 korForm::makeInvoiceGoods2 ()
 {
   fraStrList += "<tr comment=\"goods\" align=\"center\"><td>";
+
 #ifdef QF_base__
   fraStrList += "<h4>" + tr("Pozycje na fakturze przed korekt±: ") + "</h4>";
 #endif
+
+#ifdef QF_vatmp__
+  fraStrList += "<h4>" + tr("Pozycje na fakturze przed korekt±: ") + "</h4>";
+#endif
+
 #ifdef QF_noVAT__
   fraStrList += "<h4>" + tr("Pozycje na rachunku przed korekt±: ") + "</h4>";
 #endif
@@ -1006,6 +1027,11 @@ korForm::makeInvoiceGoods ()
   fraStrList += "<h4>" + tr("Pozycje na fakturze po korekcie: ") + "</h4>";
 #endif
 
+#ifdef QF_vatmp__
+  fraStrList += "<h4>" + tr("Pozycje na fakturze po korekcie: ") + "</h4>";
+#endif
+
+
 #ifdef QF_noVAT__
   fraStrList += "<h4>" + tr("Pozycje na rachunku po korekcie: ") + "</h4>";
 #endif
@@ -1153,9 +1179,15 @@ if ( settings.readBoolEntry("elinux/faktury_pozycje/bruttoval")  )
   fraStrList += "<td width=\"60\">&nbsp;" + snetto + "</td>";	// netto
   if (settings.readBoolEntry ("elinux/faktury_pozycje/vatval"))
     fraStrList += "<td width=\"60\">&nbsp;</td>";
+
 #ifdef QF_base__
   fraStrList += "<td width=\"60\">&nbsp;" + fixStr (QString::number (vatPrice)) + "</td>";	// vat
 #endif
+
+#ifdef QF_vatmp__
+  fraStrList += "<td width=\"60\">&nbsp;" + fixStr (QString::number (vatPrice)) + "</td>";	// vat
+#endif
+
   fraStrList += "<td width=\"60\">&nbsp;" + sbrutto + "</td>";	// brutto
 
   fraStrList += "</tr>";
@@ -1202,6 +1234,25 @@ korForm::makeInvoiceSummAll ()
   fraStrList += "<td width=\"48%\" valign=\"top\">";
   fraStrList += "<table width=\"80%\" class=\"stawki\" border=\"0\">";
 #ifdef QF_base__
+  fraStrList += "<tr>";
+  fraStrList +=
+    "<td colspan=\"4\"><hr width=\"100%\" noshade=\"noshade\" color=\"black\"/></td>";
+  fraStrList += "</tr>";
+  fraStrList += "<tr>";
+  fraStrList += "<td colspan=\"4\"><h5>" + tr("Ogó³em stawkami:") + "&nbsp;</h5></td>";
+// Ogó³em stawkami:
+  fraStrList += "</tr>";
+  fraStrList += getStawkami ();
+
+  fraStrList += "<tr>";
+  fraStrList += "<td>&nbsp;</td>";	// netto
+  fraStrList += "<td>&nbsp;</td>";	// stawka
+  fraStrList += "<td>&nbsp;</td>";	// podatek
+  fraStrList += "<td>&nbsp;</td>";	// brutto
+  fraStrList += "</tr>";
+#endif
+
+#ifdef QF_vatmp__
   fraStrList += "<tr>";
   fraStrList +=
     "<td colspan=\"4\"><hr width=\"100%\" noshade=\"noshade\" color=\"black\"/></td>";
@@ -1301,9 +1352,15 @@ korForm::makeInvoiceFooter ()
   fraStrList += "<tr class=\"podpisy\">";
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
   fraStrList += "<td witdh=\"48%\" align=\"center\"> ";
+
 #ifdef QF_base__
   fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT");
 #endif
+
+#ifdef QF_vatmp__
+  fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do wystawienia faktury VAT");
+#endif
+
 
 #ifdef QF_noVAT__
   fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do wystawienia rachunku");
@@ -1317,6 +1374,11 @@ korForm::makeInvoiceFooter ()
 #ifdef QF_base__
   fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do odbioru faktury VAT");
 #endif
+
+#ifdef QF_vatmp__
+  fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do odbioru faktury VAT");
+#endif
+
 
 #ifdef QF_noVAT__
   fraStrList += tr("Imiê i nazwisko osoby upowa¿nionej do odbioru rachunku");
@@ -1409,6 +1471,14 @@ korForm::makeInvoice ()
 void
 korForm::saveInvoice ()
 {
+ /*!
+   BUG!!
+	gdy dodajemy korekte, a w tym dniu nie bylo jeszcze dodane nic
+   to nazwa pliku jest zle wyliczana... rozniaca 0/1 i korekta nie
+   moze byc zaczytana... mozna to zaradzic tymczasowo przez przycisk
+   zastosuj... ale powinno sie ten problem rozwiazac. 
+  */
+
   if (kontrName->text () == "")
     {
       QMessageBox::information (this, "QFaktury", tr("Wybierz kontrahenta"),
@@ -1434,7 +1504,7 @@ korForm::saveInvoice ()
       pNumber = 0;
       file.setName (progDir2 + "/faktury/h" + fileName + "_" +
 		    QString::number (pNumber) + ".xml");
-      pNumber += 1;
+      // pNumber += 1;
       ret = "h" + fileName + "_" + QString::number (pNumber) + ".xml" + "|";
 
       while (file.exists ())
@@ -1507,7 +1577,7 @@ korForm::saveInvoice ()
   nabywca.setAttribute ("miasto", kht[1]);
   nabywca.setAttribute ("ulica", kht[2]);
 
-  nabywca.setAttribute ("nip", kht[3].replace (" ", "").replace ("NIP:", ""));
+  nabywca.setAttribute ("nip", kht[3].replace (" ", "").replace (tr("NIP:"), ""));
   ret += kht[3].simplifyWhiteSpace ();
   // nabywca.setAttribute ("nip", kht[3].replace (" ", "").replace("NIP:", "NIP:")); 
   // .replace (" ", "").replace ("NIP:", ""));

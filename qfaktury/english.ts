@@ -311,9 +311,9 @@
  Koordynator projektu: 
 <byte value="x9"/>Grzegorz R&#xea;kawek www.e-linux.pl 
 </source>
-        <translation>Program for creating invoices. (new line)
-Product manager:(new line)
-(tab)Grzegorz Rękawek www.e-linux.pl (new line)</translation>
+        <translation type="unfinished">Program for creating invoices. &lt;br&gt;
+Product manager:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;Grzegorz Rękawek www.e-linux.pl &lt;br&gt;</translation>
     </message>
     <message>
         <source>Programista:
@@ -322,18 +322,16 @@ Grafika:
 <byte value="x9"/>Dariusz Arciszewski 
 
 </source>
-        <translation>Main developer: (new line)
-(tab)Tomasz &apos;moux&apos; Pielech (new line)
-Grapics:(new line)
-(tab)Dariusz Arciszewski (new line)
-(new line)</translation>
+        <translation type="unfinished">Main developer: &lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;Tomasz &apos;moux&apos; Pielech &lt;br&gt;
+Grapics:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;Dariusz Arciszewski &lt;br&gt;</translation>
     </message>
     <message>
         <source>Support: info@e-linux.pl
 
 </source>
-        <translation>Support: info@e-linux.pl(new line)
-(new line)</translation>
+        <translation>Support: info@e-linux.pl&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <source>UWAGA!!!
@@ -343,31 +341,33 @@ Grapics:(new line)
     <message>
         <source>Ten program komputerowy dostarczany jest przez autora w formie &quot;takiej, jaki jest&quot;
 </source>
-        <translation>This program is provided &quot;AS IS&quot; with no WARRANTY OF ANY KIND INCLUDING THE WARRANTY OF DESIGN MARCHANTABILITY AND FITNESS OF ANY PARTICULAR PURPOSE</translation>
+        <translation>&lt;br&gt;This program is provided &quot;AS IS&quot; with no WARRANTY OF &lt;br&gt;
+ANY KIND INCLUDING THE WARRANTY OF DESIGN MARCHANTABILITY &lt;br&gt;
+AND FITNESS OF ANY PARTICULAR PURPOSE&lt;br&gt;</translation>
     </message>
     <message>
         <source>Autor nie udziela &#xbf;adnej gwarancji oraz r&#xea;kojmi, &#xbf;e program b&#xea;dzie dzia&#xb3;a&#xb3;
 </source>
-        <translation></translation>
+        <translation type="unfinished">&amp;nbsp;</translation>
     </message>
     <message>
         <source>prawid&#xb3;owo, jest odpowiedniej jako&#xb6;ci oraz &#xbf;e spe&#xb3;ni oczekiwania
 </source>
-        <translation></translation>
+        <translation type="unfinished">&amp;nbsp;</translation>
     </message>
     <message>
         <source>u&#xbf;ytkownika. Autor nie odpowiada za jakiekolwiek straty wynik&#xb3;e z u&#xbf;ywania
 </source>
-        <translation></translation>
+        <translation type="unfinished">&amp;nbsp;</translation>
     </message>
     <message>
         <source>programu, w tym utrat&#xea; spodziewanych korzy&#xb6;ci, danych, informacji
 </source>
-        <translation></translation>
+        <translation type="unfinished">&amp;nbsp;</translation>
     </message>
     <message>
         <source>gospodarczych lub koszt urz&#xb1;dze&#xf1; lub program&#xf3;w zast&#xea;pczych.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;nbsp;</translation>
     </message>
     <message>
         <source>korekta</source>
@@ -695,7 +695,7 @@ Grapics:(new line)
     </message>
     <message encoding="UTF-8">
         <source>Kodowanie znaków:</source>
-        <translation>Charser encoding: </translation>
+        <translation>Charset encoding: </translation>
     </message>
     <message>
         <source>Logo:</source>
@@ -1298,11 +1298,43 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>FVAT</source>
-        <translation type="unfinished">INVOICE</translation>
+        <translation>INVOICE</translation>
     </message>
     <message>
         <source>FPro</source>
-        <translation type="unfinished">PROFORMA</translation>
+        <translation>PROFORMA</translation>
+    </message>
+    <message>
+        <source>&lt;title&gt;______Faktura VAT - MP______&lt;/title&gt;</source>
+        <translation>&lt;title&gt;______Invoice - MP______&lt;/title&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;title&gt;____Faktura VAT - MP - Pro Forma____&lt;/title&gt;</source>
+        <translation>&lt;title&gt;____Invoice VAT - MP - Pro Forma____&lt;/title&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;FAKTURA VAT MP&lt;br&gt;</source>
+        <translation>&lt;h2&gt;Invoice MP&lt;br&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;FAKTURA VAT MP &lt;br&gt;Pro Forma&lt;br&gt;</source>
+        <translation>&lt;h2&gt;Invoice MP &lt;br&gt;Pro Forma&lt;br&gt;</translation>
+    </message>
+    <message>
+        <source>NR: </source>
+        <translation>Num:</translation>
+    </message>
+    <message>
+        <source>NIP: </source>
+        <translation>TAXID:</translation>
+    </message>
+    <message>
+        <source>Nr konta: </source>
+        <translation>IBAN:</translation>
+    </message>
+    <message>
+        <source>NIP:</source>
+        <translation>TAXID:</translation>
     </message>
 </context>
 <context>
@@ -1417,7 +1449,7 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>sto</source>
-        <translation>hundred</translation>
+        <translation>one hundred</translation>
     </message>
     <message>
         <source>dwie&#xb6;cie</source>
@@ -1457,10 +1489,6 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source></source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1544,6 +1572,10 @@ print will shown: payments done. </translation>
     <message>
         <source>Wska&#xbf; kontrahenta.</source>
         <translation>Select contractor.</translation>
+    </message>
+    <message>
+        <source>NIP: </source>
+        <translation>TAX ID:</translation>
     </message>
 </context>
 <context>
@@ -1630,15 +1662,15 @@ print will shown: payments done. </translation>
     </message>
     <message encoding="UTF-8">
         <source>Wartość faktury:</source>
-        <translation>Summ:</translation>
+        <translation>Invoice summ:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Wartość korekty:</source>
-        <translation>Summ:</translation>
+        <translation>Revision summ:</translation>
     </message>
     <message encoding="UTF-8">
         <source>Różnica</source>
-        <translation>Differentes</translation>
+        <translation type="unfinished">Difference:</translation>
     </message>
     <message>
         <source>0,00</source>
@@ -1726,7 +1758,7 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>FAKTURA VAT&lt;br&gt;koryguj&#xb1;ca&lt;br&gt;</source>
-        <translation>INVOICE &lt;br&gt; revision &lt;br&gt;</translation>
+        <translation>INVOICE revision &lt;br&gt;</translation>
     </message>
     <message>
         <source>NR: </source>
@@ -1891,6 +1923,22 @@ print will shown: payments done. </translation>
     <message>
         <source>korekta</source>
         <translation>REVISION</translation>
+    </message>
+    <message>
+        <source>FAKTURA VAT MP&lt;br&gt;koryguj&#xb1;ca&lt;br&gt;</source>
+        <translation>Invoice MP&lt;br&gt;revision&lt;br&gt;</translation>
+    </message>
+    <message>
+        <source>NIP: </source>
+        <translation>TAXID:</translation>
+    </message>
+    <message>
+        <source>Nr konta: </source>
+        <translation>IBAN:</translation>
+    </message>
+    <message>
+        <source>NIP:</source>
+        <translation>TAXID:</translation>
     </message>
 </context>
 <context encoding="UTF-8">

@@ -343,6 +343,9 @@
                             <property name="text">
                                 <string>Przyczyna:</string>
                             </property>
+                            <property name="alignment">
+                                <set>AlignVCenter|AlignRight</set>
+                            </property>
                         </widget>
                     </vbox>
                 </widget>
@@ -624,88 +627,55 @@
                         <property name="text">
                             <string>Lp.</string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
-                        </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Nazwa</string>
-                        </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
                         </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Kod</string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
-                        </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>PKWiU</string>
-                        </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
                         </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Ilość</string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
-                        </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Jm.</string>
-                        </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
                         </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Rabat</string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
-                        </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Cena jn.</string>
-                        </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
                         </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Netto</string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
-                        </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Vat</string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
-                        </property>
                     </column>
                     <column>
                         <property name="text">
                             <string>Brutto</string>
-                        </property>
-                        <property name="pixmap">
-                            <pixmap></pixmap>
                         </property>
                     </column>
                     <property name="name">

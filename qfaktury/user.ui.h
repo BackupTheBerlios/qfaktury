@@ -14,7 +14,7 @@
 #include "version.h"
 
 
-/* TODO
+/* TODO                                                 
   1. move settings to program directory
   2. change main group to elinux
 */

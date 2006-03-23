@@ -861,6 +861,7 @@ Form1::newPForm ()
 #ifdef QF_noVAT__
   fraWindow->setCaption ( tr("Rachunek") );
 #endif
+//  fraWindow->invType = FVat;
 
   fraWindow->backBtnClick ();
   if (fraWindow->exec () == QDialog::Accepted)

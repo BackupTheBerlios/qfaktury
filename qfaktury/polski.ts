@@ -1259,6 +1259,38 @@ to na fakturze pojawi sie napis: zapłacono.</source>
         <source>FPro</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;title&gt;______Faktura VAT - MP______&lt;/title&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;title&gt;____Faktura VAT - MP - Pro Forma____&lt;/title&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;FAKTURA VAT MP&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;FAKTURA VAT MP &lt;br&gt;Pro Forma&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NR: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NIP: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nr konta: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NIP:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -1498,6 +1530,10 @@ to na fakturze pojawi sie napis: zapłacono.</source>
     </message>
     <message>
         <source>Wska&#xbf; kontrahenta.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NIP: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1845,6 +1881,22 @@ to na fakturze pojawi sie napis: zapłacono.</source>
     </message>
     <message>
         <source>korekta</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FAKTURA VAT MP&lt;br&gt;koryguj&#xb1;ca&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NIP: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nr konta: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NIP:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
