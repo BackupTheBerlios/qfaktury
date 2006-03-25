@@ -12,5 +12,6 @@ float getPrice (QString count, QString netto, QString vat);
 float getPriceBrutto (double netto, QString vat);
 float getPrice2 (QString count, QString netto);
 QString addZeros (QString in);
+QString threePlaces( int in);
 
 #endif

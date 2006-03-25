@@ -17,7 +17,7 @@ main (int argc, char **argv)
   QRect screen = QApplication::desktop ()->screenGeometry ();
 
   QSettings settings;
-  QString lang = settings.readEntry ("elinux/lang", "english");
+  QString lang = settings.readEntry ("elinux/lang", "polski");
 
   QDir abs (a.argv ()[0]);
   QString graphDir;

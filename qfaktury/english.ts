@@ -1042,7 +1042,7 @@ print will shown: payments done. </translation>
     </message>
     <message>
         <source>Do zaplaty:</source>
-        <translation>Total: </translation>
+        <translation>Total to pay:</translation>
     </message>
     <message>
         <source>0,00</source>
@@ -1335,6 +1335,14 @@ print will shown: payments done. </translation>
     <message>
         <source>NIP:</source>
         <translation>TAXID:</translation>
+    </message>
+    <message>
+        <source>s&#xb3;ownie: </source>
+        <translation>verbal:</translation>
+    </message>
+    <message>
+        <source>Do zap&#xb3;aty: </source>
+        <translation>Total to pay: </translation>
     </message>
 </context>
 <context>

@@ -854,6 +854,7 @@
     <slot>constRabClick()</slot>
 </slots>
 <functions>
+    <function>setType( short type )</function>
     <function access="private" specifier="non virtual">init()</function>
     <function>readData( QString fraFile, int co )</function>
     <function returnType="QString">getStawkami()</function>

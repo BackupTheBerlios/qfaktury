@@ -1291,6 +1291,14 @@ to na fakturze pojawi sie napis: zapłacono.</source>
         <source>NIP:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>s&#xb3;ownie: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do zap&#xb3;aty: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>

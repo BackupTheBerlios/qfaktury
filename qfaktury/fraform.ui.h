@@ -34,6 +34,14 @@ double priceBRabN, priceBRab;
 enum InvoiceType {FVat, FPro, EFVat, EFPro};
 short invType;
 
+
+void
+FormFra::setType (short type)
+{
+ qDebug ("type: %d , %s %s:%d", type, __FUNCTION__, __FILE__, __LINE__);
+ invType = type;
+}
+
 void
 FormFra::init ()
 {
@@ -47,6 +55,7 @@ FormFra::init ()
 
   invType = FVat;
   if ( pforma ) invType = FPro;
+  qDebug( QString::number( pforma )  );
   // invoice fra1;
   // dodac do settingsow!!
 
@@ -323,7 +332,6 @@ FormFra::addTow ()
 void
 FormFra::countRabat ()
 {
-
   //    if ( constRab->isChecked() ) {
   double kwota = 0;
   double cenajdn = 0;
@@ -339,7 +347,9 @@ FormFra::countRabat ()
 	rabat1 = "0.0" + rabat1;
       else
 	rabat1 = "0." + rabat1;
-      cenajdn = tableTow->text (i, 7).replace (",", ".").toDouble ();
+      
+      cenajdn = tableTow->text (i, 7).replace (",", ".").toDouble (); // 
+
       kwota = cenajdn * tableTow->text (i, 4).replace (",", ".").toInt ();
       rabat = kwota * rabat1.toDouble ();
       // qDebug( QString::number(rabat) + "   " + rabat1 );
@@ -809,16 +819,16 @@ FormFra::makeInvoiceSummAll ()
   fraStrList += "<tr>";
   fraStrList += "<td witdh=\"20\">&nbsp;</td>";
   fraStrList += "<td width=\"48%\"> ";
-  fraStrList += tr("<h4>Do zap豉ty: " + sbrutto->text () + " " + currCombo->currentText () + "</h4>");
+  fraStrList += "<h4>" + tr("Do zap豉ty: ") + sbrutto->text () + " " + currCombo->currentText () + "</h4>";
 
  // what this code do?
   if (currCombo->currentText () == "PLN")
     fraStrList +=
-      "<h5>s這wnie:" + slownie (sbrutto->text (),
+      "<h5>" + tr("s這wnie: ") + slownie (sbrutto->text (),
 				currCombo->currentText ()) + "</h5>";
   else
     fraStrList +=
-      "<h5>s這wnie:" + slownie (sbrutto->text (),
+      "<h5>" + tr("s這wnie: ") + slownie (sbrutto->text (),
 				currCombo->currentText ()) + "</h5>";
 
 
@@ -1099,17 +1109,18 @@ FormFra::saveInvoice ()
       fileName = QDate::currentDate ().toString ("yyyy-MM-dd");
 
       int pNumber = 0;
+
       file.setName (progDir2 + "/faktury/h" + fileName + "_" +
-		    QString::number (pNumber) + ".xml");
-      ret = "h" + fileName + "_" + QString::number (pNumber) + ".xml" + "|";
+		    threePlaces(pNumber) + ".xml");
+      ret = "h" + fileName + "_" + threePlaces(pNumber) + ".xml" + "|";
       pNumber += 1;
 
       while (file.exists ())
 	{
 	  file.setName (progDir2 + "/faktury/h" + fileName + "_" +
-			QString::number (pNumber) + ".xml");
+			threePlaces (pNumber) + ".xml");
 	  ret =
-	    "h" + fileName + "_" + QString::number (pNumber) + ".xml" + "|";
+	    "h" + fileName + "_" + threePlaces(pNumber) + ".xml" + "|";
 	  pNumber += 1;
 	}
     }

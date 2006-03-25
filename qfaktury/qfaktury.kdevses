@@ -1,37 +1,28 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <!DOCTYPE KDevPrjSession>
 <KDevPrjSession>
- <DocsAndViews NumberOfDocuments="10" >
+ <DocsAndViews NumberOfDocuments="7" >
   <Doc0 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/mainform.ui.h" >
-   <View0 line="827" Type="Source" />
+   <View0 Type="Source" />
   </Doc0>
-  <Doc1 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/sett.ui.h" >
-   <View0 line="142" Type="Source" />
+  <Doc1 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/fraform.ui.h" >
+   <View0 line="350" Type="Source" />
   </Doc1>
-  <Doc2 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/main.cpp" >
-   <View0 line="20" Type="Source" />
-  </Doc2>
-  <Doc3 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/fraform.ui.h" >
-   <View0 line="1204" Type="Source" />
-  </Doc3>
-  <Doc4 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/korform.ui.h" >
+  <Doc2 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/korform.ui.h" >
    <View0 line="1579" Type="Source" />
-  </Doc4>
-  <Doc5 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/user.ui.h" >
-   <View0 line="16" Type="Source" />
-  </Doc5>
-  <Doc6 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/kontr.ui.h" >
+  </Doc2>
+  <Doc3 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/kontr.ui.h" >
    <View0 line="67" Type="Source" />
-  </Doc6>
-  <Doc7 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/towary.ui.h" >
-   <View0 line="238" Type="Source" />
-  </Doc7>
-  <Doc8 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/kontlist.ui.h" >
-   <View0 line="93" Type="Source" />
-  </Doc8>
-  <Doc9 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/config.h" >
+  </Doc3>
+  <Doc4 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/config.h" >
    <View0 line="0" Type="Source" />
-  </Doc9>
+  </Doc4>
+  <Doc5 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/sett.ui.h" >
+   <View0 line="294" Type="Source" />
+  </Doc5>
+  <Doc6 NumberOfViews="1" URL="file:///home/moux/Projekty/qfaktury/main.cpp" >
+   <View0 line="0" Type="Source" />
+  </Doc6>
  </DocsAndViews>
  <pluginList>
   <kdevdebugger>

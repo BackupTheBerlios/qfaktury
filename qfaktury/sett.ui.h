@@ -134,7 +134,7 @@ Form7::saveSettings ()
 
   settings.writeEntry ("addText", additText->text ());
 
-
+  // settings.writeEntry ("fiskal", checkBNetto->isChecked ());
   settings.writeEntry ("prefix", prefixEdit->text ());
   settings.writeEntry ("sufix", sufixEdit->text ());
   settings.writeEntry ("day", cbDay->isChecked ());
@@ -292,6 +292,7 @@ Form7::readSettings ()
   // if (settings.readEntry ("elinux/faktury/addText") != "" )
   additText->setText (settings.readEntry ("elinux/faktury/addText"));
 
+  // checkBNetto->setChecked (settings.readBoolEntry ("elinux/faktury/fiskal"));
   cbDay->setChecked (settings.readBoolEntry ("elinux/faktury/day"));
   cbMonth->setChecked (settings.readBoolEntry ("elinux/faktury/month"));
   cbYear->setChecked (settings.readBoolEntry ("elinux/faktury/year"));

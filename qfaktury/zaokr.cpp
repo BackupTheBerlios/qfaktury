@@ -126,3 +126,17 @@ getPrice2 (QString count, QString netto)
   float nt = netto.replace (",", ".").toFloat ();
   return nt * cnt;
 }
+
+/*!
+ This returns number as three chars numbers
+  */
+QString 
+threePlaces(int in)
+{
+  QString tmp;
+  tmp = QString::number(in);
+  // uint length () const 
+  if ( tmp.length() == 1 ) return "00" + tmp;
+  if ( tmp.length() == 2 ) return "0" + tmp;
+  return tmp;
+}

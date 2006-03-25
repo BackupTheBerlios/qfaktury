@@ -1503,16 +1503,16 @@ korForm::saveInvoice ()
       fileName = QDate::currentDate ().toString ("yyyy-MM-dd");
       pNumber = 0;
       file.setName (progDir2 + "/faktury/h" + fileName + "_" +
-		    QString::number (pNumber) + ".xml");
+		    threePlaces(pNumber) + ".xml");
       // pNumber += 1;
-      ret = "h" + fileName + "_" + QString::number (pNumber) + ".xml" + "|";
+      ret = "h" + fileName + "_" + threePlaces(pNumber) + ".xml" + "|";
 
       while (file.exists ())
 	{
 	  file.setName (progDir2 + "/faktury/h" + fileName + "_" +
-			QString::number (pNumber) + ".xml");
+			threePlaces(pNumber) + ".xml");
 	  ret =
-	    "h" + fileName + "_" + QString::number (pNumber) + ".xml" + "|";
+	    "h" + fileName + "_" + threePlaces(pNumber) + ".xml" + "|";
 	  pNumber += 1;
 	}
       qDebug ("2");

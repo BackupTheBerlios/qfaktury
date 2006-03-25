@@ -829,9 +829,10 @@ void
 Form1::newFra ()
 {
   // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
+
   FormFra *fraWindow = new FormFra;
+  fraWindow->setType( 0 );
   fraWindow->progDir2 = pdGlob;
-  fraWindow->pforma = false;
 #ifdef QF_noVAT__
   fraWindow->setCaption ( tr("Rachunek bez VAT") );
 #endif
@@ -856,7 +857,7 @@ Form1::newPForm ()
   // qDebug ("%s %s:%d", __FUNCTION__, __FILE__, __LINE__);
   FormFra *fraWindow = new FormFra;
   fraWindow->progDir2 = pdGlob;
-  fraWindow->pforma = true;
+  fraWindow->setType( 1 );
   fraWindow->setCaption ( tr("Faktura Pro Forma") );
 #ifdef QF_noVAT__
   fraWindow->setCaption ( tr("Rachunek") );
