@@ -27,6 +27,9 @@ nale¿y
    3a. jesli chcemy uzywac rachunkow zamiast faktur musimy
        podac parametr --no_vat
        ./configure --no_vat      
+   3b. jesli chcemy uzywac faktur VAT MP
+       podac paramtre --vatmp
+       ./configure --vatmp
 4. skompilowaæ program
 	make
 5. zainstalowaæ:

@@ -1,5 +1,15 @@
 QFaktury ChangeLog
 
+0.0.3_pre2
+- dodano obsluge faktur VAT MP
+- dodano jezyk english
+        
+0.0.3_pre1
+- dodano mozliwosc drukowania rachunkow
+- dodano mozliwosc drukowania telefonu, emaila, www w danych firmy
+- poprawiono wiele bledow
+- dodano plik configure
+
 0.0.2 BETA
 - poprawiono obsluge filrow
 - dodano sortowanie faktur wg dat (tnx to TiweK)

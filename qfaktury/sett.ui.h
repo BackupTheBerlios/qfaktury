@@ -313,7 +313,7 @@ Form7::readSettings ()
  codecList->setCurrentText( settings.readEntry ("elinux/localEnc", "ISO 8859-2") );
 
 
- langList->setCurrentText( settings.readEntry ("elinux/lang", "english") );
+ langList->setCurrentText( settings.readEntry ("elinux/lang", "polski") );
  
 }
 
